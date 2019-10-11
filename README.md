@@ -2,9 +2,17 @@
 
 My personal blog, hosted at [oli.me.uk][blog]. Written in [Clojure][] using [Conjure][] and [Neovim][].
 
-It's a static site rendered from markdown, feel free to copy and modify the code if you think you'll find it useful!
+It's a static site rendered from [AsciiDoc][], feel free to copy and modify the code if you think you'll find it useful!
+
+## Tools
+
+ * `clj -A:build` - render the blog to static HTML in `output`.
+ * `clj -A:propel` - start a prepl server with [Propel][] and write the port to `.prepl-port`.
+ * `clj -A:depot` - check for outdated dependencies with [Depot][].
 
 ## Unlicenced
+
+The posts are mine and you should not republish them without asking permission or attribution, the code is fair game.
 
 Find the full [unlicense][] in the `UNLICENSE` file, but here's a snippet.
 
@@ -17,3 +25,6 @@ Find the full [unlicense][] in the `UNLICENSE` file, but here's a snippet.
 [conjure]: https://github.com/Olical/conjure
 [neovim]: https://neovim.io/
 [blog]: https://oli.me.uk
+[propel]: https://github.com/Olical/propel
+[depot]: https://github.com/Olical/depot
+[asciidoc]: http://asciidoc.org/
