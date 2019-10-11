@@ -1,0 +1,24 @@
+= Blog (work in progress)
+
+My personal blog, hosted at https://oli.me.uk/[oli.me.uk]. Written in https://clojure.org/[Clojure] using https://github.com/Olical/conjure[Conjure] and https://neovim.io/[Neovim].
+
+It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to copy and modify the code if you think you'll find it useful!
+
+== Tools
+
+
+ * `clj -A:build` - render the blog to static HTML in `output`.
+ * `clj -A:propel` - start a prepl server with https://github.com/Olical/propel[Propel] and write the port to `.prepl-port`.
+ * `clj -A:depot` - check for outdated dependencies with https://github.com/Olical/depot[Depot].
+
+== Unlicenced
+
+The posts are mine and you should not republish them without asking permission or attribution, the code is fair game.
+
+Find the full http://unlicense.org/[unlicense] in the `UNLICENSE` file, but here's a snippet.
+
+____
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
+____
