@@ -10,6 +10,7 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
  * `clj -A:build` - render the blog to static HTML in `output`.
  * `clj -A:propel` - start a prepl server with https://github.com/Olical/propel[Propel] and write the port to `.prepl-port`.
  * `clj -A:depot` - check for outdated dependencies with https://github.com/Olical/depot[Depot].
+ * `clj -A:test` - execute all of the tests.
 
 == Unlicenced
 
