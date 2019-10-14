@@ -1,9 +1,8 @@
 (ns blog.adoc
-  "Wrapper around the AsciidoctorJ Java library."
+  "Wrapper around the AsciidoctorJ Java library.
+  JUXT's version is a good source of information on this.
+  https://github.com/juxt/adoc/blob/master/src/juxt/adoc/core.clj"
   (:import [org.asciidoctor Asciidoctor$Factory]))
-
-;; JUXT's wrapper is a good source of information on this.
-;; https://github.com/juxt/adoc/blob/master/src/juxt/adoc/core.clj
 
 (defonce adoc
   (Asciidoctor$Factory/create))
