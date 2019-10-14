@@ -20,14 +20,16 @@
 (defn- spit-post!
   "Write the given post to the output directory under the appropriate name.
   Assuming it's been run through adoc/parse already and contains the resulting keys."
-  [{:keys [slug html]}]
+  [{:keys [title slug html]}]
   (let [prefix (fs/file output-dir slug)]
+    (println "Writing post:" title (str "(" slug ")"))
     (fs/mkdirs prefix)
     (spit (fs/file prefix "index.html") html)))
 
 (defn- spit-index!
   "Write the index.html file, linking to all of the given posts."
   [posts]
+  (println "Writing index containing" (count posts) "posts.")
   (spit (fs/file output-dir "index.html")
         (tmpl "index" {:posts posts})))
 
