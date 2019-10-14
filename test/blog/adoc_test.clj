@@ -1,5 +1,6 @@
 (ns blog.adoc-test
   (:require [clojure.test :as t]
+            [java-time :as jt]
             [blog.adoc :as adoc]))
 
 (t/deftest parse
@@ -15,5 +16,5 @@
     (t/is (= {:title "Foo"
               :html "<div class=\"paragraph\">\n<p>Bar!</p>\n</div>"
               :author "Oliver Caldwell"
-              :date "2019-10-13"}
+              :date (jt/local-date "2019-10-13")}
              (adoc/parse "= Foo\nOliver Caldwell\n2019-10-13\n\nBar!")))))

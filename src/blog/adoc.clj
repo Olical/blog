@@ -2,9 +2,10 @@
   "Wrapper around the AsciidoctorJ Java library.
   JUXT's version is a good source of information on this.
   https://github.com/juxt/adoc/blob/master/src/juxt/adoc/core.clj"
+  (:require [java-time :as jt])
   (:import [org.asciidoctor Asciidoctor$Factory]))
 
-(defonce adoc
+(defonce ^:private adoc
   (Asciidoctor$Factory/create))
 
 (defn parse
@@ -24,4 +25,4 @@
                         (when-let [full-name (some-> author .getFullName)]
                           {:author full-name})
                         (when-let [date (some-> revision .getDate)]
-                          {:date date}))))))))
+                          {:date (jt/local-date date)}))))))))
