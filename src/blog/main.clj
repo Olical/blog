@@ -7,14 +7,6 @@
 (def ^:private posts-dir (fs/file "posts"))
 (def ^:private base-dir (fs/file "base"))
 
-(defn- spit-post!
-  "Write the given post to the output directory under the appropriate name.
-  Assuming it's been run through adoc/parse already and contains the resulting keys."
-  [{:keys [slug html]}]
-  (let [prefix (fs/file output-dir slug)]
-    (fs/mkdirs prefix)
-    (spit (str (fs/file prefix "index.html")) html)))
-
 (defn- tmpl
   "Render a template within the base template with the provided options."
   [tmpl-name opts]
@@ -25,6 +17,33 @@
                    (str tmpl-name ".html")
                    opts))))
 
+(defn- spit-post!
+  "Write the given post to the output directory under the appropriate name.
+  Assuming it's been run through adoc/parse already and contains the resulting keys."
+  [{:keys [slug html]}]
+  (let [prefix (fs/file output-dir slug)]
+    (fs/mkdirs prefix)
+    (spit (fs/file prefix "index.html") html)))
+
+(defn- spit-index!
+  "Write the index.html file, linking to all of the given posts."
+  [posts]
+  (spit (fs/file output-dir "index.html")
+        (tmpl "index" {:posts posts})))
+
+(defn- source->post
+  "Parse and render the post from AsciiDoc source.
+  Calculates the slug from the file path."
+  [{:keys [file source]}]
+  (let [{:keys [title] :as post} (adoc/parse source)]
+    (-> post
+        (assoc :slug (fs/name file))
+        (update :html
+                (fn [html]
+                  (tmpl "post"
+                        {:title title
+                         :content html}))))))
+
 (defn -main
   "Performs all building of the blog from source."
   []
@@ -32,15 +51,10 @@
   (fs/copy-dir base-dir output-dir)
   (let [posts (->> (fs/list-dir posts-dir)
                    (map (fn [file]
-                          (-> (adoc/parse (slurp file))
-                              (assoc :slug (fs/name file)))))
-                   (map (fn [{:keys [title] :as post}]
-                          (-> post
-                              (update :html
-                                      #(tmpl "post"
-                                             {:title title
-                                              :content %}))))))]
+                          (source->post {:file file
+                                         :source (slurp file)}))))]
+    (spit-index! posts)
     (run! spit-post! posts)))
 
 (comment
-  (time (-main)))
+  (-main))
