@@ -37,13 +37,14 @@
   "Parse and render the post from AsciiDoc source.
   Calculates the slug from the file path."
   [{:keys [file source]}]
-  (let [{:keys [title] :as post} (adoc/parse source)]
+  (let [{:keys [title date] :as post} (adoc/parse source)]
     (-> post
         (assoc :slug (fs/name file))
         (update :html
                 (fn [html]
                   (tmpl "post"
                         {:title title
+                         :date date
                          :content html}))))))
 
 (defn -main
