@@ -25,7 +25,7 @@ I don't promote my old posts through this anymore, but they're still there, I ev
 
 I think it was worth it since I no longer have to run a server and I can do things like this.
 
-[source,klipse-scheme]
+[source,scheme]
 ----
 (define (add a b)
   (if (= b 0)
