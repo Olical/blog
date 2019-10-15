@@ -1,9 +1,38 @@
 = Hello, World!
 Oliver Caldwell
-2019-10-14
+2017-10-27
 
-Hah, hi!
+I've, once again, migrated my blog onto another platform.
+This time I've gone from WordPress on my own Linode to http://cryogenweb.org/[Cryogen] on GitHub pages.
+This means a few things:
 
-== Test Post
+. I no longer need to worry about running my own server, even though Linode is fantastic.
+I just don't want to maintain anything, especially WordPress.
+. I can blog with a Clojure based platform and integrate https://github.com/viebel/klipse[Klipse] easily for interactive lispy posts.
+. I can write my posts in markdown with Emacs and keep it all on https://github.com/Olical/olical.github.io[GitHub].
 
-This is a test post. _Please_ ignore it.
+== The migration
+
+I wanted to start fresh since my old blog is full of so many topics that I do not feel reflect my true interests anymore, so here I am with a blank slate.
+Luckily I found a way to keep my WordPress site exactly how it was so as not to break a single URL without running WordPress itself.
+
+I used https://en-gb.wordpress.org/plugins/simply-static/[Simply Static] to generate a snapshot of my entire blog which I could then merge into my GitHub pages repositories top level.
+This means every URL that used to work with my original blog will work with this one.
+
+I don't promote my old posts through this anymore, but they're still there, I even preserved https://oli.me.uk/wp-index.html[the original homepage].
+
+== The payoff
+
+I think it was worth it since I no longer have to run a server and I can do things like this.
+
+[source,klipse-scheme]
+----
+(define (add a b)
+  (if (= b 0)
+    a
+    (add (+ a 1) (- b 1))))
+
+(add 10 20)
+----
+
+I also did this entire migration today while on trains and in cars over mobile internet, which was fun.

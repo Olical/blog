@@ -1,5 +1,0 @@
-= Another Test
-Oliver Caldwell
-2019-10-14
-
-Just a test *post*.
