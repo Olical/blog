@@ -14,7 +14,7 @@
   [source]
   (when source
     (let [header (.readDocumentHeader adoc source)]
-      (merge {:html (.convert adoc source {})}
+      (merge {:html (.convert adoc source {"attributes" {"source-highlighter" "rouge"}})}
              (when header
                (let [title (.getDocumentTitle header)
                      author (.getAuthor header)
