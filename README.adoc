@@ -10,7 +10,7 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
  * `clj -A:propel` - start a prepl server with https://github.com/Olical/propel[Propel] and write the port to `.prepl-port`.
  * `clj -A:depot` - check for outdated dependencies with https://github.com/Olical/depot[Depot].
  * `clj -A:test` - execute all of the tests.
- * `watch 'echo "(blog.render/render!) :repl/quit" | netcat localhost $(cat .prepl-port)'` - rebuild the blog by sending code to the prepl server every two seconds.
+ * `rg -l . | entr bash -c 'echo "(require \'blog.render) (blog.render/render!)" | netcat localhost $(cat .prepl-port)'` - rebuild the blog every time a file changes, requires https://github.com/BurntSushi/ripgrep[ripgrep] to find files and http://eradman.com/entrproject/[entr] to watch them for changes.
 
 == Unlicenced
 
