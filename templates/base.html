@@ -2,15 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{title}}</title>
+    <title>{{title|default:"Oliver Caldwell's blog"}}</title>
     <link href="/assets/normalize.css" rel="stylesheet">
     <link href="/assets/style.css" rel="stylesheet">
     <link href="/assets/github-rouge-theme.css" rel="stylesheet">
     <!-- TODO Add a .ico and any other required metadata. -->
   </head>
   <body class="page">
-    <div class="wrapper">
-      {{body|safe}}
+    <div class="page-content">
+      <header class="page-header">
+        <h1 class="page-title"><a href="/">Oliver Caldwell's blog</a></h1>
+        <h2 class="page-subtitle">On languages, text editors and tools.</h2>
+      </header>
+
+      <main class="page-main">
+        {{body|safe}}
+      </main>
+
+      <footer class="page-footer">
+        <p>
+          <a href="https://twitter.com/OliverCaldwell">@OliverCaldwell</a> &middot;
+          <a href="mailto:ollie@oli.me.uk">ollie@oli.me.uk</a> &middot; 
+          <a href="https://github.com/Olical/blog">source code</a>
+        </p>
+      </footer>
     </div>
   </body>
 </html>

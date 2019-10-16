@@ -1,5 +1,8 @@
-<h1>{{title}}</h1>
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{title}}</h1>
+    <p class="post-date">{{date|date:longDate}}</p>
+  </header>
 
-<p>{{date|date:longDate}}</p>
-
-{{content|safe}}
+  {{content|safe}}
+</article>
