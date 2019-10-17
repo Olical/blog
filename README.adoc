@@ -18,6 +18,13 @@ You can use the following if you'd like to rebuild the blog every time a file ch
 fd | entr bash -c 'echo "(require \'blog.render) (blog.render/render!) :repl/quit" | netcat localhost $(cat .prepl-port)'
 ----
 
+Finally, I use Python's `http.server` to host the `output` directory locally.
+
+[source,bash]
+----
+python -m http.server -d output
+----
+
 == Unlicenced
 
 The posts are mine and you should not republish them without asking permission or attribution, the code is fair game.
