@@ -1,0 +1,110 @@
+/* https://coolors.co/587b7f-1e2019-394032-8dab7f-cfee9e */
+/* Blue: #587B7F */
+/* Black-ish: #1E2019 */
+/* Very dark green: #34382B */
+/* Dark green: #394032 */
+/* Light green: #8DAB7F */
+/* Very light green: #CFEE9E */
+
+.page {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: #1E2019;
+}
+
+a {
+  color: #394032;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #8DAB7F;
+}
+
+.page-content {
+  max-width: 80rem;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-title {
+  font-family: monospace;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.page-title a {
+  color: #394032;
+  text-decoration: underline;
+}
+
+.page-title a:visited {
+  color: #394032;
+}
+
+.page-subtitle {
+  font-family: monospace;
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.post-header {
+  text-align: center;
+}
+
+.post-title {
+  margin-bottom: 0;
+}
+
+.post-date {
+  margin-top: 0;
+  color: #34382B;
+  font-style: italic;
+  font-family: monospace;
+}
+
+.post-content {
+  padding: 1rem;
+}
+
+.home-posts-wrapper {
+  padding: 1rem;
+}
+
+.home-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-post-date {
+  font-size: 1rem;
+  flex: 1;
+  color: #34382B;
+  font-style: italic;
+  font-family: monospace;
+}
+
+.home-post-title {
+  flex: 6;
+}
+
+.page-footer {
+  text-align: center;
+}
+
+.page-footer a {
+  color: #587B7F;
+}
+
+.page-footer a:visited {
+  color: #587B7F;
+}

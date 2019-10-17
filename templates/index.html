@@ -6,9 +6,11 @@
   <p>I hope you find something useful here. Have a great day!</p>
 </section>
 
-{% for post in posts %}
-<section class="home-post">
-  <h1 class="home-post-title"><a href="/{{post.slug}}">{{post.title}}</a></h1>
-  <p class="home-post-date">{{post.date|date:mediumDate}}</p>
-</section>
-{% endfor %}
+<div class="home-posts-wrapper">
+  {% for post in posts %}
+  <section class="home-post">
+    <p class="home-post-date">{{post.date|date:mediumDate}}</p>
+    <h1 class="home-post-title"><a href="/{{post.slug}}">{{post.title}}</a></h1>
+  </section>
+  {% endfor %}
+</div>
