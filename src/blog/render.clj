@@ -55,9 +55,9 @@
   (fs/delete-dir temp-dir)
   (fs/copy-dir base-dir temp-dir)
   (let [posts (->> (fs/list-dir posts-dir)
-                   (map (fn [file]
-                          (source->post {:file file
-                                         :source (slurp file)}))))]
+                   (pmap (fn [file]
+                           (source->post {:file file
+                                          :source (slurp file)}))))]
     (spit-index! posts)
     (run! spit-post! posts))
   (fs/delete-dir output-dir)
