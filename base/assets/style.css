@@ -3,6 +3,7 @@
 /* Black-ish: #1E2019 */
 /* Very dark green: #34382B */
 /* Dark green: #394032 */
+/* Medium green: #595E4D */
 /* Light green: #8DAB7F */
 /* Very light green: #CFEE9E */
 
@@ -33,6 +34,8 @@ a:visited {
 
 .page-header {
   text-align: center;
+  border-bottom: 1px dotted #1E2019;
+  margin-bottom: 1rem;
 }
 
 .page-title {
@@ -75,6 +78,10 @@ a:visited {
   padding: 1rem;
 }
 
+.home-intro {
+  padding: 2rem 10rem;
+}
+
 .home-posts-wrapper {
   padding: 1rem;
 }
@@ -99,6 +106,8 @@ a:visited {
 
 .page-footer {
   text-align: center;
+  border-top: 1px dotted #1E2019;
+  margin-bottom: 3rem;
 }
 
 .page-footer a {
@@ -107,4 +116,17 @@ a:visited {
 
 .page-footer a:visited {
   color: #587B7F;
+}
+
+pre.highlight {
+  margin: 0.5rem 1rem;
+  padding: 0.3rem;
+  background-color: #EEEEEE;
+}
+
+div.quoteblock blockquote {
+  border-left: #34382B 0.3rem solid;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  color: #595E4D;
 }
