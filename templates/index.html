@@ -9,8 +9,8 @@
 <div class="home-posts-wrapper">
   {% for post in posts|sort-by-reversed:date %}
   <section class="home-post">
-    <p class="home-post-date">{{post.date|date:mediumDate}}</p>
     <h1 class="home-post-title"><a href="/{{post.slug}}">{{post.title}}</a></h1>
+    <p class="home-post-date">{{post.date|date:mediumDate}}</p>
   </section>
   {% endfor %}
 </div>

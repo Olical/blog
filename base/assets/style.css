@@ -7,12 +7,15 @@
 /* Light green: #8DAB7F */
 /* Very light green: #CFEE9E */
 
-.page {
-  display: flex;
-  justify-content: center;
+body {
+  background-color: #FEFEFE;
+}
+
+.page-wrapper {
   font-size: 1rem;
   font-family: sans-serif;
   color: #1E2019;
+  padding: 0 1rem 1rem 1rem;
 }
 
 a {
@@ -30,6 +33,7 @@ a:visited {
 
 .page-content {
   max-width: 80rem;
+  margin: 0 auto;
 }
 
 .page-header {
@@ -79,11 +83,12 @@ a:visited {
 }
 
 .home-intro {
-  padding: 2rem 10rem;
+  padding: 1rem 10%;
 }
 
 .home-posts-wrapper {
   padding: 1rem;
+  margin: 0 auto;
 }
 
 .home-post {
@@ -119,9 +124,9 @@ a:visited {
 }
 
 pre.highlight {
-  margin: 0.5rem 1rem;
   padding: 0.3rem;
   background-color: #EEEEEE;
+  overflow: auto;
 }
 
 div.quoteblock blockquote {
