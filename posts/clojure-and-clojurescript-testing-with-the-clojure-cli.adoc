@@ -2,7 +2,7 @@
 Oliver Caldwell
 2018-03-09
 
-This post is sort of an extension of a previous post, https://oli.me.uk/2018-02-26-clojure-projects-from-scratch/[Clojure projects from scratch].
+This post is sort of an extension of a previous post, link:/clojure-projects-from-scratch[Clojure projects from scratch].
 That will introduce you to structuring your project around a `deps.edn` file, here we're going to simply add a couple of dependencies that allow you to run your tests.
 
 In a https://leiningen.org/[Leiningen] project, `lein test` will execute your Clojure tests, no questions asked.

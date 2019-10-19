@@ -168,7 +168,7 @@ user=>
 ----
 
 Starting a prepl is done by starting a normal socket REPL but you give it a different `:accept` function, this handles all input and output for the socket.
-You can learn a little more about starting prepls in my https://oli.me.uk/2019-03-22-clojure-socket-prepl-cookbook/[Clojure socket prepl cookbook] post.
+You can learn a little more about starting prepls in my link:/clojure-socket-prepl-cookbook[Clojure socket prepl cookbook] post.
 
 [source,sh]
 ----
@@ -207,7 +207,7 @@ user=>
 
 So our prepl server is up (on the same port as before) and we get dropped into a regular _Clojure_ REPL, this isn't ClojureScript.
 We've started a ClojureScript prepl from inside a JVM process.
-If you want to have figwheel building your ClojureScript as well as a prepl then check out the https://oli.me.uk/2019-03-22-clojure-socket-prepl-cookbook/#figwheel-and-prepl[figwheel section] in my prepl post.
+If you want to have figwheel building your ClojureScript as well as a prepl then check out the link:/clojure-socket-prepl-cookbook#figwheel-and-prepl[figwheel section] in my prepl post.
 A prepl can be plugged into any ClojureScript environment, it just might take a little research.
 
 [source,sh]

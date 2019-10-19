@@ -19,16 +19,11 @@ body {
 }
 
 a {
-  color: #394032;
-  text-decoration: none;
+  color: #8DAB7F;
 }
 
 a:hover {
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #8DAB7F;
+  color: #587B7F;
 }
 
 .page-content {
@@ -107,6 +102,10 @@ a:visited {
 
 .home-post-title {
   flex: 6;
+}
+
+.home-post-title a {
+  text-decoration: none;
 }
 
 .page-footer {

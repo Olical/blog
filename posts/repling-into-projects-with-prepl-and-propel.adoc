@@ -5,7 +5,7 @@ Oliver Caldwell
 This post is intended for https://clojure.org/[Clojure] or https://clojurescript.org/[ClojureScript] developers who're interested in trying prepl based tooling over traditional https://nrepl.org/[nREPL] approaches.
 I hope to show you how to get started quickly with my own tool, https://github.com/Olical/propel[Propel], then show you where to go once you outgrow it.
 
-You may be interested in my other post, https://oli.me.uk/2019-03-22-clojure-socket-prepl-cookbook/[Clojure socket prepl cookbook], which walks you through starting various socket prepls without any extra dependencies or tools.
+You may be interested in my other post, link:/clojure-socket-prepl-cookbook[Clojure socket prepl cookbook], which walks you through starting various socket prepls without any extra dependencies or tools.
 
 == Interlude: prepl?
 
@@ -168,7 +168,7 @@ What happens when you want an nREPL + prepl + two figwheel instances all running
 You're going to need to have your own namespaces to start these things up yourself.
 
 You can do most of this by calling the functions in the `propel.core` namespace, but you may need to do some more manual work to hook up a particularly hairy figwheel configuration to a prepl.
-I'd highly recommend you have a read of https://oli.me.uk/2019-03-22-clojure-socket-prepl-cookbook/[Clojure socket prepl cookbook] to work that sort of thing out.
+I'd highly recommend you have a read of link:/clojure-socket-prepl-cookbook[Clojure socket prepl cookbook] to work that sort of thing out.
 
 You can also learn a lot by reading Propel's source code, dive in and have a look at how I did things!
 

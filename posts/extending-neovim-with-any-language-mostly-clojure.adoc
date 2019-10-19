@@ -197,7 +197,7 @@ That project demonstrates remote plugins in Rust using https://github.com/daa84/
 Once I got around to attempting Conjure in Rust I got tangled up in Rust as a language as well as managing so many different asynchronous requests as my first real Rust project.
 
 Ultimately the final nail in the coffin of my Rust attempt was that the EDN parsing wasn't good enough for my needs.
-I needed a _real_ Clojure implementation to parse and format the results I was getting out of the https://oli.me.uk/2019-03-22-clojure-socket-prepl-cookbook/[socket prepl].
+I needed a _real_ Clojure implementation to parse and format the results I was getting out of the link:/clojure-socket-prepl-cookbook[socket prepl].
 I think if you don't need to parse a lot of Clojure and you're comfortable in Rust then it's a fine choice for writing complex remote plugins.
 
 === Dabbling with ClojureScript
