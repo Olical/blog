@@ -129,7 +129,7 @@ pre.highlight {
   overflow: auto;
 }
 
-div.quoteblock blockquote {
+blockquote {
   border-left: #34382B 0.3rem solid;
   margin-left: 1rem;
   padding-left: 1rem;
