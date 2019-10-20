@@ -2,7 +2,7 @@
 Oliver Caldwell
 2013-09-22
 
-_This is a follow on from my previous post, link:/2013/09/17/classless-javascript/[Classless JavaScript]. You might want to read, or at least skim, that first._
+_This is a follow on from my previous post, link:/classless-javascript/[Classless JavaScript]. You might want to read, or at least skim, that first._
 
 I’ve been having a think about all this classless JavaScript stuff, which is basically normal JavaScript without traditional constructors, and I’ve come up with a few ideas to refine it. The first of which being *DRY* (Don’t Repeat Yourself). I’m going to show you the things I thought of and a few working examples of this strange technique.
 
@@ -87,7 +87,7 @@ model.save = function (self) {
 
 I found that quite surprising in my experimentation, but it’s pretty cool all the same.
 
-link:/2013/09/22/classless-javascript-continued/#comment-1060281114[As Andrew pointed out], this is not to be confused with `+self+`. The `+this+` value simply allows you to call functions stored within the `+model+` object, not within the data object that gets assigned to `+self+`. I have since corrected my above example that used `+this.modelData+`, this is obviously undefined and should be `+self.modelData+`.
+link:/classless-javascript-continued/#comment-1060281114[As Andrew pointed out], this is not to be confused with `+self+`. The `+this+` value simply allows you to call functions stored within the `+model+` object, not within the data object that gets assigned to `+self+`. I have since corrected my above example that used `+this.modelData+`, this is obviously undefined and should be `+self.modelData+`.
 
 === A full example
 

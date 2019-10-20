@@ -2,7 +2,7 @@
 Oliver Caldwell
 2015-01-12
 
-This is my second implementation for my repository of https://github.com/Wolfy87/brainfucks[brainfuck interpretors], this time in the wonderful language Clojure (the first was link:/2015/01/05/brainfuck-vm-in-javascript/[JavaScript]). It largely follows the same format of my initial machine but takes a route that I want to eventually refactor my JavaScript implementation to use as well. It builds a list of token hash-maps that each contain any required meta data. The JavaScript implementation (at the time of writing) uses two arrays, one for the tokens and one for the jump (loop) meta data.
+This is my second implementation for my repository of https://github.com/Wolfy87/brainfucks[brainfuck interpretors], this time in the wonderful language Clojure (the first was link:/brainfuck-vm-in-javascript/[JavaScript]). It largely follows the same format of my initial machine but takes a route that I want to eventually refactor my JavaScript implementation to use as well. It builds a list of token hash-maps that each contain any required meta data. The JavaScript implementation (at the time of writing) uses two arrays, one for the tokens and one for the jump (loop) meta data.
 
 === The same but better
 

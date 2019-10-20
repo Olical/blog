@@ -14,7 +14,7 @@ This will be self contained within a neat little class, so you’ll easily be ab
 
 === Setup
 
-First I’m going to setup a couple of empty classes. I’m going to have a `+LineGraph+` class which inherits (using link:/2013/06/01/prototypical-inheritance-done-right/[prototypical inheritance]) from `+Graph+`. The base class will contain anything a generic graph would, such as containing data points and rendering.
+First I’m going to setup a couple of empty classes. I’m going to have a `+LineGraph+` class which inherits (using link:/prototypical-inheritance-done-right/[prototypical inheritance]) from `+Graph+`. The base class will contain anything a generic graph would, such as containing data points and rendering.
 
 It will be up to the individual implementations, a `+LineGraph+` in this case, to turn those data points into something visual.
 

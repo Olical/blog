@@ -55,7 +55,7 @@ So here’s my better method https://gist.github.com/Wolfy87/5759960[as a gist] 
 
 It works by keeping an array of keys and an array of values which it cross references on request. When you set a value it is added to the key and value arrays at the same index. When you request a value by key it will search the keys array for that key and then use that index to return the value on the adjacent array.
 
-Because I’m using two arrays and not a single array, containing objects with a key and value property, I can search the keys array with `+indexOf+`, or potentially the link:/2013/06/08/searching-javascript-arrays-with-a-binary-search/[binary search function] I talked about in my last post.
+Because I’m using two arrays and not a single array, containing objects with a key and value property, I can search the keys array with `+indexOf+`, or potentially the link:/searching-javascript-arrays-with-a-binary-search/[binary search function] I talked about in my last post.
 
 Swapping out `+indexOf+` for a binary search would speed things up, but then you would also need to keep the arrays in order because of the nature of binary searches. This may or may not work in your situation, that decision is up to you.
 

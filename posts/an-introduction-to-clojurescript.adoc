@@ -14,7 +14,7 @@ They are however, both a https://en.wikipedia.org/wiki/Lisp_%28programming_langu
 * Originally designed for AI research
 * Has a huge amount of dialects which share the core tenants, including https://github.com/clojure/clojurescript[ClojureScript], http://clojure.org/[Clojure], https://racket-lang.org/[Racket], https://en.wikipedia.org/wiki/Scheme_%28programming_language%29[Scheme], http://lfe.io/[Lisp Flavoured Erlang] and many more
 * (it’s (lists (all the way (down))))
-* It makes use of macros to define the language in the language, which I demonstrate in my post about link:/2014/12/15/a-javascript-clojure-mashup/[implementing a lisp in JavaScript]
+* It makes use of macros to define the language in the language, which I demonstrate in my post about link:/a-javascript-clojure-mashup/[implementing a lisp in JavaScript]
 
 This extremely exhaustive chart that shows the history of programming languages shows just how early Lisp turned up. It’s amazing to see what influenced what, click the image to enlarge it.
 
@@ -51,7 +51,7 @@ No kidding, you can do anything with it, it’s the most flexible language I’v
 
 === Tooling
 
-There’s excellent integration into many popular text editors and IDEs, including: Sublime, Atom, Vim, Emacs and http://lighttable.com/[LightTable] (actually written in ClojureScript). https://cursive-ide.com/[Cursive] is an IDE developed specifically for Clojure which seems pretty cool too, it’s based off of IntelliJ. I use Vim personally and have link:/2014/11/21/essential-vim-bundles-for-javascript-and-clojure/[written about it in the past]. All of the tooling hooks into a running REPL which allows you to look up source code, documentation and execute things directly from your editor.
+There’s excellent integration into many popular text editors and IDEs, including: Sublime, Atom, Vim, Emacs and http://lighttable.com/[LightTable] (actually written in ClojureScript). https://cursive-ide.com/[Cursive] is an IDE developed specifically for Clojure which seems pretty cool too, it’s based off of IntelliJ. I use Vim personally and have link:/essential-vim-bundles-for-javascript-and-clojure/[written about it in the past]. All of the tooling hooks into a running REPL which allows you to look up source code, documentation and execute things directly from your editor.
 
 Editing Clojure is fun too, because you’re editing the actual AST so you can perform structural editing with things like http://danmidwood.com/content/2014/11/21/animated-paredit.html[Paredit] or https://shaunlebron.github.io/parinfer/[Parinfer]. Forget manually copying and pasting lines around, adjusting quotes and curly braces, you can edit the AST and always keep it correct with powerful tools.
 

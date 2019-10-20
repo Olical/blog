@@ -2,7 +2,7 @@
 Oliver Caldwell
 2014-09-01
 
-In my last post I focused on link:/2014/08/11/building-vim-netrw-signs-introduction/[getting the repository and main files up and running], here I’ll briefly touch on the satellite tooling I’m going to hook into to make the development a bit easier. Oh, also, I’m writing this from a cruise ship somewhere around Gibraltar.
+In my last post I focused on link:/building-vim-netrw-signs-introduction/[getting the repository and main files up and running], here I’ll briefly touch on the satellite tooling I’m going to hook into to make the development a bit easier. Oh, also, I’m writing this from a cruise ship somewhere around Gibraltar.
 
 ==== Travis
 

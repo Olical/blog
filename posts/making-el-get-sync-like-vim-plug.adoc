@@ -2,7 +2,7 @@
 Oliver Caldwell
 2015-03-03
 
-As link:/2015/03/02/giving-emacs-another-chance/[my post] from last night says, I’m giving Emacs another go. And in an even older post, when I was trying Emacs for the first time, I show link:/2014/10/20/making-package-el-behave-like-vundle/[my approach to getting my packages syncing like I do in Vim] (spoiler alert: It didn’t work very well). My Vim setup will remove unused packages, update what I currently have and then install any that are missing through https://github.com/Wolfy87/dotfiles/blob/85937edfd5330cc0478a3165f6aa7d132173ef57/vim/.vim/update.sh[this simple script] and the use of https://github.com/junegunn/vim-plug[vim-plug].
+As link:/giving-emacs-another-chance/[my post] from last night says, I’m giving Emacs another go. And in an even older post, when I was trying Emacs for the first time, I show link:/2014/10/20/making-package-el-behave-like-vundle/[my approach to getting my packages syncing like I do in Vim] (spoiler alert: It didn’t work very well). My Vim setup will remove unused packages, update what I currently have and then install any that are missing through https://github.com/Wolfy87/dotfiles/blob/85937edfd5330cc0478a3165f6aa7d132173ef57/vim/.vim/update.sh[this simple script] and the use of https://github.com/junegunn/vim-plug[vim-plug].
 
 [source]
 ----

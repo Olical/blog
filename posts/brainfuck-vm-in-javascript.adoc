@@ -2,7 +2,7 @@
 Oliver Caldwell
 2015-01-05
 
-Welcome to 2015, I hope you had a good break! Some people may now be taking on resolutions for the year, be that to lose weight or to socialise more. I’ve opted to link:/2014/12/13/my-2015-bucket-set/[learn even more than usual], so that means https://www.coursera.org/course/algs4partI[more coursera courses] and toy projects in various languages. This is where https://github.com/Wolfy87/brainfucks[my brainfuck virtual machines] come in. I’ll be writing them in every language I find interesting, starting with my trusty (see: sarcasm) friend, JavaScript.
+Welcome to 2015, I hope you had a good break! Some people may now be taking on resolutions for the year, be that to lose weight or to socialise more. I’ve opted to link:/my-2015-bucket-set/[learn even more than usual], so that means https://www.coursera.org/course/algs4partI[more coursera courses] and toy projects in various languages. This is where https://github.com/Wolfy87/brainfucks[my brainfuck virtual machines] come in. I’ll be writing them in every language I find interesting, starting with my trusty (see: sarcasm) friend, JavaScript.
 
 This took me far longer than I wished it would and actually involved pretty much starting again at one point. Everything was fairly easy to implement up until the point where I had to synchronously read one character off of stdin. After hours of research, this proved to be nigh on impossible so I had to settle for some awkward callback based hell with two implementations because of an edge case. This is easy in C yet hard in JavaScript. What?
 

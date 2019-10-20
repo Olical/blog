@@ -2,7 +2,7 @@
 Oliver Caldwell
 2013-06-08
 
-I migrated from Octopress back to WordPress and all of my code snippets exploded, I’m in the process of fixing those, please bear with me. This post also has huge improvements detailed in the comments section [line-through]*that makes me think this post warrants a revisit, I’ll link to it from here if so*. *I’ve written a link:/2014/12/17/revisiting-searching-javascript-arrays-with-a-binary-search/[new post]!* This one includes benchmarks and generative testing (that all passes!). So you can be sure that it works and that any changes made do actually make it faster. This post is therefore *deprecated*. The repository for the new implementation can be found at https://github.com/Olical/binary-search[Olical/binary-search].
+I migrated from Octopress back to WordPress and all of my code snippets exploded, I’m in the process of fixing those, please bear with me. This post also has huge improvements detailed in the comments section [line-through]*that makes me think this post warrants a revisit, I’ll link to it from here if so*. *I’ve written a link:/revisiting-searching-javascript-arrays-with-a-binary-search/[new post]!* This one includes benchmarks and generative testing (that all passes!). So you can be sure that it works and that any changes made do actually make it faster. This post is therefore *deprecated*. The repository for the new implementation can be found at https://github.com/Olical/binary-search[Olical/binary-search].
 
 '''''
 
@@ -59,7 +59,7 @@ function binaryIndexOf(searchElement) {
 }
 ----
 
-_Edit: I’ve swapped `+Math.floor+` for `+number | 0+` at link:/2013/06/08/searching-javascript-arrays-with-a-binary-search/#comment-924876342[Yehonatan’s reccomendation]. http://jsperf.com/jsfvsbitnot/8[It’s faster sometimes]._
+_Edit: I’ve swapped `+Math.floor+` for `+number | 0+` at link:/searching-javascript-arrays-with-a-binary-search/#comment-924876342[Yehonatan’s reccomendation]. http://jsperf.com/jsfvsbitnot/8[It’s faster sometimes]._
 
 === Real world use case
 

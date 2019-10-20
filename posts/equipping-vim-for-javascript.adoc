@@ -2,11 +2,11 @@
 Oliver Caldwell
 2013-06-29
 
-I’ve written yet another post on this, I’d recommend reading link:/2015/06/17/wrangling-javascript-with-vim/[Wrangling JavaScript with Vim] instead. Feel free to peruse this post too, it’s just quite a bit older!
+I’ve written yet another post on this, I’d recommend reading link:/wrangling-javascript-with-vim/[Wrangling JavaScript with Vim] instead. Feel free to peruse this post too, it’s just quite a bit older!
 
 '''''
 
-_On a related note, link:/2014/11/21/essential-vim-bundles-for-javascript-and-clojure/[here’s a newer post] listing some of my favourite JavaScript and Clojure plugins._
+_On a related note, link:/essential-vim-bundles-for-javascript-and-clojure/[here’s a newer post] listing some of my favourite JavaScript and Clojure plugins._
 
 I absolutely love Vim. I use it for all of my writing, be that code or blog posts, which includes the funny language JavaScript. Sure you can open up Vim and start mashing JavaScript, but you’ll probably be yearning for a little help from your editor.
 

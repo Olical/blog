@@ -41,7 +41,7 @@ var SomeClass = require('SomeClass');
 var s = new SomeClass();
 ----
 
-CommonJS modules may seem a bit simpler but I still think AMD is better for browsers due to its ability to load scripts in parallel. CommonJS is more suited to things like node.js in my opinion. Now what if you want your script to work everywhere and be truly portable. You are going to need to export to all three places. The global object, AMD and CommonJS. In the following example I am using the function wrapper discussed in link:/2012/03/14/writing-great-javascript.html[my previous article].
+CommonJS modules may seem a bit simpler but I still think AMD is better for browsers due to its ability to load scripts in parallel. CommonJS is more suited to things like node.js in my opinion. Now what if you want your script to work everywhere and be truly portable. You are going to need to export to all three places. The global object, AMD and CommonJS. In the following example I am using the function wrapper discussed in link:/writing-great-javascript.html[my previous article].
 
 [source]
 ----

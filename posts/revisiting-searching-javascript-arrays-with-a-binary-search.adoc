@@ -2,7 +2,7 @@
 Oliver Caldwell
 2014-12-17
 
-Last year I wrote a post called link:/2013/06/08/searching-javascript-arrays-with-a-binary-search/[Searching JavaScript arrays with a binary search], it’s actually become quite popular and has seen a large amount of suggestions in the comments as well as helping out https://github.com/techfort/PowerArray[PowerArray]. The problem is that it’s an untested, performance chasing, mess of a function. I’ve always wanted to redo this in a more formal manner because I don’t want people using code I’ve written that will probably break on multiple edge cases.
+Last year I wrote a post called link:/searching-javascript-arrays-with-a-binary-search/[Searching JavaScript arrays with a binary search], it’s actually become quite popular and has seen a large amount of suggestions in the comments as well as helping out https://github.com/techfort/PowerArray[PowerArray]. The problem is that it’s an untested, performance chasing, mess of a function. I’ve always wanted to redo this in a more formal manner because I don’t want people using code I’ve written that will probably break on multiple edge cases.
 
 So, I’m going to build an actual repository containing a JavaScript binary search function as well as some robust tests. Step one will be to produce a simple reference implementation with benchmarks and generative tests using https://github.com/leebyron/testcheck-js[testcheck-js], then I will go on to continually speed up the algorithm without breaking that initial suite. I think this’ll produce something far better than my original post with the potential for more speed too. And it’s going to be bullet proof. I hope. Why would you be shooting at a searching algorithm anyway?
 
