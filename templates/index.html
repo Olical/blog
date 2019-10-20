@@ -13,10 +13,10 @@
     <h1>{{year.year}}</h1>
 
     {% for post in year.posts|sort-by-reversed:date %}
-    <section class="home-post">
-      <h2 class="home-post-title"><a href="/{{post.slug}}">{{post.title}}</a></h2>
-      <p class="home-post-date">{{post.date|date:mediumDate}}</p>
-    </section>
+      <section class="home-post">
+        <h2 class="home-post-title"><a href="/{{post.slug}}">{{post.title}}</a></h2>
+        <p class="home-post-date">{{post.date|date:mediumDate}}</p>
+      </section>
     {% endfor %}
   {% endfor %}
 </div>

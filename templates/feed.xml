@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss version='2.0' xmlns:atom='http://www.w3.org/2005/Atom'>
+  <channel>
+    <atom:link href='https://oli.me.uk/' rel='self' type='application/rss+xml'/>
+    <title>Oliver Caldwell's blog</title>
+    <link>https://oli.me.uk/</link>
+    <description>On languages, text editors and tools.</description>
+    <lastBuildDate>{{latest-date}}</lastBuildDate>
+    <generator>Custom Clojure https://github.com/Olical/blog</generator>
+
+    {% for post in posts|sort-by-reversed:date %}
+      <item>
+        <guid>https://oli.me.uk/{{post.slug}}</guid>
+        <link>https://oli.me.uk/{{post.slug}}</link>
+        <title>{{post.title}}</title>
+        <description>{{post.content-html}}</description>
+        <pubDate>{{post.date}}</pubDate>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>

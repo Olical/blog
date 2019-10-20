@@ -61,19 +61,30 @@
                                      (last))
                    :posts posts})))
 
+(defn- spit-feed!
+  "Write the feed.xml file."
+  [posts]
+  (spit (fs/file temp-dir "feed.xml")
+        (tmpl-xml "feed"
+                  {:latest-date (->> posts
+                                     (map :date)
+                                     (sort)
+                                     (last))
+                   :posts posts})))
+
 (defn- source->post
   "Parse and render the post from AsciiDoc source.
   Calculates the slug from the file path."
   [{:keys [file source]}]
-  (let [{:keys [title date] :as post} (adoc/parse source)]
+  (let [{:keys [title date html] :as post} (adoc/parse source)]
     (-> post
-        (assoc :slug (fs/name file))
-        (update :html
-                (fn [html]
-                  (tmpl "post"
-                        {:title title
-                         :date date
-                         :content html}))))))
+        (merge post
+               {:slug (fs/name file)
+                :content-html html
+                :html (tmpl "post"
+                            {:title title
+                             :date date
+                             :content html})}))))
 
 (defn render!
   "Performs all building of the blog from source."
@@ -86,6 +97,7 @@
                                           :source (slurp file)}))))]
     (spit-index! posts)
     (spit-sitemap! posts)
+    (spit-feed! posts)
     (run! spit-post! posts))
   (fs/delete-dir output-dir)
   (fs/copy-dir temp-dir output-dir)
