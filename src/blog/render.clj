@@ -20,6 +20,13 @@
                    (str tmpl-name ".html")
                    opts))))
 
+(defn- tmpl-xml
+  "Render a raw XML template without a wrapper."
+  [tmpl-name opts]
+  (tmpl/render-file
+    (str tmpl-name ".xml")
+    opts))
+
 (defn- spit-post!
   "Write the given post to the output directory under the appropriate name.
   Assuming it's been run through adoc/parse already and contains the resulting keys."
@@ -42,6 +49,17 @@
                            (map (fn [[year posts]]
                                   {:year year
                                    :posts posts})))})))
+
+(defn- spit-sitemap!
+  "Write the sitemap.xml file."
+  [posts]
+  (spit (fs/file temp-dir "sitemap.xml")
+        (tmpl-xml "sitemap"
+                  {:latest-date (->> posts
+                                     (map :date)
+                                     (sort)
+                                     (last))
+                   :posts posts})))
 
 (defn- source->post
   "Parse and render the post from AsciiDoc source.
@@ -67,6 +85,7 @@
                            (source->post {:file file
                                           :source (slurp file)}))))]
     (spit-index! posts)
+    (spit-sitemap! posts)
     (run! spit-post! posts))
   (fs/delete-dir output-dir)
   (fs/copy-dir temp-dir output-dir)
