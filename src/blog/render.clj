@@ -1,6 +1,7 @@
 (ns blog.render
   "Render the blog from the post source."
-  (:require [me.raynes.fs :as fs]
+  (:require [clojure.string :as str]
+            [me.raynes.fs :as fs]
             [selmer.parser :as tmpl]
             [blog.adoc :as adoc]))
 
@@ -33,7 +34,14 @@
   [posts]
   (println "Writing index containing" (count posts) "posts.")
   (spit (fs/file temp-dir "index.html")
-        (tmpl "index" {:posts posts})))
+        (tmpl "index"
+              {:years (->> posts
+                           (group-by
+                             (fn [{:keys [date]}]
+                               (str/replace date #"-\d\d-\d\d" "")))
+                           (map (fn [[year posts]]
+                                  {:year year
+                                   :posts posts})))})))
 
 (defn- source->post
   "Parse and render the post from AsciiDoc source.
