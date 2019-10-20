@@ -1,0 +1,15 @@
+= Emacs: A few hours after exposure
+Oliver Caldwell
+2014-09-17
+
+The symptoms are starting to show: fever, babbling, countless browser tabs and an insatiable urge to learn Lisp faster than it can be typed. After just one evening of https://github.com/Wolfy87/dotfiles/tree/52b5819f9e9b63685a0546071db163a1da0ce551/emacs[playing with my configuration] I have a system for me to https://github.com/Wolfy87/dotfiles/blob/52b5819f9e9b63685a0546071db163a1da0ce551/emacs/init.el#L1-L2[define and load configuration] files with ease as well as sync my plugin files https://github.com/Wolfy87/dotfiles/blob/52b5819f9e9b63685a0546071db163a1da0ce551/emacs/libraries/packages.el#L7-L8[from a list]. I am considering have it run it’s sync and update cycle on every load though, I’ll have to see how that works out. At the very least I need to define an update function, which I think I need to do through the _interactive_ function.
+
+My baseline setup includes evil mode, evil tabs (to bring me Vim tab functionality) and https://github.com/Wolfy87/dotfiles/blob/52b5819f9e9b63685a0546071db163a1da0ce551/emacs/libraries/tweaks.el[a stripped back UI]. This means no glaring logo when I open it up, it drops straight into a buffer with no strange menus or scroll bars loitering in my peripheral vision. I can already navigate around and edit to my hearts content, albeit in a very simplistic manner, all thanks to evil mode. I am however finding myself instinctively trying to invoke commands from my menagerie of wonderful https://github.com/Wolfy87/dotfiles/blob/52b5819f9e9b63685a0546071db163a1da0ce551/vim/bundles.vim[Vim plugins], I assume I’ll have to ease that out of my muscle memory over time.
+
+My next step will be to hook in ace-jump in such a way that it behaves like like EasyMotion, I can’t actually work out how to bind things through evil yet, but it can’t be that hard. I use _<space>\{motion}_ for EasyMotion, so I should be able to set up a subset of that. Maybe it’s already been done and I’m reinventing the wheel, as usual.
+
+I’m essentially using a sparse Vim right now, it feels like I’m running on some fresh machine with _:set nocompatible_ and _:syntax on_ in _~/.vimrc_, strangely enough, I’m okay with this. I actually want to bring over as little Vim functionality as possible, obviously I want my modal editing and efficient navigation as well as familiar window management, but being forced to use the native solutions where possible seems like a good idea.
+
+For example, I was going to bind _:Explore_ to a netrw equivalent (I assume there is one…), but I’ve since decided not to because I assume there’s some Emacs command that is better suited to the job. I want to keep my Vim powers for editing and Emacs for, well, everything else. I may well have to break this rule at some point to get https://github.com/tpope/vim-vinegar[vim-vinigar] functionality though, hitting the hyphen key to drop into a directory browser and then again to go up a level feels too good to leave behind.
+
+I think I’m doing okay so far.

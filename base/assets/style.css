@@ -117,3 +117,11 @@ blockquote {
   padding-left: 1rem;
   color: #595E4D;
 }
+
+/* WP Legacy styles. */
+
+span.image {
+  display: block;
+  text-align: center;
+  padding: 1rem;
+}
