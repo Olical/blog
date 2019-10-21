@@ -13,6 +13,5 @@ WORKDIR /app
 COPY server/entrypoint.sh entrypoint.sh
 COPY server/default.conf.template /etc/nginx/conf.d/default.conf.template
 COPY --from=0 /app/output .
-COPY server/CHECKS .
 ENTRYPOINT ["/app/entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
