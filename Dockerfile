@@ -1,5 +1,5 @@
 FROM clojure:tools-deps
-WORKDIR /blog
+WORKDIR /app
 COPY deps.edn .
 RUN clojure -Spath
 COPY src src
@@ -9,8 +9,10 @@ COPY posts posts
 RUN clojure -A:build
 
 FROM nginx:alpine
-COPY nginx/entrypoint.sh nginx/entrypoint.sh
-COPY nginx/default.conf.template /etc/nginx/conf.d/default.conf.template
-COPY --from=0 /blog/output /usr/share/nginx/html
-ENTRYPOINT ["/nginx/entrypoint.sh"]
+WORKDIR /app
+COPY server/entrypoint.sh entrypoint.sh
+COPY server/default.conf.template /etc/nginx/conf.d/default.conf.template
+COPY --from=0 /app/output .
+COPY server/CHECKS .
+ENTRYPOINT ["entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
