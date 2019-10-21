@@ -5,4 +5,5 @@
 (defn -main
   "Entry point for the CLI, simply executes blog.render/render!"
   []
-  (render/render!))
+  (render/render!)
+  (shutdown-agents))
