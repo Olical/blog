@@ -1,4 +1,10 @@
 server {
+    listen 80 default_server;
+    server_name _;
+    return 404;
+}
+
+server {
   listen ${PORT};
   server_name oli.me.uk;
 
