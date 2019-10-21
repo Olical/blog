@@ -49,6 +49,14 @@ a:hover {
   margin-top: 0;
 }
 
+.not-found-title {
+  text-align: center;
+}
+
+.not-found-content {
+  padding: 1rem 10%;
+}
+
 .post-header {
   text-align: center;
 }

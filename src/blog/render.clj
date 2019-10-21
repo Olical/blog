@@ -39,7 +39,7 @@
 (defn- spit-index!
   "Write the index.html file, linking to all of the given posts."
   [posts]
-  (println "Writing index containing" (count posts) "posts.")
+  (println "Writing index.")
   (spit (fs/file temp-dir "index.html")
         (tmpl "index"
               {:years (->> posts
@@ -53,6 +53,7 @@
 (defn- spit-sitemap!
   "Write the sitemap.xml file."
   [posts]
+  (println "Writing sitemap.")
   (spit (fs/file temp-dir "sitemap.xml")
         (tmpl-xml "sitemap"
                   {:latest-date (->> posts
@@ -64,6 +65,7 @@
 (defn- spit-feed!
   "Write the feed.xml file."
   [posts]
+  (println "Writing feed.")
   (spit (fs/file temp-dir "feed.xml")
         (tmpl-xml "feed"
                   {:latest-date (->> posts
@@ -71,6 +73,13 @@
                                      (sort)
                                      (last))
                    :posts posts})))
+
+(defn- spit-404!
+  "Write the 404.html file."
+  []
+  (println "Writing 404.")
+  (spit (fs/file temp-dir "404.html")
+        (tmpl "404" {})))
 
 (defn- source->post
   "Parse and render the post from AsciiDoc source.
@@ -95,9 +104,11 @@
                    (pmap (fn [file]
                            (source->post {:file file
                                           :source (slurp file)}))))]
+    (println "Prepared" (count posts) "posts.")
     (spit-index! posts)
     (spit-sitemap! posts)
     (spit-feed! posts)
+    (spit-404!)
     (run! spit-post! posts))
   (fs/delete-dir output-dir)
   (fs/copy-dir temp-dir output-dir)
