@@ -6,24 +6,12 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
 
 == Tools
 
- * `clj -A:build` - render the blog to static HTML in `output`.
- * `clj -A:propel` - start a prepl server with https://github.com/Olical/propel[Propel] and write the port to `.prepl-port`.
- * `clj -A:depot` - check for outdated dependencies with https://github.com/Olical/depot[Depot].
- * `clj -A:test` - execute all of the tests.
-
-You can use the following if you'd like to rebuild the blog every time a file changes. It requires https://github.com/sharkdp/fd[fd] to find the files and http://eradman.com/entrproject/[entr] to watch them then execute the `blog.render/render!` function.
-
-[source,bash]
-----
-fd | entr bash -c 'echo "(require \'blog.render) (blog.render/render!) :repl/quit" | netcat localhost $(cat .prepl-port)'
-----
-
-Finally, I use Python's `http.server` to host the `output` directory locally.
-
-[source,bash]
-----
-python -m http.server -d output
-----
+ * `make build` - Render the blog to static HTML in `output`.
+ * `make propel` - Start a prepl server with https://github.com/Olical/propel[Propel] and write the port to `.prepl-port`.
+ * `make depot` - Check for outdated dependencies with https://github.com/Olical/depot[Depot].
+ * `make test` - Execute all of the tests.
+ * `make serve` - Host the `output` directory with Python's `http.server` module.
+ * `make watch` - Rebuild when any source files change, requires http://eradman.com/entrproject/[entr] to be installed and `make propel` already running.
 
 == Unlicenced
 
