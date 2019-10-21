@@ -1,5 +1,6 @@
 server {
   listen ${PORT};
+  server_name oli.me.uk;
 
   location / {
     root /usr/share/nginx/html;
