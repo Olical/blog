@@ -5,10 +5,16 @@ server {
 }
 
 server {
-  listen ${PORT};
-  server_name oli.me.uk;
+    listen ${PORT};
+    server_name oli.me.uk;
 
-  location / {
-    root /usr/share/nginx/html;
-  }
+    location / {
+        root /usr/share/nginx/html;
+    }
+
+    error_page 404 /404.html;
+    location = /404.html {
+        root /usr/share/nginx/html;
+        internal;
+    }
 }
