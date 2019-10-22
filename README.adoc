@@ -13,7 +13,7 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
  * `make serve` - Host the `output` directory with Python's `http.server` module.
  * `make watch` - Rebuild when any source files change, requires http://eradman.com/entrproject/[entr] to be installed and `make propel` already running.
  * `make build-container` - Build the docker container and tag it as `blog`.
- * `make run-container` - Run the container locally, hosts on port `8080`.
+ * `make run-container` - Run the container locally, hosts on port `9898`.
  * `make setup-deploy` - Configures git to deploy to my host.
  * `make deploy` - Deploys the current master to my host.
 

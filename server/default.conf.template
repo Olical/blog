@@ -9,12 +9,15 @@ server {
     server_name oli.me.uk;
 
     location / {
-        root /usr/share/nginx/html;
+        root /app/output;
     }
 
     error_page 404 /404.html;
     location = /404.html {
-        root /usr/share/nginx/html;
+        root /app/output;
         internal;
     }
+
+    # Redirect my old blog URL formats to the new one.
+    rewrite ^/\d\d\d\d[\-\/]\d\d[\-\/]\d\d[\-\/](.*)$ /$1 permanent;
 }
