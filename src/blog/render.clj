@@ -101,9 +101,10 @@
   (fs/delete-dir temp-dir)
   (fs/copy-dir base-dir temp-dir)
   (let [posts (->> (fs/list-dir posts-dir)
-                   (pmap (fn [file]
-                           (source->post {:file file
-                                          :source (slurp file)}))))]
+                   (map (fn [file]
+                          (println "Parsing:" (fs/name file))
+                          (source->post {:file file
+                                         :source (slurp file)}))))]
     (println "Prepared" (count posts) "posts.")
     (spit-index! posts)
     (spit-sitemap! posts)
