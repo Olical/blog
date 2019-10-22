@@ -21,6 +21,18 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
 
 This blog runs on https://m.do.co/c/e643aa564b21[Digital Ocean] (referral link!) via http://dokku.viewdocs.io/dokku/[Dokku].
 
+The container ends up being just the static rendered HTML served by https://www.nginx.com/[nginx] hosted in Dokku. The `server` directory contains the nginx configuration template, the `$PORT` that Dokku selects in added in at startup.
+
+== Forking
+
+Feel free to fork this project and adapt it for your own needs! You'll need to replace my domain in a few places (`oli.me.uk`) as well as my name. I'd prefer you to delete my posts and write your own too...
+
+You'll probably want to edit the nginx configuration to remove the redirects I added for my own legacy blog reasons as well.
+
+Just have a look around the source and grep for some things you spot that are related to myself, feel free to do whatever you'd like with the code.
+
+If you get a lot out of forking this project I'd love to hear about it.
+
 == Unlicenced
 
 The posts are mine and you should not republish them without asking permission or attribution, the code is fair game.
