@@ -6,7 +6,7 @@ output: $(shell find templates src posts -type f)
 build: output
 
 propel:
-	clojure -A:propel
+	clj -A:propel
 
 depot:
 	clojure -A:depot
