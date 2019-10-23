@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <title>{{title|default:"Oliver Caldwell's blog"}}</title>
 
-    <link href="/assets/normalize.css" rel="stylesheet">
-    <link href="/assets/style.css" rel="stylesheet">
-    <link href="/assets/github-rouge-theme.css" rel="stylesheet">
+    <style type="text/css">
+      {% include "style/normalize.css" %}
+      {% include "style/github-rouge-theme.css" %}
+      {% include "style/style.css" %}
+    </style>
 
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
