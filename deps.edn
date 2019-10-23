@@ -6,6 +6,7 @@
   selmer {:mvn/version "1.12.17"}
   org.asciidoctor/asciidoctorj {:mvn/version "2.1.0"}
   clojure.java-time {:mvn/version "0.3.2"}
+  com.taoensso/timbre {:mvn/version "4.10.0"}
 
   ;; tmp while porting old WP posts + writing new blog post
   hickory {:mvn/version "0.7.1"}}

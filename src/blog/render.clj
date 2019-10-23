@@ -3,6 +3,7 @@
   (:require [clojure.string :as str]
             [me.raynes.fs :as fs]
             [selmer.parser :as tmpl]
+            [taoensso.timbre :as log]
             [blog.adoc :as adoc]))
 
 (defonce ^:private temp-dir (fs/temp-dir "blog"))
@@ -32,14 +33,14 @@
   Assuming it's been run through adoc/parse already and contains the resulting keys."
   [{:keys [title slug html]}]
   (let [prefix (fs/file temp-dir slug)]
-    (println "Writing post:" title (str "(" slug ")"))
+    (log/infof "Writing post: %s (%s)" title slug)
     (fs/mkdirs prefix)
     (spit (fs/file prefix "index.html") html)))
 
 (defn- spit-index!
   "Write the index.html file, linking to all of the given posts."
   [posts]
-  (println "Writing index.")
+  (log/info "Writing index.")
   (spit (fs/file temp-dir "index.html")
         (tmpl "index"
               {:years (->> posts
@@ -53,7 +54,7 @@
 (defn- spit-sitemap!
   "Write the sitemap.xml file."
   [posts]
-  (println "Writing sitemap.")
+  (log/info "Writing sitemap.")
   (spit (fs/file temp-dir "sitemap.xml")
         (tmpl-xml "sitemap"
                   {:latest-date (->> posts
@@ -65,7 +66,7 @@
 (defn- spit-feed!
   "Write the feed.xml file."
   [posts]
-  (println "Writing feed.")
+  (log/info "Writing feed.")
   (spit (fs/file temp-dir "feed.xml")
         (tmpl-xml "feed"
                   {:latest-date (->> posts
@@ -77,7 +78,7 @@
 (defn- spit-404!
   "Write the 404.html file."
   []
-  (println "Writing 404.")
+  (log/info "Writing 404.")
   (spit (fs/file temp-dir "404.html")
         (tmpl "404" {})))
 
@@ -102,10 +103,10 @@
   (fs/copy-dir base-dir temp-dir)
   (let [posts (->> (fs/list-dir posts-dir)
                    (map (fn [file]
-                          (println "Parsing:" (fs/name file))
+                          (log/infof "Parsing: %s" (fs/name file))
                           (source->post {:file file
                                          :source (slurp file)}))))]
-    (println "Prepared" (count posts) "posts.")
+    (log/infof "Prepared %d posts." (count posts))
     (spit-index! posts)
     (spit-sitemap! posts)
     (spit-feed! posts)
@@ -113,7 +114,7 @@
     (run! spit-post! posts))
   (fs/delete-dir output-dir)
   (fs/copy-dir temp-dir output-dir)
-  (println "Done!"))
+  (log/info "Done!"))
 
 (comment
   (render!))
