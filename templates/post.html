@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{title}}</h1>
@@ -8,3 +13,4 @@
     {{content|safe}}
   </div>
 </article>
+{% endblock %}

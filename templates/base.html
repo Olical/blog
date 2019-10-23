@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{title|default:"Oliver Caldwell's blog"}}</title>
+    <title>{% block title %}Oliver Caldwell's blog{% endblock %}</title>
 
     <style type="text/css">
       {% include "style/normalize.css" %}
@@ -27,7 +27,9 @@
         </header>
 
         <main class="page-main">
-          {{body|safe}}
+          {% block body %}
+            <p>Nothing to see here...</p>
+          {% endblock %}
         </main>
 
         <footer class="page-footer">

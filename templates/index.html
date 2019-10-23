@@ -1,22 +1,26 @@
-<section class="home-intro">
-  <p>Hi, I'm Ollie, a <a href="https://clojure.org/">Clojure</a> programmer living and working in London for <a href="https://www.signal-ai.com/">Signal</a>. I've worked with a sprawling collection of technologies over my decade (or so) of programming, ranging from React to Ring. I'm most passionate about developer tooling, text editors and languages.</p>
+{% extends "base.html" %}
 
-  <p>My free time is mainly occupied by my <a href="https://neovim.io/">Neovim</a> Clojure tooling, <a href="https://github.com/Olical/conjure">Conjure</a>. You'll find posts in this blog covering topics such as D3 and React integration as well as building Neovim RPC clients in Rust, it's quite eclectic.</p>
+{% block body %}
+  <section class="home-intro">
+    <p>Hi, I'm Ollie, a <a href="https://clojure.org/">Clojure</a> programmer living and working in London for <a href="https://www.signal-ai.com/">Signal</a>. I've worked with a sprawling collection of technologies over my decade (or so) of programming, ranging from React to Ring. I'm most passionate about developer tooling, text editors and languages.</p>
 
-  <p>You can find ways to get in touch with me at the bottom of each page.</p>
+    <p>My free time is mainly occupied by my <a href="https://neovim.io/">Neovim</a> Clojure tooling, <a href="https://github.com/Olical/conjure">Conjure</a>. You'll find posts in this blog covering topics such as D3 and React integration as well as building Neovim RPC clients in Rust, it's quite eclectic.</p>
 
-  <p>I hope you find something useful here. Have a great day!</p>
-</section>
+    <p>You can find ways to get in touch with me at the bottom of each page.</p>
 
-<div class="home-posts-wrapper">
-  {% for year in years|sort-by-reversed:year %}
-    <h1>{{year.year}}</h1>
+    <p>I hope you find something useful here. Have a great day!</p>
+  </section>
 
-    {% for post in year.posts|sort-by-reversed:date %}
-      <section class="home-post">
-        <h2 class="home-post-title"><a href="{{post.slug}}">{{post.title}}</a></h2>
-        <p class="home-post-date">{{post.date|date:mediumDate}}</p>
-      </section>
+  <div class="home-posts-wrapper">
+    {% for year in years|sort-by-reversed:year %}
+      <h1>{{year.year}}</h1>
+
+      {% for post in year.posts|sort-by-reversed:date %}
+        <section class="home-post">
+          <h2 class="home-post-title"><a href="{{post.slug}}">{{post.title}}</a></h2>
+          <p class="home-post-date">{{post.date|date:mediumDate}}</p>
+        </section>
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-</div>
+  </div>
+{% endblock %}

@@ -12,76 +12,62 @@
 (def ^:private posts-dir (fs/file "posts"))
 (def ^:private base-dir (fs/file "base"))
 
-(defn- tmpl
-  "Render a template within the base template with the provided options."
-  [tmpl-name opts]
-  (tmpl/render-file
-    "base.html"
-    (assoc opts
-           :body (tmpl/render-file
-                   (str tmpl-name ".html")
-                   opts))))
-
-(defn- tmpl-xml
-  "Render a raw XML template without a wrapper."
-  [tmpl-name opts]
-  (tmpl/render-file
-    (str tmpl-name ".xml")
-    opts))
-
 (defn- spit-post!
   "Write the given post to the output directory under the appropriate name.
   Assuming it's been run through adoc/parse already and contains the resulting keys."
-  [{:keys [title slug html]}]
+  [{:keys [title slug page-html]}]
   (let [prefix (fs/file temp-dir slug)]
     (log/infof "Writing post: %s (%s)" title slug)
     (fs/mkdirs prefix)
-    (spit (fs/file prefix "index.html") html)))
+    (spit (fs/file prefix "index.html") page-html)))
 
 (defn- spit-index!
   "Write the index.html file, linking to all of the given posts."
   [posts]
   (log/info "Writing index.")
   (spit (fs/file temp-dir "index.html")
-        (tmpl "index"
-              {:years (->> posts
-                           (group-by
-                             (fn [{:keys [date]}]
-                               (str/replace date #"-\d\d-\d\d" "")))
-                           (map (fn [[year posts]]
-                                  {:year year
-                                   :posts posts})))})))
+        (tmpl/render-file
+          "index.html"
+          {:years (->> posts
+                       (group-by
+                         (fn [{:keys [date]}]
+                           (str/replace date #"-\d\d-\d\d" "")))
+                       (map (fn [[year posts]]
+                              {:year year
+                               :posts posts})))})))
 
 (defn- spit-sitemap!
   "Write the sitemap.xml file."
   [posts]
   (log/info "Writing sitemap.")
   (spit (fs/file temp-dir "sitemap.xml")
-        (tmpl-xml "sitemap"
-                  {:latest-date (->> posts
-                                     (map :date)
-                                     (sort)
-                                     (last))
-                   :posts posts})))
+        (tmpl/render-file
+          "sitemap.xml"
+          {:latest-date (->> posts
+                             (map :date)
+                             (sort)
+                             (last))
+           :posts posts})))
 
 (defn- spit-feed!
   "Write the feed.xml file."
   [posts]
   (log/info "Writing feed.")
   (spit (fs/file temp-dir "feed.xml")
-        (tmpl-xml "feed"
-                  {:latest-date (->> posts
-                                     (map :date)
-                                     (sort)
-                                     (last))
-                   :posts posts})))
+        (tmpl/render-file
+          "feed.xml"
+          {:latest-date (->> posts
+                             (map :date)
+                             (sort)
+                             (last))
+           :posts posts})))
 
 (defn- spit-404!
   "Write the 404.html file."
   []
   (log/info "Writing 404.")
   (spit (fs/file temp-dir "404.html")
-        (tmpl "404" {})))
+        (tmpl/render-file "404.html" {})))
 
 (defn- source->post
   "Parse and render the post from AsciiDoc source.
@@ -91,11 +77,11 @@
     (-> post
         (merge post
                {:slug (fs/name file)
-                :content-html html
-                :html (tmpl "post"
-                            {:title title
-                             :date date
-                             :content html})}))))
+                :page-html (tmpl/render-file
+                             "post.html"
+                             {:title title
+                              :date date
+                              :content html})}))))
 
 (defn render!
   "Performs all building of the blog from source."
