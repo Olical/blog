@@ -10,7 +10,7 @@ The video shows a beautiful way of visualising this problem and I felt it was a
 
 I must warn you that I never reproduced the one from the video, just something that follows the same ideas and looks kind of similar from a distance. I honestly can’t work out what magic was used to get it to look that good, maybe some special rendering techniques that are just beyond me at the moment. Maybe you’ll be able to take my repository and perfect it!
 
-=== Collatz in Clojure
+== Collatz in Clojure
 
 Before I even attempt to render this, I’ll need some functions that generate the Collatz conjecture numbers. I will refer to these as a Collatz sequence or Collatz seqs. You can find the full code in https://github.com/Olical/collatz[Olical/collatz], but I will be breaking it down here for you.
 
@@ -80,7 +80,7 @@ We can walk this tree, or seq of seqs, to render the visualisation you saw in th
 
 The commit at this point was https://github.com/Olical/collatz/commit/4a155ed3a80e177655cbe41ba38e783978f17cb7[4a155ed]. Feel free to take this abstraction and do what you want with it, copy and paste it into your project if that’s easiest.
 
-=== Visualising the tree
+== Visualising the tree
 
 Now for the pretty part. I hope. I’m starting with the default Quil setup the lein template provides you with, this includes the functional middleware which makes it a bit nicer to work with (although I found I wasn’t really using the state management very much at all). After a little bit of tinkering I ended up with this rough attempt.
 
@@ -100,7 +100,7 @@ It definitely looks better now, but it’s still not true to the original. A hug
 
 That’s going to mean forgoing a bit of laziness and building a big data structure that I can use as a lookup table, I think it’s worth it for the rendering optimisations. That should allow me to render the branches in different orders too instead of largest to smallest.
 
-=== Epiphany time
+== Epiphany time
 
 Two things happened while developing this project and writing this post (I’ve been writing it as I developed it to capture every step, so it may seem a bit jumbled in places).
 
@@ -124,7 +124,7 @@ Just as a reminder, this is what I want it to look like.
 
 image:/assets/legacy-images/2017/04/C8FvTBiW0AAFGpG-809x1024.jpg[The original from the video, saved from https://twitter.com/numberphile/status/847080594723000320[this tweet].,width=792,height=1002]
 
-=== Flipping the tree
+== Flipping the tree
 
 So I want to get it looking semi-accurate before I try to optimise, maybe the optimisations won’t actually be required it it’s “good enough”. I’m going to flip the tree by reversing the Collatz sequences that comprise my “Collatz tree” sequence.
 
@@ -140,7 +140,7 @@ image:/assets/legacy-images/2017/04/Screenshot_2017-04-04_21-52-49.png[The spind
 
 From the thinner versions you can quite clearly see the need for deduplication, if you just draw _everything_ over the top of each other, not only is it slow, but it also looks messy. I definitely needed to prepare my data a little better, but this post that was supposed to be a small little experiment was beginning to drag on by then.
 
-=== Close but no cigar
+== Close but no cigar
 
 I’m disappointed that I couldn’t get it quite right, although I think I probably could if I just put more time into it. Sadly, visualisations aren’t really my forte or main interest. I’m more of a “programming languages, data structures and text editors” kind of programmer. It’s a little bit niche, okay.
 

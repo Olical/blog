@@ -8,7 +8,7 @@ ____
 Note: There’s a referral link at the bottom of this post.
 ____
 
-=== Some context
+== Some context
 
 I’ve been running my blog off of https://www.webfaction.com/[webfaction] for a few years now, I actually used it before then whilst at a previous job too, if memory serves correctly (James? Did we?).
 
@@ -16,7 +16,7 @@ It’s been working well and I’ve actually been hosting a whole suite of sites
 
 Webfaction moved my data to a new server recently (it’s all managed) which prompted me to think about moving, so I started hunting. I was originally going to settle for https://www.digitalocean.com/[DigitalOcean] after a little search, but a colleague (thanks Alan!) convinced me that https://www.linode.com/[Linode] offered everything I wanted for the same price as DigitalOcean, but with more memory. I suppose it’s an aside, but as far as I know Linode has been around a lot longer too.
 
-=== My Linode
+== My Linode
 
 After dumping the source and databases of my blog and __scp__ing it all down to my machine I signed up for Linode. I’m delighted to report that it works well with LastPass and supports two factor authentication, thankfully.
 

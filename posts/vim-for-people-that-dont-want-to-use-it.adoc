@@ -6,7 +6,7 @@ This is for those of you that use a GUI IDE / editor happily but sometimes use V
 
 I agree, Vim is not perfect, although nothing is perfect in every situation. Most of my colleagues use IntelliJ or similar IDEs and editors, which is fine since they’re also great tools. Sometimes you will find yourself on a command line with your familiar tools out of reach and you’ll have to quickly dip into Vim. This could be to write a commit message, amend a readme or correct a variable name on a remote server. My point being: Even those of you that think a text editor in your terminal is for masochists need to use it every now and then. I’m going to show you some _very small_ changes you can make to create a much more modern Vim. I can’t stand using the default set up on someone else’s machine, so why should you?
 
-=== Absolute minimum
+== Absolute minimum
 
 You can add two lines to your _~/.vimrc_ (Vim loads this when you start it, it’s essentially your settings but can do a whole lot more) that will remove a lot of the legacy compatibility and enable syntax highlighting. Two core tenants to any editor.
 
@@ -18,7 +18,7 @@ syntax enable
 
 So for those of you that really don’t care and just wish it wasn’t a black and white program of despair, that should get you going.
 
-=== Dig deeper for a much better tool
+== Dig deeper for a much better tool
 
 The power of Vim lies not in it’s modal editing features, but the extensibility and community. You can find a plugin for almost anything, including managing plugins. If you follow the guide to install https://github.com/junegunn/vim-plug[vim-plug] then you will easily be able to install https://github.com/tpope/vim-sensible[vim-sensible] (an excellent set of defaults that make everything even more modern looking) and https://github.com/tpope/vim-sleuth[vim-sleuth] which detects and manages your indentation settings for you. With all of this installed (which will not take you long at all) you can add a few more settings to make it even better.
 

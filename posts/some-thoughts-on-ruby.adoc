@@ -6,15 +6,15 @@ You may have noticed that I recently started working my way through https://prag
 
 All of my work for these books can be found within my https://github.com/Wolfy87/langs[langs] repository. So check out the Ruby directory for some more context with regards to what I was asked to do during the little exercises.
 
-=== My thoughts?
+== My thoughts?
 
 I _like_ it. I do *not* _love_ it. This is for quite a few reasons, most of which wouldn’t annoy most other programmers but I’ll try to list them all here.
 
-==== Sugar
+=== Sugar
 
 There’s just so much of it, every sentence of the chapter introduced some new magical syntax that did something miraculous yet non-obvious. The meta programming just felt downright clunky when compared to the king of macros, [INSERT ANY LISP HERE]. I know that’s not really a fair fight, but if you’re going to let the user add to the language let it be in a beautiful and seamless way.
 
-==== A dozen paths
+=== A dozen paths
 
 There seems to be an overwhelming amount of ways to do one thing so I felt a little lost when looking for a canonical solution. Sure, this happens to a certain extent in any language, but with Ruby fundamental things like parentheses are optional some of the time. That _really_ threw me.
 
@@ -22,7 +22,7 @@ Blocks going after the last argument, or maybe there is no arguments list, infer
 
 I think I’ve been spoiled by falling in love with simplicity and simple languages. I’m looking at you, Clojure, you beautiful enigma I yearn to work with.
 
-==== SURPRISE!
+=== SURPRISE!
 
 I felt like the book shouted this at every paragraph and expected me to be happy about it. “Look at all these shiny features, you can make things happen without having to explicitly execute it! Isn’t that wonderful!?”
 
@@ -36,7 +36,7 @@ I just spent a lot of time going “wat?” which put me off a little.
 
 '''''
 
-=== Right tool for the job
+== Right tool for the job
 
 I’m bashing on a fairly good language for things that make it good. I know. It is a great tool for scripting things and just generally getting something done very quickly. I’d definitely select it over JavaScript / node.js for any scripts or small web services, but that’s not a hard choice. If JavaScript wasn’t currently omnipotent I’d drop it, burn it and erase it from my memory in a heart beat. Then I’d go use something elegant, well rounded and functional. But that’s not going to happen for a very long time. _Sigh._
 

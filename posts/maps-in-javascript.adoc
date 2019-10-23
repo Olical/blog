@@ -6,7 +6,7 @@ No, I don’t mean the things that help you find obscure places, I mean the thin
 
 Wouldn’t it be great if you could map anything to anything though? Maybe a user model to a view, for example. Well that’s something you can achieve with a map implementation. You can replace the string key in an object with anything you want. If you want to see a good example of a map, I’d turn to http://www.cplusplus.com/reference/map/map/[C++’s map documentation].
 
-=== A vanilla implementation
+== A vanilla implementation
 
 You can actually use the default JavaScript objects as a http://en.wikipedia.org/wiki/Hash_table[hash map]. This requires adding a `+toString+` method to every item you want to use as a key though. So if you were mapping user models to their view counterparts, your user model would need to have a `+toString+` method that returned a unique identifier.
 
@@ -49,7 +49,7 @@ It works because when you use an object as a key, JavaScript automatically calls
 
 This gives you nice vanilla code that should be incredibly quick; it’s about as direct as you can get. This is great, but you can still take it further with a fairly small amount of code. A better method does not involve relying on `+toString+`, it should use the real references to things as keys in exchange for a little bit less speed and simplicity.
 
-=== Getting classy
+== Getting classy
 
 So here’s my better method https://gist.github.com/Wolfy87/5759960[as a gist] and http://jsfiddle.net/Wolfy87/Wuqag/[as a fiddle] with a little extra code to show you how to use it; although the JSDoc comments should be enough. It may seem complicated in comparison to the method above, but it’s a lot more powerful and isn’t actually that intricate.
 

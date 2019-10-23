@@ -10,7 +10,7 @@ One of the (many) things I saw in Haskell that I couldn’t think of an alternat
 
 So, I set about writing a tiny tuple implementation in JavaScript; this is what I came up with.
 
-=== The base class definition
+== The base class definition
 
 For starters, I needed a simple class definition that created the tuple instance, set it’s size and stored some initial data.
 
@@ -45,7 +45,7 @@ Tuple.prototype.pack = function pack(/* values */) {
 
 Now the arguments you pass to the constructor are sliced into an array and pushed onto the `+pack+` method which bundles them into the storage array. The pack method simply iterates over it’s arguments and assigns each one to it’s place in the storage.
 
-=== Getting the data out
+== Getting the data out
 
 It’s all well and good dumping values into a fixed size tuple, but how do you get them out? Better still, how do you get them out in a Haskell-ish way the will allow you to assign each value to a variable of your choice?
 
@@ -90,7 +90,7 @@ function snd(tuple) {
 
 I would not advise using anonymous functions like I have done above in production. Please place them into stand alone functions that are not declared every time. I have only written them like that for brevity.
 
-=== Integration with other tuples and types
+== Integration with other tuples and types
 
 One thing you can add to make it behave slightly more like a native type is to add a `+toString+` method.
 
@@ -134,7 +134,7 @@ So now you can create a tuple type which sits in between an object and an array 
 
 You can play about with my code in http://jsfiddle.net/Wolfy87/nuGWQ/[this fiddle].
 
-=== Edit
+== Edit
 
 Due to a sudden influx of views and opinions, I have decided to create an actual project based off of this idea; albeit a very simplified one. It can be found in the repository, https://github.com/Wolfy87/tuple[Wolfy87/tuple]. I have finished and published the first release tonight and you can grab it from GitHub, Bower (`+bower install tuple+`) and npm (`+npm install tuple-w+`, the name “tuple” was taken).
 

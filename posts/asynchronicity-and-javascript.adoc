@@ -61,7 +61,7 @@ Notice the similarities? The callback approach even looks cleaner in this situat
 
 The promises we have right now add some value over callbacks, but not much. They’re just a different way of writing the same spaghetti with less indentation. The only good thing about them are the 3rd party implementations (such as http://bluebirdjs.com/docs/api-reference.html[bluebird]) that add some nice functions to handle asynchronous transformation of data. Other than that, promises ~= callbacks.
 
-=== If not those, then what?
+== If not those, then what?
 
 I’m calling callbacks bad and promises essentially the same thing with some minor differences. What we actually need is something that allows us to invert control and pull data through (potentially in a blocking fashion) thus eliminating the need for callbacks and handing off control to another function which may _never_ give you the control back.
 
@@ -69,7 +69,7 @@ Different languages solve this problem in various ways, https://www.golang-book.
 
 ES6 is adding https://davidwalsh.name/es6-generators[generators] and ES7 is adding https://jakearchibald.com/2014/es7-async-functions/[async/await]. You can actually use CSP with generators like Clojure and Go if you try hard enough, http://swannodette.github.io/2013/08/24/es6-generators-and-csp/[David Nolen wrote something really cool] regarding this. There’s also https://github.com/ubolonton/js-csp[entire libraries] to allow use of CSP in JavaScript via generators. I’m not sure if it’s the right way to go since generators are essentially just a way to lazily generate sequences with async as a side effect, but it’s better than promises. As far as I can tell, async/await is just another syntactic abstraction on top of promises.
 
-=== These aren’t the solutions
+== These aren’t the solutions
 
 All of this syntax being added to JavaScript seems like a really bad idea. Each comes with it’s own rules, complexities and even more libraries just to be able to use them conveniently. My advice? Use a good language that compiles to JavaScript to escape the impending madness. Yes it works and sort of gets the job done, but setting fire to your house will warm it up and keep heating bills down. It doesn’t mean there isn’t a far better alternative out there.
 

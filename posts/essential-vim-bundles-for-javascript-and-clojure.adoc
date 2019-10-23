@@ -8,7 +8,7 @@ My two primary languages that go through Vim right now are JavaScript and Clojur
 
 This is just a quick dependency list for those already using the languages or are just starting out. I feel that they are essential. To install these you will need a bundle manager, I recommend https://github.com/Shougo/neobundle.vim[NeoBundle], https://github.com/gmarik/Vundle.vim[Vundle] or https://github.com/junegunn/vim-plug[vim-plug]. I am currently using NeoBundle but may well swap to vim-plug soon for the minimalism and impressive parallelism.
 
-=== Common bundles
+== Common bundles
 
 These are extremely useful for either language, and generally enhance Vim in many ways. So really, these will improve your experience no matter what you write.
 
@@ -19,7 +19,7 @@ These are extremely useful for either language, and generally enhance Vim in man
 * https://github.com/embear/vim-localvimrc[vim-localvimrc] – Have per-project configuration, I have things like _<localleader>tt_ mapped to execute the very specific command to **t**est **t**his file.
 * https://github.com/Lokaltog/vim-easymotion[vim-easymotion] – Jump to anywhere. This is essential for anything in Vim.
 
-=== JavaScript
+== JavaScript
 
 The common bundles pretty much cover JavaScript, but there’s still a few specific things you need.
 
@@ -27,7 +27,7 @@ The common bundles pretty much cover JavaScript, but there’s still a few speci
 * https://github.com/marijnh/tern_for_vim[tern_for_vim] – http://ternjs.net/[Tern] omnicomplete support that YouCompleteMe hooks in to. Works very well if set up correctly. It can even infer or read types from http://usejsdoc.org/[JSDoc] comments.
 * https://github.com/pangloss/vim-javascript[vim-javascript] – Provides improved syntax and indentation.
 
-=== Clojure
+== Clojure
 
 There’s a few more for Clojure and they each have their own learning curves, namely paredit and fireplace. It’ll take you a while to get proficient, but you’ll be very happy when you get there.
 
@@ -37,6 +37,6 @@ There’s a few more for Clojure and they each have their own learning curves, n
 * https://github.com/guns/vim-clojure-static[vim-clojure-static] – Better static highlighting.
 * https://github.com/guns/vim-clojure-highlight[vim-clojure-highlight] – More dynamic highlighting that tries to fetch context and more information from fireplace. An extension to static.
 
-=== There’s a lot more
+== There’s a lot more
 
 You have to discover some things for yourself because you probably don’t like everything I do. Saying that, here’s my https://github.com/Wolfy87/dotfiles[dotfiles] that you can fork, copy, steal or retrofit to fit your needs.

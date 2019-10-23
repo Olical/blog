@@ -8,7 +8,7 @@ https://github.com/Olical/Color[Olical/Color] is something I started in early 2
 
 I was reminded by https://github.com/Olical/Color/pull/1[this small pull request] to fix a bug in my old untested project. It came up out of the blue and instantly had someone else respond, to my amazement. So what I thought I’d do is quickly go through the project with 5-6 more years of experience under my belt and share those feelings. Then I want to clean it up to the standards I have today. Maybe even just rewrite the damn thing within tests.
 
-=== Distribution
+== Distribution
 
 No _package.json_, no instructions, good luck. Apparently I just wanted people to clone this into their repo or literally copy and paste the file into a directory.
 
@@ -18,7 +18,7 @@ At least I was using https://developers.google.com/closure/compiler/[Closure Com
 
 link:/assets/legacy-images/2016/11/giphy.gif[image:/assets/legacy-images/2016/11/giphy.gif[Shame Cube,width=350,height=248]]
 
-=== Code
+== Code
 
 https://github.com/Olical/Color/blob/45a83fecda62c086e788895182e403a9c9b42807/color.js[Here’s the source]. Why did I feel the need to comment every damn thing? _The “No Shit Sherlock” award goes to…_
 
@@ -69,7 +69,7 @@ Want to know the worst thing about this code though? That’s rhetorical, this i
 
 *curtain falls*
 
-=== Fixing what ain’t broke
+== Fixing what ain’t broke
 
 It’s fine, honestly, even though I look back and say “ew”, it works. Well, apart from that bug that https://github.com/pypmannetjies[pypmannetjies] kindly fixed for me. But that doesn’t mean it can’t be “better”. Here’s what I __want __to do, but I don’t _need_ to do.
 

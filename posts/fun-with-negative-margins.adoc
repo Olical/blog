@@ -4,7 +4,7 @@ Oliver Caldwell
 
 Ever wanted to overlay elements? You can create great effects and produce a really engaging site by simply making `+div+`s overlap slightly. But sometimes making elements lay on top of each other is harder than you would think. One of the biggest problems people have when overlaying elements on top of each other seems to be z-index issues. Luckily I am here to show you the perfect way to overlay elements with no z-index woes.
 
-=== An example
+== An example
 
 You may be wondering what on earth a negative margin looks like. Well take the new look of a Facebook profile for example. You see the way the smaller image pushes up into the larger one? That is the kind of effect you would be aiming for with a negative margin. Although I think Facebook are using a slightly different method. Saying that, I can see that they do use a negative margin, just not how I would have.
 
@@ -12,7 +12,7 @@ So you use it when you want an element to either pull it’s self upwards or dra
 
 To start you off, here is my example code. You can also http://jsfiddle.net/Wolfy87/E48MA/[have a play with it on jsFiddle].
 
-==== HTML
+=== HTML
 
 [source]
 ----
@@ -35,7 +35,7 @@ To start you off, here is my example code. You can also http://jsfiddle.net/Wolf
 </div>
 ----
 
-==== CSS
+=== CSS
 
 [source]
 ----
@@ -83,11 +83,11 @@ body {
 }
 ----
 
-=== Eh, what?
+== Eh, what?
 
 This may seem a little daunting. That is mainly because this is a fancy decorated version. Here is the stripped down version with only the code you need. You should easily be able to work out what is going on from the comments.
 
-==== HTML (simple)
+=== HTML (simple)
 
 [source]
 ----
@@ -100,7 +100,7 @@ This may seem a little daunting. That is mainly because this is a fancy decorate
 </div>
 ----
 
-==== CSS (simple)
+=== CSS (simple)
 
 [source]
 ----
@@ -118,6 +118,6 @@ See, pretty simple when you tear it down. So all we are doing is adding a negati
 
 The exact same theory applies to downwards or sideways margins. You can pull anything over anything to improve the visual flow of your pages. Play about with it and overlay items in creative ways. Although I doubt anything will be better than text laid over a kitten.
 
-==== A note on the delay
+=== A note on the delay
 
 Sorry about the delay between this post and the last. I have had quite a bit on. If you have waited it out, thank you, I appreciate your patience. I have two or three ideas already lined up so the next posts should be a lot quicker. Until next time!

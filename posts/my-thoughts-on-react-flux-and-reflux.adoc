@@ -8,7 +8,7 @@ I spent a week of evenings and most of a weekend building an application much li
 
 I’d also like to mention http://dev.hubspot.com/blog/moving-backbone-to-flux-react[this tangential video] that explains what Flux and React solve perfectly, it also talks about things such as optimistic fulfilment within the UI. A concept in which you respond to user input immediately, even if you have to ask the server, and then roll back the state by popping some snapshots off of a stack if a promise fails. This sort of thing would be a monumental challenge in any other world, but it’s feasible with React and Flux.
 
-=== My structure
+== My structure
 
 Since I was using Reflux, I tried to follow the general architecture of the https://github.com/spoike/refluxjs-todo[reflux-todo] example. I really like Reflux’s approach to the Flux architecture, it kicks out the useless string passing in the dispatcher and binds things together through concrete function calls and references. I sincerely hope the project gains traction and continues to grow in this direction. I’d really like to see some immutable data structure integration too.
 
@@ -138,7 +138,7 @@ module.exports = compile;
 
 So that should give you a rough idea as to what I was playing with. I may well open up the repository to public ridicule in the coming months. Now onto the things I wish I’d known about before.
 
-=== Things I would have done differently
+== Things I would have done differently
 
 image:http://img3.wikia.nocookie.net/__cb20101028071113/southpark/images/d/d8/Coon2Hindsight10.png[Captain Hindsight turned up once I was done,width=624,height=352]
 

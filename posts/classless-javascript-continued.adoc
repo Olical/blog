@@ -6,7 +6,7 @@ _This is a follow on from my previous post, link:/classless-javascript/[Classles
 
 I’ve been having a think about all this classless JavaScript stuff, which is basically normal JavaScript without traditional constructors, and I’ve come up with a few ideas to refine it. The first of which being *DRY* (Don’t Repeat Yourself). I’m going to show you the things I thought of and a few working examples of this strange technique.
 
-=== DRY
+== DRY
 
 I realised that I was creating and destroying a lot of objects in the same way, so I thought the first thing to do would be to add a base object that all others can extend by default. This object simply creates a new object where required and will wipe an object, preparing it for a pool, if you wish to destroy it.
 
@@ -39,7 +39,7 @@ var model = Object.create(base);
 
 That’s it. The model object is still empty but it now holds the base object within it’s prototype chain, ready for you to override or add to.
 
-=== Inheritance
+== Inheritance
 
 There isn’t any, well, in a way. All objects can be used in any function you want, you just have to make sure they have the right values pre-defined, so you just have to make sure you call the correct create methods.
 
@@ -68,7 +68,7 @@ model.set(user, 'name', 'Oliver');
 
 Now our model can have `+model+` methods or `+events+` methods such as `+events.addListener+` called on it interchangeably. This can be used with as many other types as you like!
 
-=== Calling methods internally
+== Calling methods internally
 
 Amazingly, the `+this+` object still works, so feel free to use that to reference internal methods.
 
@@ -89,6 +89,6 @@ I found that quite surprising in my experimentation, but it’s pretty cool all 
 
 link:/classless-javascript-continued/#comment-1060281114[As Andrew pointed out], this is not to be confused with `+self+`. The `+this+` value simply allows you to call functions stored within the `+model+` object, not within the data object that gets assigned to `+self+`. I have since corrected my above example that used `+this.modelData+`, this is obviously undefined and should be `+self.modelData+`.
 
-=== A full example
+== A full example
 
 I also thought it would be worth putting together a full example of this technique. I’ve built an, albeit minimalistic, MVC system with this and it works excellently. It feels like it was easier to write too, but that might just be a placebo. Everything slotted together perfectly, I didn’t have to worry about inheritance or prototypes, it just worked.

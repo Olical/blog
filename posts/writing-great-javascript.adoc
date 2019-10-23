@@ -6,7 +6,7 @@ I probably could have named this post something like “Writing clean, validatin
 
 So what’s the point in this, why can’t you just carry on writing JavaScript as you have been for ages. It works doesn’t it? Well if you took the same opinion with a car and drove on 20 year old tires which will give out any day you are just asking for something to go horrifically wrong. Want an example? Here you go.
 
-=== What could possibly go wrong
+== What could possibly go wrong
 
 You are writing something that manipulates color in some way. Maybe it is a color pallet tool, some form of UI selector element that allows you to set the background of your twitter style profile. You have some code like this in one of your scripts.
 
@@ -66,7 +66,7 @@ main();
 
 The only difference is that `+main+` will now be in the global namespace, whereas the other method does not pollute anything.
 
-=== Portability
+== Portability
 
 It is pretty standard for the newer JavaScript libraries to work on both browsers and servers with the same code these days. But how can you write something that will run in Chrome, Firefox and node.js in my terminal? First you place your code in the wrapper as shown above, then you simply create an alias to the global variable of your current environment.
 
@@ -99,7 +99,7 @@ var SomeClass = require('someclass').SomeClass;
 var foo = new SomeClass();
 ----
 
-=== Validation
+== Validation
 
 If you haven’t already I insist you read http://www.amazon.co.uk/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742[JavaScript: The Good Parts]. Alongside that I urge you to run all of your code through the amazing validation tool that is http://www.jshint.com/[JSHint]. http://www.jslint.com/[JSLint] will be referred to in the aforementioned book, but don’t use that, it will be mentioned because they are written by the same man, http://www.crockford.com/[Douglas Crockford]. JSHint is a much better fork of JSLint. This tool will show you any problems with your code. Some are purely stylistic, some will fix huge bugs. It will point out extra commas in arrays that will cause IE to complain and help you speed up your code.
 
@@ -118,7 +118,7 @@ I recommend ticking almost *every* box on the JSHint site, use your common sense
 
 If you follow the guidelines laid down by The Good Parts and JSHint you will find and fix so many errors before they bite you in the…
 
-=== Thanks
+== Thanks
 
 This post turned out a lot longer and wordier than I first intended. That seems to happen a lot with my posts. I hope you have learned something from it though and I hope it has helped you to write better JavaScript which is *much* less prone to errors.
 

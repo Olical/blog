@@ -6,7 +6,7 @@ If you’ve worked with JavaScript in a browser, or indeed on the server, for an
 
 You end up with multiple boolean variables and function calls constantly checking if all of those AJAX requests have finished; it is far from ideal. I’m going to show you how to break the problem down and come out of the other side with your sanity still intact.
 
-=== An example
+== An example
 
 The first step in explaining this involves creating a problem, here’s the scenario: You’re running a site like https://gist.github.com/[gist.github.com] and you need to fetch some meta data for a list of gists from the server. This is going to involve you making multiple requests and then doing something when they’re all finished, you’ll probably want a loading spinner overlay or something while it fetches them as well.
 
@@ -29,7 +29,7 @@ function Batch(functions, completionHandler) {
 
 This is just an empty class that will take an array of functions that it will execute later. It also takes a `+completionHandler+` function argument; it is executed when all of the functions are completely finished.
 
-=== Starting the requests
+== Starting the requests
 
 Now we need a method that will execute all of our provided functions.
 
@@ -54,7 +54,7 @@ When called, this will store the amount of remaining functions left to finish ex
 
 The `+this._results+` array will be used to hand the results of each function back to the completion handler when everything is finished.
 
-=== Letting Batch know we’re done
+== Letting Batch know we’re done
 
 Each function that is executed is going to need to signify that it is done somehow. We will do this by adding a third method to the `+Batch+` class which knocks one off of the `+this._remaining+` counter and executes the completion handler if we’re done. We’ll also allow this function to store a result in the `+this._results+` array.
 
@@ -84,7 +84,7 @@ Batch.prototype.done = function done(result) {
 
 Now our asynchronous functions can let the class know when they’re done, we can also store resulting values to be passed along to the completion handler. In our case, this will probably be gist meta data object or a chunk of JSON. This call would probably be made from the `+oncomplete+` event of our chosen AJAX library.
 
-=== Putting it into use
+== Putting it into use
 
 Now we need to construct our array of functions, execute them as a batch and use their results. You’d need to do a little bit more work to add error handling and potential timeouts, but this should get you more than started.
 
@@ -129,4 +129,4 @@ As you can see, I’ve used a simple class to solve a potentially complicated pr
 
 As always, I’d gladly turn this into a fully fledged package if there was enough interest.
 
-=== Obligatory JSFiddle example
+== Obligatory JSFiddle example

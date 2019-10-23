@@ -6,7 +6,7 @@ I’ve read a lot of posts in the past on this subject; this includes some by ma
 
 Plain ol’ JavaScript is perfectly capable of handling all of your inheritance needs without the use of wrapper methods or those pesky `+Class+` instances. Of course, you can wrap these simple techniques up inside functions if you want to, it probably looks a little prettier that way.
 
-=== A base class
+== A base class
 
 In JavaScript, classes are simply constructor functions that build an object from their prototype when instantiated with the `+new+` keyword.
 
@@ -26,7 +26,7 @@ el.getId(); // 'example'
 
 The `+this+` keyword is mapped to the new object instance. In this case that would be `+el+`. So when `+this._id = id;+` is executed it’s actually assigning the `+id+` argument to the new `+el+` object that `+new Element(...)+` created.
 
-=== Inheriting another prototype
+== Inheriting another prototype
 
 To inherit from another class, all you really need to do is copy the prototype object from your base class into the one you want to add the functionality to. Here’s how *not* to do it.
 
@@ -44,7 +44,7 @@ That sound you hear? That’s the sound of a thousand bugs hurtling towards you 
 
 There is a very easy way around this though. Well, actually there are quite a few. All you need to do is make a new object with the same properties as the original instead of an actual reference to the original.
 
-=== The solution to leaky prototypes
+== The solution to leaky prototypes
 
 Use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create[`+Object.create+`] to create a new object (obviously) with it’s prototype set to the one you pass. So when you try to access something on the created object, it will look for it in the local object and not be able to find it. It will, however, then look up the prototype chain to the parent object you specified and find your method or property there (hopefully).
 
@@ -78,7 +78,7 @@ ImageElement.prototype.setImageUrl = function() {};
 
 Now `+setImageUrl+` will only be added to the `+ImageElement+` prototype, and not the `+Element+` one. Perfect. The only real downside to this is that it’s a fairly new method, so http://kangax.github.io/es5-compat-table/#Object.create[the support for it _isn’t_ perfect]. There is a simple https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Polyfill[polyfill] though.
 
-=== Dude, where’s my constructor?
+== Dude, where’s my constructor?
 
 A weird quirk you may notice with this technique is that the `+constructor+` attribute of the child class actually points to the parent.
 
@@ -138,7 +138,7 @@ image instanceof Element; // true
 image instanceof ImageElement; // true
 ----
 
-=== Calling the “super” methods
+== Calling the “super” methods
 
 When you extend a class and override a method you will probably want to call the parent method too, just to make sure you’re not missing anything. You do that in the way you would expect, even if it is a little verbose.
 
@@ -160,7 +160,7 @@ ImageElement.prototype.render = function() {
 };
 ----
 
-=== Polishing it all off
+== Polishing it all off
 
 I think this method of inheritance is as simple as it gets and covers every angle in regards to inheriting a class. If you wanted to do things such as mixins, it would work exactly the same as this, you would just need a method which copied all of the properties from the mixin object into the target classes prototype. All of this can be as simple as you want it to be.
 
@@ -207,6 +207,6 @@ ImageElement.prototype.render = function() {
 
 That little reference just makes everything a little bit easier to type and read.
 
-=== Got it?
+== Got it?
 
 So, that’s about it. That’s how you inherit classes in pure JavaScript in a very robust yet easy way. If any of this isn’t quite clear then please feel free to ask me about it in the comments. I hope you found this useful.

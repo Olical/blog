@@ -6,7 +6,7 @@ In this post I’m going to aim for an MVP that may not be the most usable but c
 
 The very first step involves creating the main plugin file which is loaded from the runtime path and defines commands, automatic as well as normal. These commands will point to a namespaced file which will be loaded on demand, this is all contained within the `+autoload+` directory.
 
-==== The initial files
+== The initial files
 
 First `+plugin/netrw_signs.vim+`, which points to an autoload function.
 
@@ -71,7 +71,7 @@ filetype plugin indent on
 EOF) +Vader tests/*.vader
 ----
 
-==== High level testing
+== High level testing
 
 I’m going to use my tests to define how the plugin will actually work. Some may say that I’m driving my development with tests. These will be high level but provide me with all the checks I need to make sure my basic configuration is actually producing the desired results and signs. One of the best things about writing the tests up front is that my configuration will be thought out in a way that makes sense from the users perspective, I’ll then work back from there.
 
@@ -111,6 +111,6 @@ My current thinking is for each check function to either get called once with ea
 
 With those implementation details in mind, I’ll write my first tests against this configuration.
 
-==== Uh oh…
+== Uh oh…
 
 It is at this point that I realised how much work will actually be involved to get a working and tested MVP that didn’t die when it encountered tiny changes in netrw configuration. I don’t have time for this sort of return on investment, so I’m shelving this little project to learn about Clojure and algorithms using this stack of books I’ve accumulated. I’m obviously going to push everything I’ve got so far alongside these few posts, and I may even come back to it one day. Until then, sorry vim-netrw-signs, you’re dead to me.

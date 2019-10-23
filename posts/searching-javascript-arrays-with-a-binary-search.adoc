@@ -14,7 +14,7 @@ You will probably find that `+indexOf+` doesn’t quite cut it in those situatio
 
 This is where you have an excuse to suggest a binary search and blow everyone else’s minds.
 
-=== What is it
+== What is it
 
 A binary search searches by splitting your array into smaller and smaller chunks until it finds your desired value. Unlike the normal `+indexOf+` which searches from left to right in a simple iteration. http://en.wikipedia.org/wiki/Binary_search_algorithm[The binary search Wikipedia article] explains it best (as always). There are a couple of downsides; It will be slower with smaller data sets (this needs proving) and the array you are searching *needs to be sorted*.
 
@@ -61,7 +61,7 @@ function binaryIndexOf(searchElement) {
 
 _Edit: I’ve swapped `+Math.floor+` for `+number | 0+` at link:/searching-javascript-arrays-with-a-binary-search/#comment-924876342[Yehonatan’s reccomendation]. http://jsperf.com/jsfvsbitnot/8[It’s faster sometimes]._
 
-=== Real world use case
+== Real world use case
 
 Okay, you might not want to search an array of numbers. Say you were working on a JavaScript map implementation, as I will be talking about in my next post, you might need to search an array of objects. As long as this array contains some kind of number you can use as an index whilst sorting, then it can be done.
 
@@ -99,7 +99,7 @@ var index = models.binaryIndexOf(someModel);
 
 Let me know what you think and if you have any improvements or suggestions. I hope this can help to destroy a bottleneck or two (or 100,000).
 
-=== Edit: Where should you stick it?
+== Edit: Where should you stick it?
 
 http://www.reddit.com/r/javascript/comments/1fx4od/searching_javascript_arrays_with_a_binary_search/caeo5is[doomslice over on reddit] suggested that I return the http://en.wikipedia.org/wiki/Two%27s_complement[twos compliment] in place of -1. As far as I can tell, this means returning the negative version of the last place that was checked. So if you wanted to insert a value and wanted to know where you should put it, you could run the function and use the returned number to splice the value into the array.
 

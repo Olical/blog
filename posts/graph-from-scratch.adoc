@@ -6,13 +6,13 @@ https://twitter.com/jamesfublo[James] mentioned the other day that he was drinki
 
 This post is mainly about plotting a graph with nothing but JavaScript and a canvas element, but it also gives me a chance to finally document my tea drinking habits for the world to gaze upon in wonder.
 
-=== Aim
+== Aim
 
 I’m going to build a simple plotted graph using JavaScript and a canvas element but without any external dependencies. I’ll try to walk you through each step of the way too, so you can pick and choose which parts of this code you’d like to use in your possibly unrelated canvas project.
 
 This will be self contained within a neat little class, so you’ll easily be able to pull it out and modify it to your hearts content.
 
-=== Setup
+== Setup
 
 First I’m going to setup a couple of empty classes. I’m going to have a `+LineGraph+` class which inherits (using link:/prototypical-inheritance-done-right/[prototypical inheritance]) from `+Graph+`. The base class will contain anything a generic graph would, such as containing data points and rendering.
 
@@ -42,7 +42,7 @@ function LineGraph() {
 LineGraph.prototype = Object.create(Graph.prototype);
 ----
 
-=== Storing the data
+== Storing the data
 
 The base `+Graph+` class needs to take a set of data and store it for later use by it’s child classes. This data could be an array (line graphs) or an object containing simple numbers (pie chart).
 
@@ -72,7 +72,7 @@ Graph.prototype.setDataSource = function (dataSource) {
 };
 ----
 
-=== Creating the canvas
+== Creating the canvas
 
 We’ll leave it to the base class to create and prepare the canvas element. It will create the element at a specified size and then store it’s context.
 
@@ -141,7 +141,7 @@ var canvas = g.getCanvasElement();
 document.body.appendChild(canvas);
 ----
 
-=== Setting up the data
+== Setting up the data
 
 This isn’t very well defined, it’s kind of up to how the specific graph child class wishes to implement it. Here’s how I’m going to implement the data structure for the `+LineGraph+` class.
 
@@ -169,7 +169,7 @@ var teaGraph = new LineGraph(300, 200, {
 
 This allows us to name our plotted lines if we ever wanted to, colour them and specify the actual values they should display. I think the `+LineGraph+` class should be able to work with that.
 
-=== Calculating the bounds
+== Calculating the bounds
 
 When the data source is set we’re going to want to pre-calculate the maximum amount of positions across the X and Y axis. We will use this count to divide the graph up into the right amount of columns and rows to represent every data point.
 
@@ -274,7 +274,7 @@ All that block above is doing is calculating the upper bounds for the X and Y ax
 
 Keeping everything in small, well named and focussed functions keeps things testable and above all: clean. Now that our data is prepared, we can move onto rendering our data.
 
-=== Rendering the graph
+== Rendering the graph
 
 The first step is to add an initial render method to the base `+Graph+` class. This will call all of the appropriate methods to clean and then render the canvas.
 
@@ -382,7 +382,7 @@ LineGraph.prototype.calculatePositionForValue = function (column, value) {
 
 That’s it. That last block renders each line onto the canvas taking up all available space using it’s selected colour. Each line is marked with dots along it’s path with a line joining each point.
 
-=== Wrapping it all up (_FINALLY!_)
+== Wrapping it all up (_FINALLY!_)
 
 The code above will leave you with two classes that can be used to set up and plot a graph onto a canvas. It is built in such a way that other graph types could descend from the base class to inherit some default functionality (a pie or bar chart for example).
 

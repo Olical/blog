@@ -10,7 +10,7 @@ I began hunting around and asking questions as to how I can become a better *pro
 
 A good programmer however, in my opinion, should be good in almost every domain. Be it web, game or any other form of development. They are not a jack of all traits and master of none, they should simply be able to learn and adapt incredibly quickly. They don’t panic when they have to implement a sorting algorithm, they read up on it and write it without having someone on StackOverflow do it for them.
 
-=== One example
+== One example
 
 A response I received while asking about becoming a better programmer was to write a Gray code implementation in C. First thought: Wat. But after a bit of research, I realised it really wasn’t that bad and I could definitely do it. This small task taught me so much and reinforced my confidence as a programmer.
 
@@ -20,7 +20,7 @@ I had almost no knowledge of C before attempting to write that application. I ju
 
 Go out there and find something you don’t understand _yet_. Why not run through the first 20 https://projecteuler.net/[Project Euler] problems, write a simple language or learn some assembly.
 
-=== Never stop learning
+== Never stop learning
 
 It’s one thing I try to focus on in my life: I need to be learning or progressing at all times. If not, what am I doing? Progressing through time? So I’m always looking for new things inside and outside of programming that completely baffle me at first.
 

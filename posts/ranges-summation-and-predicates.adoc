@@ -8,7 +8,7 @@ I have since started trying to apply functional concepts to problems I have come
 
 The problem I wish to solve is this: Find the product of all numbers within an array that pass a specific test. In this case I will be finding the sum of all _even_ numbers within a specific range.
 
-=== Decimating it with Underscore
+== Decimating it with Underscore
 
 Okay, this might not be a vanilla solution, but _wow_ does it look pretty.
 
@@ -64,7 +64,7 @@ The main difference is that I am now creating functions with other functions. Th
 
 I don’t know about you, but I think the line that actually calculates the result clearly expresses it’s intent without need for comments or any other sort of explanation. It took me a while to stop thinking in a solely imperative way, but I understood the high level side of functional JavaScript pretty quickly. I’m only now beginning to grasp the thought processes involved in writing it. It feels like unlearning bad habits, I love it.
 
-=== The imperative equivalent
+== The imperative equivalent
 
 I thought it would be worth showing you a quick and dirty imperative equivalent without the use of Underscore; just in case you’re finding it hard to grasp these weird functional concepts.
 
@@ -98,7 +98,7 @@ I personally prefer the functional method because you end up with a toolbox of u
 
 Functional programming seems to be for humans, once you stop thinking in an imperative way, imperative programming appears to be better for the computer.
 
-=== In summary
+== In summary
 
 Using functional programming techniques where appropriate can result in an incredibly clean and reusable API where the imperative version would probably encounter spaghettification.
 

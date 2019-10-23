@@ -4,23 +4,23 @@ Oliver Caldwell
 
 My entire web development work flow takes place within my terminal; obviously I need a browser too, but other than that I have no GUI tools floating around. I’m going to show you what tools I use and how I use them. Take from this what you will.
 
-=== A quick overview
+== A quick overview
 
 I make use of http://tmux.sourceforge.net/[tmux] for multitasking, http://www.vim.org/[Vim] for any editing with https://github.com/Wolfy87/vim-config[my extensive configuration], http://git-scm.com/[git], https://github.com/ggreer/the_silver_searcher[ag] (also known as “The Silver Searcher”) as a grep replacement, http://docs.python.org/3.0/library/http.server.html[Python] for simple HTTP servers, http://nodejs.org/[node] and a few linters including http://www.jshint.com/[JSHint], https://github.com/stubbornella/csslint[CSSLint] and https://github.com/zaach/jsonlint[JSONLint]. These linters are completely integrated into Vim with https://github.com/scrooloose/syntastic[Syntastic], so I don’t need to worry about running them.
 
 I also use the general Unix tools a lot which include `+less+`, `+grep+`, `+curl+` and `+ssh+`. Never underestimate the base tools that come with your OS; if you’re on Linux or Mac that is. I personally prefer a clean https://www.archlinux.org/[Arch] Linux install with http://www.xfce.org/[XFCE] as a desktop environment. Combine that with my SSD wielding laptop and you have yourself some insane speeds to help you get your work done.
 
-=== Tying things together
+== Tying things together
 
 All of those tools would have no edge over GUIs if they all ran separately and could not be linked together easily. That’s why I have multiple bundles within my https://github.com/Wolfy87/vim-config[Vim configuration] that allow me to interface with programs such as ag (https://github.com/rking/ag.vim[ag.vim]) and git (https://github.com/tpope/vim-fugitive[vim-fugitive]). I don’t have to worry about running my linters either, https://github.com/scrooloose/syntastic[Syntastic] does that for me and shows me where the problems reside.
 
-=== Multitasking
+== Multitasking
 
 So I can do 80% of my work comfortably without leaving Vim by tying other programs into it via bundles. For the last 20% which are easier to do outside of Vim, such as manipulating large portions of the file system, I can send my Vim to the background with `++` and bring it back by running `+fg+` when I’m done.
 
 I can also use tmux for a huge amount of flexibility by splitting (`+<%>+` or `+<">+`) or by creating a new window with `++`. I have remapped my leader key to `++` too, just to make it easier to hit.
 
-=== Why?
+== Why?
 
 It may be because I have been working like this for a while now, but this kind of thing feels so natural now. If I work inside my terminal 100% of the time I know that any tool I use will work in a similar way. I can search any output and pipe it around however I like. I can tie things into my editor with minimal effort and I can fix things when they go wrong (which is very, very rare).
 

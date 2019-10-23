@@ -38,7 +38,7 @@ Package management through _~/.*rc_ files is the Shih Tzu. Sadly, http://wikemac
 
 I’m not having any of that.
 
-=== Installing missing packages
+== Installing missing packages
 
 This one’s easy enough to solve and many people have many solutions. I have a function, https://github.com/Wolfy87/dotfiles/blob/88926d0f8ad581f4a4953d6fdea40d812638b17d/emacs/init.el#L97-L103[_dotfiles-sync_], which will get the latest package lists from http://melpa.milkbox.net/[MELPA] (and a few others) and installs all packages I currently don’t have locally. Simple enough and very effective, even if it does require a few reboots to get them all installed, still trying to work that one out.
 
@@ -100,7 +100,7 @@ This one’s easy enough to solve and many people have many solutions. I have a 
 
 So here I have a list of packages, a function to fetch them and a macro that I use to wait until each package is loaded before I configure them. To update my packages I have to go into the text based menu, mark out of date packages for upgrade and then execute it all (_M-x list-packages RET U x_). Despite this being cumbersome and annoying, this appears to be the only way right now.
 
-=== The other problem, pruning
+== The other problem, pruning
 
 So I can install and update fairly easily, albeit not perfectly, but I’m still lacking the ability to prune old packages that I no longer have listed in my _init.el_ file. My only main requirement for this process is that it executes as part of my synchronisation. Luckily the problem frustrated me enough to construct a solution, now my Emacs package management isn’t that far behind that of Vim / Vundle’s, but it still doesn’t feel quite a smooth. I’ll take what I can get.
 

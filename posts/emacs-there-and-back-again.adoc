@@ -10,7 +10,7 @@ I missed the feeling of building my own editor bit by bit however, and only Vim 
 
 I’m a huge advocate of the unix philosophy, and even though Vim can break it a bit, Emacs breaks it a lot. As it’s widely known, it’s essentially an operating system. Linux is my OS of choice, Vim in my text editor.
 
-=== Good came out of it
+== Good came out of it
 
 Emacs is great, don’t get me wrong. I learnt a lot of useful tricks that I want to translate over to the Vim world since there’s always an equivalent. A prime example being https://github.com/emacs-helm/helm[helm], it’s an excellent piece of software, who’d have thunk that uniting textual interfaces worked so well. This is where https://github.com/Shougo/unite.vim[Unite] steps in to fill the void in Vim. I’ve already got it hooked up in my new setup but I’ll touch on that towards the end of the post.
 
@@ -20,7 +20,7 @@ I’ve also bound `+\gj+` to pull and `+\gk+` to push, because they’re synonym
 
 So in the end, I found Emacs to be an excellent _platform_ for almost anything you can imagine that can be represented with text. But I want an editor, and I kind of like Vim Script. Please don’t die from shock. It’s a horrible language, but a good DSL, in my opinion.
 
-=== Rebuilding my dotfiles
+== Rebuilding my dotfiles
 
 All of this discovery and new found ideas prompted me to `+rm -rf ~/dotfiles+`, which are stored on GitHub, but still. You get the idea, I started my dotfiles again. Mostly. Go peruse my new https://github.com/Wolfy87/dotfiles[dotfiles] if you so wish.
 
@@ -32,7 +32,7 @@ On the subject of bundles, I also swapped from https://github.com/gmarik/Vundle.
 
 One key point of this new setup is the fact that it can be installed and linked in with a single bash script. It works incredibly well, check out the readme for more detailed information on the inner workings of my new tooling.
 
-=== Please copy things
+== Please copy things
 
 This is what I hope others will obtain from this post and the actual repository: Take as much as you can from my work, fork if you wish. Just please learn something from it. This is like spring cleaning for my tools, I can’t wait to refine them over the coming year, especially Vim. I want my changes to inspire others to improve their tooling too.
 

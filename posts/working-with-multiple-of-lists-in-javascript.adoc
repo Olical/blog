@@ -44,7 +44,7 @@ You could extract parts of this into named variables or move it into other funct
 
 We can however completely eliminate the need for this nesting by using something called list comprehension.
 
-=== List comprehension
+== List comprehension
 
 My favourite implementation of list comprehension can be found in my favourite language, https://clojuredocs.org/clojure.core/for[Clojure’s for]. You can also find them in many other languages such as Python and Scala, I’m just in love with https://xkcd.com/297/[all those parenthesis].
 
@@ -54,7 +54,7 @@ They allow you to produce a single list from one statement or call that accepts 
 
 I’ve built one for JavaScript that is a port of the Clojure implementation, I’ve tried to keep it as close to the original as possible. Including code-as-data based API and laziness all the way down. You can use plain old arrays or infinite generators, it will accept _any_ https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols[iterable].
 
-=== Introducing https://github.com/Olical/forc[forc] https://badge.fury.io/js/forc[image:https://badge.fury.io/js/forc.svg[npm version,height=18]]
+== Introducing https://github.com/Olical/forc[forc] https://badge.fury.io/js/forc[image:https://badge.fury.io/js/forc.svg[npm version,height=18]]
 
 The name stems from “for comprehension” or maybe even “for Clojure”, but mainly because I obviously can’t use just “for” as a name. It allows you to do everything Clojure’s for does, but with JavaScript and any kind of iterable. It’s written with all sorts of ES6y things and I’d recommend using it with Babel, but it will work without them (I compile it at publish time). Pre-ES6 you won’t have any way to iterate the iterables it generates easily, so I wouldn’t recommend that.
 

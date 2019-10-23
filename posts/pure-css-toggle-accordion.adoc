@@ -6,7 +6,7 @@ CSS is brilliant. When written properly you can do so much with it. I believe th
 
 I admit, because of using newer CSS, namely the `+:checked+` pseudo selector, you alienate your older IE audience. But that can be fixed by including http://selectivizr.com/[Selectivizr]. So you have your increased performance and ease of use in newer browsers with a working version in IE. The first thing you will need is the HTML.
 
-=== Markup
+== Markup
 
 Now the HTML for this particular accordion is a little more complicated than some. That is because we are utilizing radio buttons to perform the toggle on click action. But do not fear, it only means one extra element that is actually set to `+display: none+`.
 
@@ -35,7 +35,7 @@ I have only added two content panes here, but you can add as many as you require
 
 When adding more items you must remember to update the `+for+` attribute on the label and the `+id+` of the radio input. Otherwise you will click one and six will show. You can also specify a content pane to be open by default by adding `+checked='checked'+` to its radio button, just like I have done in the HTML above. Other than that you can just copy and paste to your hearts content.
 
-=== CSS
+== CSS
 
 Now here is the code that makes the accordion work. I have added comments to help you out, but you may still find it a bit confusing. If you do just utilize it in your project via copy and paste first, then keep tweaking it until you know what does what. I believe that it is one of the best ways to understand some confusing code. Style it up, add some transitions. Maybe even adapt it to work horizontally. Just don’t say “bah! that looks too hard, I give up”. Just experiment.
 

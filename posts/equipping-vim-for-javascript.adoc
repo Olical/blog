@@ -12,17 +12,17 @@ I absolutely love Vim. I use it for all of my writing, be that code or blog post
 
 With a little bit of work you can actually set up Vim to give you pretty good suggestions (not just based on dumb strings!), great highlighting, perfect indentation and automatic linting. If you haven’t tried this kind of thing before, welcome to the wonderful world of https://github.com/Wolfy87/vim-config/blob/master/bundles.vim[Vim bundle soup].
 
-=== Managing the bundles
+== Managing the bundles
 
 I use https://github.com/gmarik/Vundle.vim[Vundle] to manage all of my bundles, I’d recommend it to anyone looking to manage an extensive amount of bundles. It’s pretty easy to use and is kind of built for downloading from GitHub, which is where all the bundles I am going to suggest are located.
 
 I’m not going to cover using Vundle here because https://github.com/gmarik/Vundle.vim#quick-start[the repository covers it perfectly]. So you should go and get Vundle set up before proceeding, it should only take a couple of minutes.
 
-=== All things syntax
+== All things syntax
 
 You may notice that JavaScript isn’t exactly smooth to write in a default Vim install. You can rectify all of it’s problems _really_ easily.
 
-==== Colours (British spelling, deal with it)
+=== Colours (British spelling, deal with it)
 
 First, you will want to make sure that you have decent normal Vim colouring by adding something like this to your `+.vimrc+`.
 
@@ -47,7 +47,7 @@ Plugin 'jelera/vim-javascript-syntax'
 
 After configuring and executing `+vim +BundleInstall+` (https://github.com/gmarik/Vundle.vim#quick-start[learn about Vundle] if you haven’t already!) your JavaScript should _look_ a lot nicer.
 
-==== Indenting (plus a couple of extra visual features)
+=== Indenting (plus a couple of extra visual features)
 
 The perfect bundle to compliment `+vim-javascript-syntax+` is https://github.com/pangloss/vim-javascript[`+pangloss/vim-javascript+`]. This bundle will add a tiny bit more highlighting as well as completely fix the weird indentation in standalone JavaScript files and code that’s embedded within HTML (_shudder_).
 
@@ -61,7 +61,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 ----
 
-==== Automate some typing
+=== Automate some typing
 
 One bundle I can’t live without is https://github.com/Raimondi/delimitMate[`+Raimondi/delimitMate+`], it will automatically add the closing quote, bracket or any other thing you’re typing that needs a counterpart character to stop your browser going haywire on the next refresh.
 
@@ -96,7 +96,7 @@ imap <C-c> <CR><Esc>O
 
 That will map `+Ctrl+C+` whilst still within insert mode to the line splitting command. You can obviously rebind it if you want, but I think this works really well.
 
-=== Linting integration
+== Linting integration
 
 If you need linting in _any_ language you should turn to https://github.com/scrooloose/syntastic[`+scrooloose/syntastic+`]. It doesn’t do much on its own, but combine it with an external linter and you have amazing live linting with indicators pointing to your problems within your actual code.
 
@@ -116,7 +116,7 @@ So once you have `+syntastic+` installed you will want to grab something that wi
 npm install -g jshint
 ----
 
-=== Amazing code completion
+== Amazing code completion
 
 This is the most complicated thing to get going, but it’s still pretty easy as install processes go. My first suggestion for auto completing your code would be to install https://github.com/Valloric/YouCompleteMe[`+Valloric/YouCompleteMe+`].
 
@@ -144,6 +144,6 @@ Plugin 'marijnh/tern_for_vim'
 
 You will need to do some extra install work for both Tern and YouCompleteMe though, so please be sure to read though there documentation. YouCompleteMe requires you to compile a module to enable ridiculously fast completion and Tern needs to you go into it’s directory and download it’s NPM dependencies. Once done though, they will “just work”.
 
-=== Now go and write some JavaScript
+== Now go and write some JavaScript
 
 Hopefully you will now get to enjoy a similar environment to me. If you like the kind of bundles and configuration options I use then you might want to cherry-pick even more from https://github.com/Wolfy87/vim-config[my Vim configuration repository]. It’s kind of spilled over into Tmux and Bash configuration now too, so you should be able to find at least one nice thing in there.

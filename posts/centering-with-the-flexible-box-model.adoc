@@ -6,7 +6,7 @@ For those of you that have not heard of the flexible box model, brace yourselves
 
 But it does more than just center any way you want. It also allows you to center multiple elements and space them how you want. It may sound too good to be true, but it isn’t (for once). It is just a little… new. So please keep that in mind when considering using it.
 
-=== Get stuck in with flexbox
+== Get stuck in with flexbox
 
 Please bear in mind that I am using https://github.com/LeaVerou/prefixfree[prefixfree] on this site, so I don’t have to worry about vendor prefixes. However, *you do*. Fear not, if you do not want to include prefixfree in your code you can run your flexbox CSS through http://prefixr.com/[prefixr]. It is the web app equivalent of prefixfree. Let’s get started then…
 
@@ -52,7 +52,7 @@ I think we should begin wit~ wait what, *that’s it?!* Whoa. It only takes that
 
 Yeah. I don’t hear any screaming developers. Easy as π.
 
-=== Need an alternative?
+== Need an alternative?
 
 Okay, so maybe it is not the most widely supported feature out there. There’s a good chance your client won’t take “it is a lot easier for the developer” to not support anything other than the latest browsers. And I am all for realistic code, not stuff that will only work in the nightly of Chrome. On a Wednesday. If the wind is blowing in a southerly direction.
 
@@ -95,6 +95,6 @@ And here is the cross-browser method in action.
 
 Hopefully, when you are asked to center something vertically, you will at least know where to start now. Flexbox is amazing, but poorly supported. Give it time and we will be using it all over the place. I am guessing about a year before the first “flexbox grid system” is released.
 
-=== Dive deeper
+== Dive deeper
 
 Want to do more with flexbox than just center things? Well then http://www.html5rocks.com/en/tutorials/flexbox/quick/[this post] is for you. It covers pretty much everything you need to know.

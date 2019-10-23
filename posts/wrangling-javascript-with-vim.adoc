@@ -4,7 +4,7 @@ Oliver Caldwell
 
 I’ve created a link:/equipping-vim-for-javascript/[few] link:/2014/11/21/essential-vim-bundles-for-javascript-and-clojure/[posts] on here about writing JavaScript with Vim, this is because it’s what I do all day (and night) long, I’ve refined my editor to make writing this slightly questionable language as easy as possible. I’ve now hit a point, once again, where I feel like I should share my tooling for everyone else to take advantage of. You can find everything I’m going to talk about in my https://github.com/Wolfy87/dotfiles[dotfiles] under the Vim directory if you’re curious.
 
-=== Plugin management
+== Plugin management
 
 I’ve gone through a few different systems since starting to use Vim, I’ve finally settled on one that’ll be tough to beat: https://github.com/junegunn/vim-plug[vim-plug]. A good plugin manager is essential to any good Vim configuration, in my opinion. It allows me to easily add, remove and update plugins as well as keep them in sync across machines. The parallel processing and optional deferred loading are excellent features.
 
@@ -12,7 +12,7 @@ My configuration is modularised by having https://github.com/Wolfy87/dotfiles/bl
 
 The point of this section being: Make sure you have a good plugin manager and a nice place to list your plugins as well as their configuration. It’ll help keep things clean. Feel free to copy my system exactly, in fact, I encourage it. Fork my dotfiles if you so wish.
 
-=== Essential plugins
+== Essential plugins
 
 I’m going to list a fairly exhaustive list of every plugin I use that can help with JavaScript development. There’s going to be a lot here, but I’ll try to justify each one as best as I can. Adding all of them will have no impact on the performance of your editor (unless you’re on a Raspberry Pi for example) and vim-plug will fetch / update them incredibly quickly. I actually use https://github.com/Wolfy87/dotfiles/blob/9c5f008620287bb495e56452123d6bff76bb4639/vim/.vim/plugins.vim[a lot more] than this, but these are some of the most relevant.
 
@@ -33,7 +33,7 @@ I’m going to list a fairly exhaustive list of every plugin I use that can help
 * [.pl-s]#http://github.com/scrooloose/syntastic[scrooloose/syntastic]# – Provides automatic JSHint linting. (among many other JavaScript linters, check the docs)
 * https://github.com/Wolfy87/dotfiles/blob/9c5f008620287bb495e56452123d6bff76bb4639/vim/.vim/plugins.vim#L40-L57[Too many to list] from https://github.com/tpope[tpope], but honestly, I use almost all of these on a daily basis. Feel free to pick and choose any that sound cool, https://github.com/tpope/vim-sensible[vim-sensible] is a start and https://github.com/tpope/vim-surround[vim-surround] is essential.
 
-=== Project specific configuration
+== Project specific configuration
 
 I use [.pl-s]#http://embear/vim-localvimrc[embear/vim-localvimrc]# to provide project specific functionality such as executing tests or running the build. Because this is something that isn’t universal, having a _.lvimrc_ to hand is extremely useful. I have the following binding defined at the moment so I can just hit “<http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#local-leader[localleader]>tt” (which is “|tt” right now for me) to **t**est **t**his file, it doesn’t matter if I’m in the source or test file, it just works.
 
@@ -63,11 +63,11 @@ set path+=**/src/main/**,**
 set suffixesadd+=.js
 ----
 
-=== Snippets
+== Snippets
 
 I use https://github.com/SirVer/ultisnips[UltiSnips] to manage my snippets, which is a fantastic tool. The key to snippets, however, is to not have too many. That is why https://github.com/Wolfy87/dotfiles/blob/9c5f008620287bb495e56452123d6bff76bb4639/vim/.vim/UltiSnips/javascript.snippets[I only have three] at the time of writing. It’s pretty obvious what they’re for, the most used being _fn_. Having a few for your most common patterns is a good idea, but delete them if you find you’re not using them, keep your snippets clean.
 
-=== Concealing
+== Concealing
 
 Concealing is a neat (and relatively new) feature in Vim that allows you to mask a set of characters as a single character. It just so happens that https://github.com/pangloss/vim-javascript[vim-javascript] has some excellent conceal configuration that’s easy to use and very effective. Here’s what I currently use, it’s pretty self explanatory.
 
@@ -87,7 +87,7 @@ let g:javascript_conceal_prototype = "#"
 
 This is all well and good, but it got me thinking, what if I could just press the @ key and have it expand to “this” but still show an @ through conceal? Essentially creating a cute little language on top of JavaScript within Vim that’s arguably easier to write and read.
 
-=== Expanding and concealing
+== Expanding and concealing
 
 This is where my https://github.com/Wolfy87/vim-syntax-expand[vim-syntax-expand] plugin comes in. Here’s a quick demo to give you an idea of what I mean if my previous paragraph was not clear.
 

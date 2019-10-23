@@ -6,13 +6,13 @@ It may be a bold statement, but I believe that modularity is the way forward. By
 
 The thing that got me thinking about modules was looking at http://www.python.org/[Python], more specifically https://www.djangoproject.com/[Django] with http://mezzanine.jupo.org/[Mezzanine], and just realizing how nice it is having everything loosely coupled and easily reusable. So I set about finding a way to write modular JavaScript *and* CSS.
 
-=== Modular JavaScript
+== Modular JavaScript
 
 I have already talked about this before but I can’t stress enough how good it is. Using http://requirejs.org/[RequireJS] for loading and managing modules is just fantastic. Using it you can avoid polluting the global namespace and actually speed up your page. This is because your modules are loaded in parallel, not one after the other. So if you load http://mootools.net/[MooTools] from https://code.google.com/apis/libraries/devguide.html[Google’s CDN] and the https://developers.facebook.com/docs/reference/javascript/[Facebook JavaScript SDK] from the Facebook servers they will be loaded side by side along with your own modules, which can contain anything from single functions to huge classes.
 
 When you go to release your project you can run your code through the http://requirejs.org/docs/optimization.html[RequireJS optimizer] (r.js) to concatenate and minify your modules into a single file. You end up with your minified code, MooTools and the Facebook SDK loading at the same time. This can prove faster than a single file a lot of the time.
 
-=== Modular CSS
+== Modular CSS
 
 Now this is a bit different. You do not use a library to load CSS files in parallel and you don’t have to export selectors with a call to something like `+@define+`, this is more of an underlying guide or technique than a CSS framework. The core ideas of this can be found in https://github.com/stubbornella/oocss/wiki[OOCSS]. The core idea found in that wiki is that you should separate your structure and skin of your site. I could not agree more.
 

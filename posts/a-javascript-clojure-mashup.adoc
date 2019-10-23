@@ -8,7 +8,7 @@ Join me on an adventure into insanity, forget your current opinions about JavaSc
 
 http://xkcd.com/297/[image:http://imgs.xkcd.com/comics/lisp_cycles.png[I've just received word that the Emperor has dissolved the MIT computer science program permanently.,width=640,height=211]]
 
-=== *What I want to end up with*
+== *What I want to end up with*
 
 So my goal is to execute the following (very simple) Clojure code in JavaScript, but without any kind of string parsing, for example. The only thing I’ll need to cheat on is swapping parentheses for square braces, adding commas (sorry!) and correcting names that are illegal in JavaScript. My end goal is to start implementing the language in the language, just like Clojure. This little experiment could be cultivated into a DSL within JavaScript.
 
@@ -46,7 +46,7 @@ In time I could have this supporting things like defn and multiple arity functio
 
 I wrapped it in an IIFE because the return statements would have made no sense otherwise. The array syntax should pass the values back implicitly, normal JavaScript is not so lucky.
 
-=== *Science time*
+== *Science time*
 
 Let’s start off small, this function will walk a tree of arrays and execute the first item with the rest of the items as it’s arguments. The function will first recurse to the bottom of the stack then begin evaluation inside out, just like Lisp.
 
@@ -202,7 +202,7 @@ unquote(
 
 It works! Had to quote that array and define all of the required functions, but it works! Only the required code path is executed too, which I find very cool for an array.
 
-=== *Take it further?*
+== *Take it further?*
 
 It could perform some kind of caching as it walked the tree so you had a compile and execution step to this process. That allows you to build certain code paths and probably make it faster. Maybe not, maybe it’s fast enough right now and the simplicity is a far greater advantage. I would lean towards the latter. I would like to add defun, multiple arity functions and other such sugar. This is all something I would do if I carried this idea further into a more complex project. Even if nobody will ever use it, myself included, I think it would be fun. A language within a language.
 

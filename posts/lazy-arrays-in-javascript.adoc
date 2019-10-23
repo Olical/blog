@@ -4,13 +4,13 @@ Oliver Caldwell
 
 So I built a thing called https://github.com/Wolfy87/lazy-array[lazy-array]. It came off the back of https://gist.github.com/Wolfy87/75b435fce2091f79155e[a tiny gist] and grew into something quite powerful (if I do say so myself). This project allows you to define lazy arrays in JavaScript, surprisingly enough, but what are they?
 
-==== Lazy arrays
+== Lazy arrays
 
 A lazy array is a sort of collection that doesn’t actually do or contain anything until it’s absolutely necessary. So a lazy http://clojure.org/sequences[sequence] in Clojure will do as little as possible until required. I’ve actually modelled my implementation on that of http://theatticlight.net/posts/Lazy-Sequences-in-Clojure/[Clojure’s lazy sequences].
 
 This allows you to represent things that don’t exist yet or are infinite, such as the entire Fibonacci sequence. That’s a powerful concept that I want to explore a little within the JavaScript UI space.
 
-==== This implementation
+== This implementation
 
 My implementation actually works fine with vanilla arrays as well as the lazy variety, so my library ends up being a set of array manipulation functions (like map and filter) that evaluate at the last possible moment and can consume infinite lazy arrays of all positive integers, for example.
 
@@ -24,7 +24,7 @@ ____
 
 Well said, https://twitter.com/krisajenkins[Kris]. This is more lipstick. I hope it’s good lipstick.
 
-==== Fibonacci: The classic
+== Fibonacci: The classic
 
 Every time someone discusses laziness they create an example using the Fibonacci sequence, this is no exception. I’m going to port this little Clojure implementation from http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Lazy_Fibonacci[a wiki] to lazy-array.
 
@@ -98,7 +98,7 @@ describe('fib', function () {
 
 So that’s an actual test that I’ve just added to the project which showcases a lot of the functionality. The most interesting thing is the simplicity of the _fib_ function which creates the lazy array. You may say “well a recursive solution would also be that succinct” *but*, a recursive solution would eventually blow up since JavaScript does not have http://en.wikipedia.org/wiki/Tail_call[tail call optimisation] (http://www.reddit.com/r/javascript/comments/162tth/javascript_es6_has_tail_call_optimization/[yet]). Thanks to a single tiny while loop inside one of my functions, lazy arrays can just keep going. So at the very least lazy-array allows you to do sort of tail call optimised recursion in JavaScript.
 
-==== Applications within the UI
+== Applications within the UI
 
 I don’t know about you, but I don’t get to write numerical sequences for a living (boo). We JavaScript frontend wranglers deal with events, networking and state all day long, so building this had me wondering if I could apply laziness to the UI domain. The more I thought about this concept and talked with colleagues about it I realised that I’m essentially heading towards http://en.wikipedia.org/wiki/Functional_reactive_programming[functional reactive programming], with https://baconjs.github.io/[bacon.js] as a JavaScript example.
 
@@ -165,7 +165,7 @@ describe('date', function () {
 
 As you can see, a simple function can produce some interesting and powerful results. We could quite easily generate an infinite lazy array of every Thursday for the next decade. We could filter out any date that falls on the 25th and then reduce their timestamps down to a value. I don’t know why you’d want to do that, but it illustrates the point, lazy arrays allow you to do some really difficult things very easily. You just have to know when to apply them to your problem.
 
-==== A long way to go
+== A long way to go
 
 These are only the fundamentals really, I could carry on until I had ported the entire http://clojure.org/sequences#toc5[Clojure seq library], which I would actually be quite happy to do. I think this could provide a powerful tool for problems that are well suited to lazy solutions, you’d just have to implement a few functions that you’re used to having to hand with other more feature rich implementations.
 

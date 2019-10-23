@@ -8,7 +8,7 @@ So, I’m going to build an actual repository containing a JavaScript binary sea
 
 You can find the repository at https://github.com/Wolfy87/binary-search[Wolfy87/binary-search].
 
-=== The baseline
+== The baseline
 
 So I built up a repository with tests and a function called _binarySearch_ that actually uses _indexOf_ instead. It’s lying to you, it’s not a binary search just yet. This provides us with a working example to base the tests against and a good baseline in performance. Here’s the function which basically does nothing of any significance.
 
@@ -49,7 +49,7 @@ Now to turn it into an actual binary search. During this process I tried multipl
 
 I eventually gave up with them all and went back to the implementation from Khan. It falls over on calls such as “( [0,0,0,13,2,2], 13 )” and “( [10,6], 6 )”, which is sort of bad.
 
-=== This is the point where I realised I’m an idiot and slammed my face into my desk
+== This is the point where I realised I’m an idiot and slammed my face into my desk
 
 There wasn’t anything wrong with the search functions. The sorting of the sample arrays was wrong. I noticed it after putting in some logging for failing cases that showed numbers being inserted out of order.
 
@@ -132,7 +132,7 @@ describe('binarySearch', function () {
 });
 ----
 
-=== Now it’s safe
+== Now it’s safe
 
 I am free to change the implementation now since I’m happy with the test suite (despite it subtly stabbing me in the back). So I can add in every crazy optimisation under the sun, but to be able to tell that it actually improved I’ll need some benchmarks. I’m going to use http://benchmarkjs.com/[Benchmark.js].
 

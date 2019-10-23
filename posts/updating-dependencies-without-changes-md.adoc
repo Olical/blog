@@ -6,7 +6,7 @@ I recently received an issue on https://github.com/Olical/EventEmitter[EventEmit
 
 Although I have https://github.com/Olical/react-faux-dom/blob/master/CHANGES.md[a pretty thorough change log] for my newer projects like https://github.com/Olical/react-faux-dom[react-faux-dom], I didn’t even understand http://semver.org/[semver] back when I started it all those years ago (it feels like a long time to me, okay). I never considered explaining what changed over time for my users because I’d never had that requirement or predicament myself. Yet.
 
-=== Some tips will have to do
+== Some tips will have to do
 
 I couldn’t go back in time and tell younger me to track the changes and I certainly wasn’t going to trawl through every commit and build one retrospectively. All I could offer the nice fellow was advice I’ve picked up from books, people and mistakes over time. I’m putting that here to in the hopes that others outside of my projects issue tracker can learn from what I had to say. I hope it’s useful and helps you out some day. I pretty much copied it directly but fixed a handful of small typos.
 

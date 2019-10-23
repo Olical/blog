@@ -259,7 +259,7 @@ Detected 3 errors
 
 That’s much better! Suddenly you don’t have to run a REPL in your brain to understand what went wrong, the machine is telling you exactly what is wrong, where and what you can do instead. It may not be as succinct as Elm, but the information at the start is just as useful.
 
-=== Integration
+== Integration
 
 Luckily, expound happens to be extremely easy to use. Hopefully we can make that easier by including it by default in a lot of beginner friendly code too. The README does a great job of explaining how to use it.
 

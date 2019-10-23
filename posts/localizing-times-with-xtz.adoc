@@ -8,7 +8,7 @@ This conversion is incredibly useful for things such as gaming clan website wher
 
 You can learn more about it in the https://github.com/Wolfy87/xtz[GitHub repository] or from http://jsfiddle.net/Wolfy87/qgDLY/[this fiddle]. Or you can carry on reading to see a quick example.
 
-=== An example
+== An example
 
 So here is a really simple example as to how you use it. First off you start out with your dates within elements. I am using span tags within a paragraph because that is probably one of the most common places.
 
@@ -40,6 +40,6 @@ Now to make this date actually get executed you are going to first need two scri
 
 I am using the ID to fetch a single element in this example. Although you can also pass an array of elements. So if you are using MooTools or jQuery you can use their selector engines to make it a lot easier.
 
-=== Feedback
+== Feedback
 
 This is a very new library although I have put a lot of thought into it. So any feedback is greatly appreciated. Feel free to leave a comment below or https://github.com/Wolfy87/xtz/issues[open an issue in the repository].

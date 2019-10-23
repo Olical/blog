@@ -29,7 +29,7 @@ ____
 
 The underline is my addition. I’ve recently come to admire software that solves a specific problem and nothing more with as little code as possible.
 
-=== Usage
+== Usage
 
 Thinking about the possibilities is all well and good, but I’m going to show you a simple concrete usage, something I felt the README lacked (which is fine, it’s new!). I’m going to write a dice roller using the REPL to check the code as I go along. I’ll move these checks out into _.repl_ files, when I’m done I should have a working dice roller with an example based test suite all thanks to transcriptor.
 
@@ -245,7 +245,7 @@ Caused by: clojure.lang.ExceptionInfo: Transcript assertion failed! val: () fail
 
 It’s a wall of text, but a useful one!
 
-=== Thoughts
+== Thoughts
 
 All in all, I really like the approach. It’s easy to use and should be usable with any problem, you’ll just have to be wary of setup and teardown in stateful applications. I’m not sure on the best practice way of using it, but I think this is a good basic start, a canonical lein plugin would be pretty neat though.
 
@@ -257,6 +257,6 @@ I’d recommend that you give this a whirl on one of your own projects and see w
 
 Thank you very much, Stuart, for releasing this into the world. It’s pretty cool.
 
-=== Edit
+== Edit
 
 I went ahead and created https://github.com/Olical/lein-transcriptor[lein-transcriptor], the dice roller repository used in this post has been updated to use that instead.

@@ -48,7 +48,7 @@ Easy to read and very powerful. You can see that and element with a class of `+g
 
 We end up with something that looks like this.
 
-=== Making it simpler with LESS
+== Making it simpler with LESS
 
 You can amazingly make this even simpler. My favorite way to do this is by using a mixin with LESS. Here is the green styling again but instead using a mixin. This method means you could have as many button styles as you want and manage them easily.
 

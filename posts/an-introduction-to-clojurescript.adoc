@@ -4,7 +4,7 @@ Oliver Caldwell
 
 In this post I’m going to attempt to explain where https://github.com/clojure/clojurescript[ClojureScript] comes from as well as what it is and what it can do for you. I’m coming at this from the perspective of someone who writes a lot of JavaScript already, probably with React and Redux.
 
-=== Lisp
+== Lisp
 
 ClojureScript is a very slight sub-set of Clojure, the main difference being one compiles to JavaScript, the other to Java VM bytecode. On the JVM, Clojure has access to threads and other OS level niceties. ClojureScript as a language is very similar to it’s parent, but it lacks certain things that just aren’t possible in the browser.
 
@@ -20,7 +20,7 @@ This extremely exhaustive chart that shows the history of programming languages 
 
 link:/assets/legacy-images/2016/02/history-of-languages.png[image:/assets/legacy-images/2016/02/history-of-languages-1024x631.png[history-of-languages,width=792,height=488]]So it has been around for a very long time and has appeared in many flavours. We’re going to skip all of the other fascinating Lisps in the middle and jump all the way to Clojure, one of the newest and most popular in recent years.
 
-=== Clojure
+== Clojure
 
 https://en.wikipedia.org/wiki/Clojure[Clojure] is a Lisp dialect that encourages functional programming with immutable data structures. The data structures themselves are pretty amazing and can be found in JavaScript through https://facebook.github.io/immutable-js/[ImmutableJS]. Immutable data structures never change, they only allow you to create new versions of them with your changes applied, this prevents mutation, a source of pain in many systems. They don’t just copy the data to prevent mutation as some people appear to do in JavaScript, they use efficient algorithms to share as much data as possible to keep things immutable without sacrificing too much speed or efficiency. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze[Object.freeze] is not persistent immutability, neither is cloning things every time. That’s slow and inefficient. Neither is using https://gist.github.com/sebmarkbage/005c81e6f2f5ddac443f[the spread operator].
 
@@ -28,7 +28,7 @@ It runs on the JVM by default, so you can use all the Java libraries out there w
 
 One cool thing about Clojure is that the language is defined by the language. By that I mean, there’s a core interpreter (called a reader) as well as some core functions written outside of Clojure, but the rest is defined in https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj[core.clj], in Clojure. If there’s ever anything you don’t understand about the language, you can actually go and read the source code for that feature, like the https://github.com/clojure/clojure/blob/d5708425995e8c83157ad49007ec2f8f43d8eac8/src/clj/clojure/core.clj#L6087[while macro].
 
-=== Versatility
+== Versatility
 
 You may wonder what Clojure can actually do, the Wikipedia page just says is “general purpose”, but so is JavaScript and anything else you’ve probably ever used. Well, it’s more general than you’ll be used to, if you can name a paradigm that a language supports, Clojure probably has support for it too. Because of it’s generic macro based nature, you can define any other style within the language. Here’s a list of libraries that enable awesome paradigms from other languages within Clojure.
 
@@ -49,7 +49,7 @@ ____
 
 No kidding, you can do anything with it, it’s the most flexible language I’ve ever researched. To me, it’s a host unifier, you have every paradigm and every platform within the same beautiful language. This versatility means it’s being used all over the world in various industries to solve all sorts of interesting and hard problems, as http://blog.cognitect.com/blog/2016/1/28/state-of-clojure-2015-survey-results[the 2015 survey] shows. Ludwik actually uses it day to day at http://www.qubit.com/[Qubit] with his team.
 
-=== Tooling
+== Tooling
 
 There’s excellent integration into many popular text editors and IDEs, including: Sublime, Atom, Vim, Emacs and http://lighttable.com/[LightTable] (actually written in ClojureScript). https://cursive-ide.com/[Cursive] is an IDE developed specifically for Clojure which seems pretty cool too, it’s based off of IntelliJ. I use Vim personally and have link:/essential-vim-bundles-for-javascript-and-clojure/[written about it in the past]. All of the tooling hooks into a running REPL which allows you to look up source code, documentation and execute things directly from your editor.
 
@@ -59,7 +59,7 @@ Now the coolest thing about everything I’ve mentioned above, it pretty much al
 
 All of this magic is driven by a very small amount of tooling, no more learning the “npm + grunt / gulp / broccoli + browserify / webpack + react + redux + immutablejs + ….” silliness. All you need is http://leiningen.org/[Leiningen]. A simple “lein new project-name-here” will get you up and running.
 
-=== ClojureScript
+== ClojureScript
 
 Let’s assume you’ve got leiningen installed and you want to create a “Hello, World!” application with https://reagent-project.github.io/[Reagent] (a minimalistic React wrapper for ClojureScript, there’s a few wrappers out there though, go explore!) and live reloading through figwheel.
 
