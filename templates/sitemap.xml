@@ -2,13 +2,13 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
   <url>
     <loc>https://oli.me.uk/</loc>
-    <lastmod>{{latest-date}}</lastmod>
+    <lastmod>{% now yyyy-MM-dd %}</lastmod>
   </url>
 
   {% for post in posts|sort-by-reversed:date %}
     <url>
       <loc>https://oli.me.uk/{{post.slug}}</loc>
-      <lastmod>{{post.date}}</lastmod>
+      <lastmod>{% now yyyy-MM-dd %}</lastmod>
     </url>
   {% endfor %}
 </urlset>

@@ -5,7 +5,7 @@
     <title>Oliver Caldwell's blog</title>
     <link>https://oli.me.uk/</link>
     <description>On languages, text editors and tools.</description>
-    <lastBuildDate>{{latest-date}}</lastBuildDate>
+    <lastBuildDate>{% now yyyy-MM-dd %}</lastBuildDate>
     <generator>Custom Clojure https://github.com/Olical/blog</generator>
 
     {% for post in posts|sort-by-reversed:date %}
