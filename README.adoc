@@ -1,4 +1,4 @@
-= Blog (work in progress)
+= Blog
 
 My personal blog, hosted at https://oli.me.uk/[oli.me.uk]. Written in https://clojure.org/[Clojure] using https://github.com/Olical/conjure[Conjure] and https://neovim.io/[Neovim].
 
@@ -21,7 +21,7 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
 
 This blog runs on https://m.do.co/c/e643aa564b21[Digital Ocean] (referral link!) via http://dokku.viewdocs.io/dokku/[Dokku].
 
-The container ends up being just the static rendered HTML served by https://www.nginx.com/[nginx] hosted in Dokku. The `server` directory contains the nginx configuration template, the `$PORT` that Dokku selects in added in at startup.
+The container ends up being just the static rendered HTML served by https://www.nginx.com/[nginx] hosted in Dokku. The `server` directory contains the nginx configuration template, the `$PORT` that Dokku selects is added in at startup.
 
 == Forking
 
