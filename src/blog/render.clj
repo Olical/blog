@@ -4,6 +4,7 @@
             [me.raynes.fs :as fs]
             [selmer.parser :as tmpl]
             [taoensso.timbre :as log]
+            [com.climate.claypoole :as cp]
             [blog.adoc :as adoc]))
 
 (defonce ^:private temp-dir (fs/temp-dir "blog"))
@@ -102,19 +103,28 @@
   (fs/delete-dir temp-dir)
   (fs/copy-dir base-dir temp-dir)
   (let [posts (->> (fs/list-dir posts-dir)
-                   (map (fn [file]
-                          (log/infof "Parsing: %s" (fs/name file))
-                          (source->post {:file file
-                                         :source (slurp file)}))))]
-    (log/infof "Prepared %d posts." (count posts))
-    (spit-index! posts)
-    (spit-sitemap! posts)
-    (spit-feed! posts)
-    (spit-404!)
-    (run! spit-post! posts))
-  (fs/delete-dir output-dir)
-  (fs/copy-dir temp-dir output-dir)
-  (log/info "Done!"))
+                   (cp/upmap 8 (fn [file]
+                                 (log/infof "Parsing: %s" (fs/name file))
+                                 (source->post {:file file
+                                                :source (slurp file)}))))
+        !post-write-results (future
+                              (doall
+                                (cp/upmap 8 spit-post! posts)))]
+
+    (doall
+      (cp/pcalls
+        4
+        #(spit-index! posts)
+        #(spit-sitemap! posts)
+        #(spit-feed! posts)
+        #(spit-404!)))
+
+    @!post-write-results
+
+    (fs/delete-dir output-dir)
+    (fs/copy-dir temp-dir output-dir)
+
+    (log/infof "All done! Processed %d posts." (count posts))))
 
 (comment
   (render!))
