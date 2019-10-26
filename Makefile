@@ -27,7 +27,7 @@ run-container:
 	docker run --rm -e PORT=9898 -p 9898:9898 blog
 
 setup-deploy:
-	git remote add dokku dokku@178.62.55.204:oli.me.uk 
+	git remote add dokku dokku@host.oli.me.uk:oli.me.uk
 
 deploy:
 	git push dokku master
