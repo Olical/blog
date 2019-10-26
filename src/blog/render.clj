@@ -86,6 +86,7 @@
 (defn render!
   "Performs all building of the blog from source."
   []
+  (tmpl/cache-off!)
   (fs/delete-dir temp-dir)
   (fs/copy-dir base-dir temp-dir)
   (let [posts (->> (fs/list-dir posts-dir)

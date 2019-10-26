@@ -1,5 +1,29 @@
+/* https://srcery-colors.github.io/ */
+/* black rgb(28, 27, 25) */
+/* red rgb(239, 47, 39) */
+/* green rgb(81, 159, 80) */
+/* yellow rgb(251, 184, 41) */
+/* blue rgb(44, 120, 191) */
+/* magenta rgb(224, 44, 109) */
+/* cyan rgb(10, 174, 179) */
+/* white rgb(145, 129, 117) */
+/* brightblack rgb(45, 44, 41) */
+/* brightred rgb(247, 83, 65) */
+/* brightgreen rgb(152, 188, 55) */
+/* brightyellow rgb(254, 208, 110) */
+/* brightblue rgb(104, 168, 228) */
+/* brightmagenta rgb(255, 92, 143) */
+/* brightcyan rgb(83, 253, 233) */
+/* brightwhite rgb(252, 232, 195) */
+
 body {
-  background-color: #FEFEFE;
+  background-color: #EEEEEE;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
 }
 
 .page-wrapper {
@@ -29,9 +53,8 @@ a:hover {
 }
 
 .page-title {
-  font-family: monospace;
   font-size: 4rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .page-title a {
@@ -44,7 +67,6 @@ a:hover {
 }
 
 .page-subtitle {
-  font-family: monospace;
   font-size: 2rem;
   margin-top: 0;
 }
@@ -69,20 +91,6 @@ a:hover {
   margin-top: 0;
   color: #34382B;
   font-style: italic;
-  font-family: monospace;
-}
-
-.post-content {
-  padding: 1rem;
-}
-
-.home-intro {
-  padding: 1rem 10%;
-}
-
-.home-posts-wrapper {
-  padding: 1rem;
-  margin: 0 auto;
 }
 
 .home-post {
@@ -92,15 +100,12 @@ a:hover {
 }
 
 .home-post-date {
+  text-align: right;
   font-size: 1rem;
-  flex: 1;
   color: #34382B;
   font-style: italic;
-  font-family: monospace;
-}
-
-.home-post-title {
-  flex: 6;
+  white-space: nowrap;
+  padding-left: 1rem;
 }
 
 .home-post-title a {
