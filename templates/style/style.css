@@ -24,9 +24,12 @@
     :bright-black "#2D2C29",
     :black "#1C1B19"} */
 
+html {
+  font-size: 18px;
+}
+
 body {
   background-color: #EEEEEE;
-  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -50,7 +53,7 @@ a:hover {
 }
 
 .page-content {
-  max-width: 80rem;
+  max-width: 50rem;
   margin: 0 auto;
 }
 
