@@ -1,20 +1,28 @@
 /* https://srcery-colors.github.io/ */
-/* black rgb(28, 27, 25) */
-/* red rgb(239, 47, 39) */
-/* green rgb(81, 159, 80) */
-/* yellow rgb(251, 184, 41) */
-/* blue rgb(44, 120, 191) */
-/* magenta rgb(224, 44, 109) */
-/* cyan rgb(10, 174, 179) */
-/* white rgb(145, 129, 117) */
-/* brightblack rgb(45, 44, 41) */
-/* brightred rgb(247, 83, 65) */
-/* brightgreen rgb(152, 188, 55) */
-/* brightyellow rgb(254, 208, 110) */
-/* brightblue rgb(104, 168, 228) */
-/* brightmagenta rgb(255, 92, 143) */
-/* brightcyan rgb(83, 253, 233) */
-/* brightwhite rgb(252, 232, 195) */
+/* {:bright-magenta "#FF5C8F",
+    :bright-red "#F75341",
+    :bright-cyan "#53FDE9",
+    :bright-blue "#68A8E4",
+    :orange "#D75F00",
+    :xgray1 "#262626",
+    :bright-green "#98BC37",
+    :bright-yellow "#FED06E",
+    :bright-orange "#FF8700",
+    :white "#918175",
+    :yellow "#FBB829",
+    :green "#519F50",
+    :cyan "#0AAEB3",
+    :bright-white "#FCE8C3",
+    :xgray4 "#444444",
+    :xgray5 "#4E4E4E",
+    :red "#EF2F27",
+    :blue "#2C78BF",
+    :xgray2 "#303030",
+    :hard-black "#121212",
+    :magenta "#E02C6D",
+    :xgray3 "#3A3A3A",
+    :bright-black "#2D2C29",
+    :black "#1C1B19"} */
 
 body {
   background-color: #EEEEEE;
@@ -29,16 +37,16 @@ h1, h2, h3, h4, h5, h6 {
 .page-wrapper {
   font-size: 1rem;
   font-family: sans-serif;
-  color: #1E2019;
+  color: #1C1B19;
   padding: 0 1rem 1rem 1rem;
 }
 
 a {
-  color: #595E4D;
+  color: #519F50;
 }
 
 a:hover {
-  color: #FF9999;
+  color: #E02C6D;
 }
 
 .page-content {
@@ -57,18 +65,18 @@ a:hover {
   margin-bottom: 1rem;
 }
 
-.page-title a {
-  color: #394032;
+.page-title a, .page-title a:visited {
+  color: #519F50;
   text-decoration: underline;
-}
-
-.page-title a:visited {
-  color: #394032;
 }
 
 .page-subtitle {
   font-size: 2rem;
   margin-top: 0;
+}
+
+.page-main {
+  padding: 0 1rem;
 }
 
 .not-found-title {
@@ -84,12 +92,12 @@ a:hover {
 }
 
 .post-title {
-  margin-bottom: 0;
+  margin-bottom: 0.5rem;
 }
 
 .post-date {
   margin-top: 0;
-  color: #34382B;
+  color: #2D2C29;
   font-style: italic;
 }
 
@@ -102,7 +110,7 @@ a:hover {
 .home-post-date {
   text-align: right;
   font-size: 1rem;
-  color: #34382B;
+  color: #2D2C29;
   font-style: italic;
   white-space: nowrap;
   padding-left: 1rem;
@@ -120,15 +128,16 @@ a:hover {
 
 pre.highlight {
   padding: 0.3rem;
-  background-color: #EEEEEE;
+  background-color: #DFDFDF;
   overflow: auto;
+  border: 1px solid #FF5C8F;
 }
 
 blockquote {
-  border-left: #34382B 0.3rem solid;
+  border-left: #2C78BF 0.3rem solid;
   margin-left: 1rem;
   padding-left: 1rem;
-  color: #595E4D;
+  color: #2D2C29;
 }
 
 /* WP Legacy styles. */
