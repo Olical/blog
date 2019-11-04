@@ -20,6 +20,8 @@ Sending `:repl/quit` or an "end of file" should kick you off of the socket prepl
 
 Sending two forms in one go should result in at least two responses. Evaluating `(foo) (bar)`, for example, shouldn't hide the result of `(foo)`, it should return the result of both top level forms one after the other. Evaluations are _not_ wrapped in an implicit `(do ...)`.
 
+You *need* to allow the use of reader conditionals inside the evaluation (like `#?(:clj 10, :cljs 20)`), make sure you test this! Clojure `1.10` doesn't currently allow them but you can work around it by wrapping the code to be evaluated in an evaluation call that does allow it (Conjure does this). I've fixed this and it should be released with `1.11`.
+
 == Messages
 
 There are four kinds of messages denoted by the `:tag` of the response, it's possible that prepl implementors may add their own but support for them will depend on the tool (shadow-cljs might let you know if the browser was disconnected, for example).
