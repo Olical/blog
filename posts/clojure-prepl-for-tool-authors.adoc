@@ -20,7 +20,7 @@ Sending `:repl/quit` or an "end of file" should kick you off of the socket prepl
 
 Sending two forms in one go should result in at least two responses. Evaluating `(foo) (bar)`, for example, shouldn't hide the result of `(foo)`, it should return the result of both top level forms one after the other. Evaluations are _not_ wrapped in an implicit `(do ...)`.
 
-You *need* to allow the use of reader conditionals inside the evaluation (like `#?(:clj 10, :cljs 20)`), make sure you test this! Clojure `1.10` doesn't currently allow them but you can work around it by wrapping the code to be evaluated in an evaluation call that does allow it (Conjure does this). I've fixed this and it should be released with `1.11`.
+You *need* to allow the use of reader conditionals inside the evaluation (like `+#?(:clj 10, :cljs 20)+`), make sure you test this! Clojure `1.10` doesn't currently allow them but you can work around it by wrapping the code to be evaluated in an evaluation call that does allow it (Conjure does this). I've fixed this and it should be released with `1.11`.
 
 == Messages
 
@@ -31,8 +31,8 @@ If you're building something that connects to a prepl, think about what you coul
 ____
 
  * `:ret` - returned result from an evaluation.
- * `:out` - from `*out*`.
- * `:err` - from `*err*`.
+ * `:out` - from `+*out*+`.
+ * `:err` - from `+*err*+`.
  * `:tap` - data sent through a call to `(tap> ...)`.
 
 Let's look at the messages in turn and I'll highlight some key things to pay attention to.
@@ -76,7 +76,7 @@ ____
 {:tag :ret, :val "nil", :ns "user", :ms 2, :form "(println \"Hello, World!\")"}
 ----
 
- * All data written to `*out*` should appear under `:tag :out`.
+ * All data written to `+*out*+` should appear under `:tag :out`.
  * The actual data is stored as a string under `:val`, just like `:ret` messages.
  * New lines are preserved if the user performed a `println`, for example. Don't trim anything!
  * You may want to flush on every prepl evaluation to ensure that things like `pr` or `print` appear under `:out` as they happen.
@@ -84,7 +84,7 @@ ____
 
 == `:err`
 
-See `:out`, it's the same but for data sent to `*err*`, as you might expect.
+See `:out`, it's the same but for data sent to `+*err*+`, as you might expect.
 
 == `:tap`
 
@@ -104,6 +104,6 @@ See `:out`, it's the same but for data sent to `*err*`, as you might expect.
 
 That's actually all there is to it! Just make sure you're returning strings, not data, in the right places.
 
-Pay special attention to how exceptions work and when you're flushing to `*out*` or `*err*` to avoid surprising `print` behaviour for the client.
+Pay special attention to how exceptions work and when you're flushing to `+*out*+` or `+*err*+` to avoid surprising `print` behaviour for the client.
 
 Please do get in touch if you have questions or thoughts about how to build or use a prepl as a Clojure (or ClojureScript) tool author.
