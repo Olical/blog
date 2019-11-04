@@ -143,6 +143,14 @@ blockquote {
   color: #2D2C29;
 }
 
+code {
+  color: #68A8E4;
+}
+
+code[data-lang] {
+  color: #3A3A3A;
+}
+
 /* WP Legacy styles. */
 
 span.image {
