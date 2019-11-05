@@ -151,6 +151,10 @@ code[data-lang] {
   color: #3A3A3A;
 }
 
+.asciicast {
+  text-align: center;
+}
+
 /* WP Legacy styles. */
 
 span.image {

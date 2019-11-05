@@ -1,0 +1,116 @@
+= Getting started with Conjure in minutes
+Oliver Caldwell
+2019-11-06
+
+https://github.com/Olical/conjure[Conjure] is my attempt at https://clojure.org/[Clojure] and https://clojurescript.org/[ClojureScript] tooling for https://neovim.io/[Neovim] without relying on any existing https://nrepl.org/[nREPL] based dependencies. Instead it relies on the https://oli.me.uk/exploring-repl-tooling-with-prepl/[socket prepl] which is built into all newer versions of the language.
+
+Here's a quick demo of Conjure in action so you know what to expect.
+
+++++
+<script id="asciicast-267614" src="https://asciinema.org/a/267614.js" async></script>
+++++
+
+I'm going to help you get Clojure code evaluating in a matter of minutes, you'll be able to try Conjure for yourself and see what it's all about. All you're going to need are the following.
+
+ * The https://clojure.org/guides/getting_started[Clojure CLI] - I installed it through the Arch Linux package manager, you can probably do something similar.
+ * https://neovim.io/[Neovim]
+ * A hot beverage to enjoy as you follow along.
+
+== Grab plugin manager
+
+I'm assuming you have nothing set up for Neovim right now, let's get started with a plugin manager. Skip ahead if you already have a preferred way to install plugins!
+
+I've used https://github.com/junegunn/vim-plug[vim-plug] for years and I highly recommend it. Setup is really easy, let's start out by fetching the script.
+
+[source,bash]
+----
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+----
+
+Now we need to edit `+~/.config/nvim/init.vim+` to initialise it. I'm going to get you started with https://github.com/liuchengxu/vim-better-default[vim-better-default], as you'd expect, it's a set of great default configuration values.
+
+[source,viml]
+----
+" Specify a directory for plugins.
+call plug#begin(stdpath('data') . '/plugged')
+
+" Specify your required plugins here.
+Plug 'liuchengxu/vim-better-default'
+
+" Initialize plugin system.
+call plug#end()
+----
+
+Now we can open Neovim and execute `+:PlugInstall+`. Have a look around the https://github.com/junegunn/vim-plug[vim-plug] documentation to find more commands you can run for things like updating or pruning of unused plugins.
+
+== Optional (amazing) plugins
+
+Although you can get away with _just_ Conjure, I'd highly recommend you also add at least some of these ones too. They'll greatly improve your experience!
+
+=== https://github.com/easymotion/vim-easymotion[EasyMotion]
+
+_The_ way to move around your buffer with ease, extremely useful when you're jumping from form to form performing evaluations. The only downside is that editing without it in any other editor now feels far too cumbersome.
+
+[source,viml]
+----
+Plug 'easymotion/vim-easymotion'
+----
+
+=== https://github.com/guns/vim-sexp[vim-sexp] and https://github.com/tpope/vim-sexp-mappings-for-regular-people[vim-sexp-mappings-for-regular-people]
+
+These will take you a while to get the hang of but they're so worth it. They allow you to structurally edit any lisp language, this means you can turn `+(+ 10 20) 30+` into `+(+ 10 20 30)+` with a key press all while keeping your cursor in the same place.
+
+The learning curve is steep but optional, you can always edit the text manually. The more you learn the faster and more fluid you'll get, it's well worth investing some time into.
+
+[source,viml]
+----
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+----
+
+=== https://github.com/Shougo/deoplete.nvim[Deoplete] and https://github.com/ncm2/float-preview.nvim[float-preview]
+
+Conjure has completion built in via Neovim's native https://vim.fandom.com/wiki/Omni_completion[Omnicompletion] but I'd recommend you add an asynchronous autocompleter for maximum convinience.
+
+[source,viml]
+----
+Plug 'Shougo/deoplete.nvim'
+
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'}) 
+set completeopt-=preview
+
+
+Plug 'ncm2/float-preview.nvim'
+
+let g:float_preview#docked = 0
+let g:float_preview#max_width = 80
+let g:float_preview#max_height = 40
+----
+
+Conjure comes bundled with the Python code required to hook itself into Deoplete automatically, combine that with float-preview and suddenly you have automatic completions popping up with their documentation alongside it as you type.
+
+=== https://github.com/jiangmiao/auto-pairs[auto-pairs]
+
+Simply a really handy way to keep your pairs of characters in check, not quite essential but nice to have.
+
+[source,viml]
+----
+Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
+----
+
+=== https://github.com/w0rp/ale[ALE]
+
+The Asynchronous Lint Engine, when combined with https://github.com/borkdude/clj-kondo[clj-kondo] and https://github.com/candid82/joker[joker], is an indispensable tool. It's caught countless typos and brain farts for me _before_ I've had a chance to evaluate the code.
+
+[source,viml]
+----
+Plug 'w0rp/ale'
+
+let g:ale_linters = {
+      \ 'clojure': ['clj-kondo', 'joker']
+      \}
+----
+
+== Adding Conjure
