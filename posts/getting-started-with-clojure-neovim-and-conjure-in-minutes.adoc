@@ -44,6 +44,8 @@ call plug#end()
 
 Now we can open Neovim and execute `+:PlugInstall+`. Have a look around the https://github.com/junegunn/vim-plug[vim-plug] documentation to find more commands you can run for things like updating or pruning of unused plugins.
 
+Whenever you make a change to your plugin configuration in `+init.vim+` you'll need to reload the file by restarting Neovim. I think you might be able to `+:source %+` too but restarting Neovim is really quick. Once you've done that you can install or update whatever was specified.
+
 == Optional (amazing) plugins
 
 Although you can get away with _just_ Conjure, I'd highly recommend you also add at least some of these too. They'll greatly improve your experience!
@@ -70,6 +72,10 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 ----
 
 === https://github.com/Shougo/deoplete.nvim[Deoplete] and https://github.com/ncm2/float-preview.nvim[float-preview]
+
+____
+Make sure you have Python `+3.6.1+` or greater installed before attempting to use Deoplete!
+____
 
 Conjure has completion built in via Neovim's native https://vim.fandom.com/wiki/Omni_completion[Omnicompletion] but I'd recommend you add an asynchronous autocompleter for maximum convinience.
 
@@ -117,6 +123,34 @@ Plug 'w0rp/ale'
 let g:ale_linters = {
       \ 'clojure': ['clj-kondo', 'joker']
       \}
+----
+
+== https://github.com/liuchengxu/vim-clap[vim-clap]
+
+If you want to get into Neovim properly you're probably going to want a way to find things in your project, that's where https://github.com/liuchengxu/vim-clap[vim-clap] comes in.
+
+It allows you to hook into various searching tools such https://github.com/BurntSushi/ripgrep[ripgrep] in a pretty floating window. You'll have to spend a little while setting up your mappings to each command but it's well worth the investment. You can find my configuration in https://github.com/Olical/dotfiles/blob/29f47aaaa279769ea82367a4ff4a3c5916d2c082/neovim/.config/nvim/modules/plugins/vim-clap.vim[my dotfiles].
+
+[source,viml]
+----
+Plug 'liuchengxu/vim-clap'
+
+" Configuration from my dotfiles.
+let g:clap_provider_grep_delay = 50
+let g:clap_provider_grep_opts = '-H --no-heading --vimgrep --smart-case --hidden -g "!.git/"'
+
+nnoremap <leader>* :Clap grep ++query=<cword><cr>
+nnoremap <leader>fg :Clap grep<cr>
+nnoremap <leader>ff :Clap files --hidden<cr>
+nnoremap <leader>fb :Clap buffers<cr>
+nnoremap <leader>fw :Clap windows<cr>
+nnoremap <leader>fr :Clap history<cr>
+nnoremap <leader>fh :Clap command_history<cr>
+nnoremap <leader>fj :Clap jumps<cr>
+nnoremap <leader>fl :Clap blines<cr>
+nnoremap <leader>fL :Clap lines<cr>
+nnoremap <leader>ft :Clap filetypes<cr>
+nnoremap <leader>fm :Clap marks<cr>
 ----
 
 == Adding Conjure
@@ -172,6 +206,8 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
 Plug 'jiangmiao/auto-pairs', { 'tag': 'v2.0.0' }
 Plug 'w0rp/ale'
+
+" I skipped vim-clap but feel free to add it!
 
 " Conjure! :D
 Plug 'Olical/conjure', { 'tag': 'v2.0.0', 'do': 'bin/compile' }
