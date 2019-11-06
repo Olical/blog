@@ -1,10 +1,10 @@
-= Getting started with Conjure in minutes
+= Getting started with Clojure, Neovim and Conjure in minutes
 Oliver Caldwell
 2019-11-06
 
 https://github.com/Olical/conjure[Conjure] is my attempt at https://clojure.org/[Clojure] and https://clojurescript.org/[ClojureScript] tooling for https://neovim.io/[Neovim] without relying on any existing https://nrepl.org/[nREPL] based dependencies. Instead it relies on the https://oli.me.uk/exploring-repl-tooling-with-prepl/[socket prepl] which is built into all newer versions of the language.
 
-Here's a quick demo of Conjure in action so you know what to expect.
+Here's a quick demo of Conjure in action for those of you that haven't seen it before.
 
 ++++
 <script id="asciicast-267614" src="https://asciinema.org/a/267614.js" async></script>
