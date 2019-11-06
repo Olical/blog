@@ -1,12 +1,12 @@
 server {
     listen 80 default_server;
     server_name _;
-    return 404;
+    return 200;
 }
 
 server {
     listen ${PORT};
-    server_name oli.me.uk localhost;
+    server_name oli.me.uk;
 
     location / {
         root /app/output;
