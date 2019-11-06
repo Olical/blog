@@ -6,7 +6,7 @@ server {
 
 server {
     listen ${PORT};
-    server_name oli.me.uk;
+    server_name oli.me.uk localhost;
 
     location / {
         root /app/output;
