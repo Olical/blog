@@ -1,0 +1,16 @@
+= Neovim configuration and plugins in Fennel (Lisp)
+Oliver Caldwell
+2019-11-25
+
+== Notes
+
+ * Historically, everything was VimL
+ * Python integration, remote plugins
+ * Lua, it's okay, not much to it
+ * Clojure and Lisp are my favs
+ * Conjure shows my passion, shame there's so much VimL and Lua
+ * Fennel compiles to Lua
+ * Replace dotfiles and Conjure VimL / Lua with it
+ * Aniseed makes this easy
+ * Here's how it works
+ * Here's how my dotfiles are architected
