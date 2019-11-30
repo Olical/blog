@@ -91,7 +91,7 @@ The majority of the plugin is contained in https://github.com/Olical/nvim-local-
 ----
 ;; Iterate over all directories from the root to the cwd.
 ;; For every .lnvim.fnl, compile it to .lvim.lua (if required) and execute it.
-;; If a .lua is foud without a .fnl, delete the .lua to clean up.
+;; If a .lua is found without a .fnl, delete the .lua to clean up.
 (let [cwd (cwd)
       dirs (parents cwd)]
   (table.insert dirs cwd)
@@ -184,15 +184,18 @@ That initial module loads every other module found within https://github.com/Oli
 
 == Interactive buffer evaluation
 
-== Notes
+You may have noticed the `:aniseed/module` key in the return values of the modules I've shown, these have special meaning in Aniseed. If you have https://github.com/Olical/aniseed/tree/b82429053cd69d030b380dd3a2598770112ea258#evaluating-with-mappings[Aniseed's mappings] set up like I do (shown in the linked documentation), you can go into any Fennel file you like and evaluate it with `<localleader>ef`. This means you can tweak and re-evaluate your library as you work on it, just like you would with Clojure and Conjure, you don't need to restart Neovim to try something out!
 
- * Historically, everything was VimL
- * Python integration, remote plugins
- * Lua, it's okay, not much to it
- * Clojure and Lisp are my favs
- * Conjure shows my passion, shame there's so much VimL and Lua
- * Fennel compiles to Lua
- * Replace dotfiles and Conjure VimL / Lua with it
- * Aniseed makes this easy
- * Here's how it works
- * Here's how my dotfiles are architected
+It solves a problem I found with Lua modules where it was easy to require it once, but awkward to change and then require again. This small feature makes interactive development a whole lot easier, something I feel every Lisp needs.
+
+== That's all I've got for now!
+
+This post has been pretty lengthy and dense but I hope it's given you a good idea of what you can do with Neovim, Aniseed and Fennel. Please get in touch via Twitter or Email (linked below) with any thoughts or questions you may have. Sharing of this post and the linked projects around social media is greatly appreciated!
+
+Have a good day!
+
+[source,scheme]
+----
+(local nvim (require :aniseed.nvim))
+(nvim.ex.wq_)
+----
