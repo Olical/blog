@@ -1,6 +1,6 @@
 = Neovim configuration and plugins in Fennel (Lisp)
 Oliver Caldwell
-2019-11-25
+2019-11-30
 
 In the beginning, there was Vim Script (also known as VimL). All Vim configuration, plugins, tweaks and hacks went through that configuration DSL with a sprinkling of flow control. VimL will take you wherever you want to go, albeit in a slightly slow and clunky fashion.
 
