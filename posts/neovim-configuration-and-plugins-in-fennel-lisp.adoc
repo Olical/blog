@@ -61,17 +61,14 @@ If you know me, you'll know that I'm a massive Clojure nerd and can't seem to ed
 ----
 ;; From my dotfiles.
 
-(local core (require :aniseed.core))
 (local nvim (require :aniseed.nvim))
-(local util (require :config.util))
 
-;; Load all config modules in no particular order.
-(->> (util.glob (.. util.config-path "/lua/config/module/*.lua"))
-     (core.run! (fn [path]
-                  (require (string.gsub path ".*/(.-)/(.-)/(.-)%.lua" "%1.%2.%3")))))
+;; Elided for brevity...
 
-;; Some magic from Aniseed to allow easy reloading of modules as you edit them.
-{:aniseed/module :config.init}
+(fn exists? [path]
+  (= (nvim.fn.filereadable path) 1))
+
+;; Elided for brevity...
 ----
 
 The end result is a decent Lisp that drives Neovim directly, no remote plugin overhead and a blisteringly fast JIT runtime to execute it. Once all of the code is compiled ahead of time there's essentially zero overhead when compared to writing the underlying Lua by hand. You have access to a (subjectively or objectively?) superiour syntax you can manipulate with https://github.com/guns/vim-sexp[vim-sexp] (and https://github.com/tpope/vim-sexp-mappings-for-regular-people[vim-sexp-mappings-for-regular-people]) as well as all the macros your heart desires.
@@ -138,6 +135,52 @@ submodules:
 Now users of the plugin can simply depend on our repository and have it load and execute without ever knowing about the Lisp it came from! We get a wonderfully expressive language that runs incredibly fast but the user has no idea about what's going on under the hood.
 
 == Configuration
+
+Another use for Aniseed is to replace your local Neovim configuration with Fennel, I've done just that with my https://github.com/Olical/dotfiles/tree/f1187da605f40908582c7a4356ba5771c23df816/neovim/.config/nvim[dotfiles]. We start with https://github.com/Olical/dotfiles/blob/f1187da605f40908582c7a4356ba5771c23df816/neovim/.config/nvim/init.vim[`init.vim`] which ensures we have Aniseed installed and then requires the bootstrap Lua.
+
+____
+I depend upon `develop` but you should be using the latest released tag for stability. Since I'm the only one changing `develop` I know I'm not going to surprise myself with breaking changes. Hopefully.
+____
+
+[source,viml]
+----
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'Olical/aniseed', { 'branch': 'develop' }
+call plug#end()
+
+lua require("config/bootstrap")
+----
+
+Then we move onto the bootstrap Lua in https://github.com/Olical/dotfiles/blob/f1187da605f40908582c7a4356ba5771c23df816/neovim/.config/nvim/lua/config/bootstrap.lua[`lua/config/bootstrap.lua`], writing this part in VimL would also be fine to be honest.
+
+[source,lua]
+----
+if not(pcall(require, "aniseed.compile")) then
+  vim.api.nvim_command("PlugInstall")
+end
+
+local dir = vim.api.nvim_call_function("stdpath", {"config"})
+require("aniseed.compile").glob("**/*.fnl", dir .. "/fnl", dir .. "/lua")
+require("config")
+----
+
+All it does is perform a `:PlugInstall` if we don't have Aniseed yet and then ask the newly installed Aniseed to compile all of the configuration Fennel to Lua. Once that's done we can simply load the compiled Lua! Let's take a peek inside https://github.com/Olical/dotfiles/blob/f1187da605f40908582c7a4356ba5771c23df816/neovim/.config/nvim/fnl/config/init.fnl[`fnl/config/init.fnl`], the first module to be loaded.
+
+[source,scheme]
+----
+(local core (require :aniseed.core))
+(local nvim (require :aniseed.nvim))
+(local util (require :config.util))
+
+;; Load all config modules in no particular order.
+(->> (util.glob (.. util.config-path "/lua/config/module/*.lua"))
+     (core.run! (fn [path]
+                  (require (string.gsub path ".*/(.-)/(.-)/(.-)%.lua" "%1.%2.%3")))))
+
+{:aniseed/module :config.init}
+----
+
+That initial module loads every other module found within https://github.com/Olical/dotfiles/tree/f1187da605f40908582c7a4356ba5771c23df816/neovim/.config/nvim/fnl/config/module[`fnl/config/module`] automatically, allowing me to easily grow my configuration with well named Fennel files, keeping everything easy to find and understand. Have a browse through those modules to see what I do with plugin installation and configuration.
 
 == Interactive buffer evaluation
 
