@@ -4,13 +4,30 @@ Oliver Caldwell
 
 In the beginning, there was Vim Script (also known as VimL). All Vim configuration, plugins, tweaks and hacks went through that configuration DSL with a sprinkling of flow control. VimL will take you wherever you want to go, albeit in a slightly slow and clunky fashion.
 
+[source,viml]
+----
+let g:my_thing = "Hello, World!"
+----
+
 We're going to explore the present and potential future in this post together.
 
 == Going beyond Vim Script
 
 Eventually people started writing some plugins in Ruby or Python, a lot of great tools came out of that but not so many configuration styles (by configuration, I mean what you'd find in your dotfiles).
 
-Neovim introduced us to remote plugins that communicate with the editor process over a MessagePack RPC channel, this means we can write plugins in our beloved languages for our beloved text editor. This is what my long term project, https://github.com/Olical/conjure[Conjure], is built upon! It's actually written mostly in Clojure which is almost entirely hidden away from you.
+Neovim introduced us to remote plugins that communicate with the editor process over a https://neovim.io/doc/user/api.html#msgpack-rpc[MessagePack RPC] channel, this means we can write plugins in our beloved languages for our beloved text editor. This is what my long term project, https://github.com/Olical/conjure[Conjure], is built upon! It's actually written mostly in https://clojure.org/[Clojure] which is almost entirely hidden away from you.
+
+[source,clojure]
+----
+;; From Conjure.
+
+(defn read-buffer
+  "Read the entire current buffer into a string."
+  []
+  (-> (api/get-current-buf) (api/call)
+      (api/buf-get-lines {:start 0, :end -1}) (api/call)
+      (util/join-lines)))
+----
 
 This is great and all but you'll find that the overhead of communicating back and forth with Neovim begins to add up, especially for things that run as a user types. I found myself writing some of the more chatty functions that needed to call a lot of API functions in VimL then calling out to that from Clojure. This helped speed things up where bulk RPC calls didn't quite cut it.
 
@@ -20,17 +37,52 @@ Moving things to VimL to optimise MessagePack RPC overhead isn't a great long te
 
 Neovim has an integrated Lua interpreter, https://luajit.org/[LuaJIT] to be precise. It's an extremely fast runtime that has access to all the tools remote plugins have at their disposal, minus the requirement for MessagePack RPC encoding overhead. This means you get a much simpler language than VimL that's many times faster without the encoding burden.
 
+[source,lua]
+----
+-- Also from Conjure.
+
+-- Close the log window if it's open in the current tabpage.
+function conjure.close_log(log_buf_name)
+  local match = find_log(log_buf_name)
+  if match.win then
+    local win_number = vim.api.nvim_win_get_number(match.win)
+    vim.api.nvim_command(win_number .. "close!")
+  end
+end
+----
+
 The only downside to Lua is that it's minimal (in syntax and built in functions) almost to a fault, you end up having to use Neovim API calls as your standard library, something that gets pretty tedious to type out eventually. I, personally, struggled to move some logic from Conjure's Clojure into pre-defined Lua functions simply for the fact that I found Lua a bit awkward to type and work with.
 
 == Best of both worlds?
 
-If you know me, you'll know that I'm a massive Clojure nerd and can't seem to edit anything unless it's got s-expressions. That's why I've written https://github.com/Olical/aniseed[Aniseed], a convenient way to compile https://github.com/bakpakin/Fennel[Fennel] (a Lisp) into Lua ahead of time or on the fly while you're inside Neovim. Not only does it help you compile things but it also acts as a small Clojure like standard library to help you build Neovim things with Fennel.
+If you know me, you'll know that I'm a massive Clojure nerd and can't seem to edit anything unless it's got https://en.wikipedia.org/wiki/S-expression[s-expressions]. That's why I've written https://github.com/Olical/aniseed[Aniseed], a convenient way to compile https://github.com/bakpakin/Fennel[Fennel] (a https://en.wikipedia.org/wiki/Lisp_(programming_language)[Lisp]) into Lua ahead of time or on the fly while you're inside Neovim. Not only does it help you compile things but it also acts as a small Clojure like standard library to help you build Neovim things with Fennel.
+
+[source,scheme]
+----
+;; From my dotfiles.
+
+(local core (require :aniseed.core))
+(local nvim (require :aniseed.nvim))
+(local util (require :config.util))
+
+;; Load all config modules in no particular order.
+(->> (util.glob (.. util.config-path "/lua/config/module/*.lua"))
+     (core.run! (fn [path]
+                  (require (string.gsub path ".*/(.-)/(.-)/(.-)%.lua" "%1.%2.%3")))))
+
+;; Some magic from Aniseed to allow easy reloading of modules as you edit them.
+{:aniseed/module :config.init}
+----
 
 The end result is a decent Lisp that drives Neovim directly, no remote plugin overhead and a blisteringly fast JIT runtime to execute it. Once all of the code is compiled ahead of time there's essentially zero overhead when compared to writing the underlying Lua by hand. You have access to a (subjectively or objectively?) superiour syntax you can manipulate with https://github.com/guns/vim-sexp[vim-sexp] (and https://github.com/tpope/vim-sexp-mappings-for-regular-people[vim-sexp-mappings-for-regular-people]) as well as all the macros your heart desires.
 
-Finding it tedious to write out all of those clever mappings for your plugin but don't want to incur more function call overhead on startup? Fennel macros to the rescue!
-
 == What does this mean for you?
+
+You'll be able to replace _almost_ all of the VimL in your Neovim configuration or plugin with a Lisp that runs at Lua speeds, no more Googling around for how to compare strings in a case sensitive way regardless of editor configuration (`==#` if I'm not mistaken?).
+
+You can use Fennel macros to remove duplicated boilerplate code without sacrificing performance. This can be extremely useful for plugin authors who want to write clever and lengthy mappings in a concise syntax without a chain of extra function calls on startup.
+
+For some of you, replacing several non-Lisp languages with a Lisp will be enough to convince you to do this, I'm definitely in that camp.
 
 == Plugins
 
