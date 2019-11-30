@@ -86,6 +86,57 @@ For some of you, replacing several non-Lisp languages with a Lisp will be enough
 
 == Plugins
 
+I wrote https://github.com/Olical/nvim-local-fennel[nvim-local-fennel] as an example plugin that happens to be pretty damn useful in it's own right. It allows you to write Fennel code in `.lnvim.fnl` files all the way up your directory tree (think machine local and project local configuration) and have them executed on Neovim startup automatically. The Fennel is compiled to Lua as and when the Fennel source changes, this is all really easy thanks to Aniseed.
+
+The majority of the plugin is contained in https://github.com/Olical/nvim-local-fennel/blob/249d139d64abaea7c0137213dd82fd22444a1b40/fnl/nvim-local-fennel/init.fnl[`fnl/nvim-local-fennel/init.fnl`], the key chunk of code can be found around line 29 (if it hasn't changed since then).
+
+[source,scheme]
+----
+;; Iterate over all directories from the root to the cwd.
+;; For every .lnvim.fnl, compile it to .lvim.lua (if required) and execute it.
+;; If a .lua is foud without a .fnl, delete the .lua to clean up.
+(let [cwd (cwd)
+      dirs (parents cwd)]
+  (table.insert dirs cwd)
+  (core.run!
+    (fn [dir]
+      (let [src (.. dir "/.lnvim.fnl")
+            dest (.. dir "/.lnvim.lua")]
+        (if (file-readable? src)
+          (do
+            (compile.file src dest)
+            (nvim.ex.luafile dest))
+          (when (file-readable? dest)
+            (nvim.fn.delete dest)))))
+    dirs))
+----
+
+There's a _tiny_ bit of Vim Script in https://github.com/Olical/nvim-local-fennel/blob/249d139d64abaea7c0137213dd82fd22444a1b40/plugin/nvim-local-fennel.vim[`plugin/nvim-local-fennel.vim`] that simply loads the compiled Lua automatically as the plugin is loaded. You could skip this if your plugin is an optional library users interact with through requiring the Lua modules.
+
+[source,viml]
+----
+lua require("nvim-local-fennel")
+----
+
+And the final piece of the puzzle is a small https://github.com/Olical/nvim-local-fennel/blob/6231efe066db8b5d53e2053309857c2ce18ecd79/Makefile[`Makefile`] that allows you to `make compile` the Fennel into Lua (using Aniseed) ahead of time for distribution. I commit the Fennel and Lua code into the repository to save users of my plugin from having to compile any Fennel to use the plugin itself.
+
+[source,make]
+----
+.PHONY: compile submodules
+
+compile:
+	rm -rf lua
+	nvim -c "set rtp+=submodules/aniseed" \
+		-c "lua require('aniseed.compile').glob('**/*.fnl', 'fnl', 'lua')" \
+		+q
+	ln -s ../../submodules/aniseed/lua/aniseed lua/nvim-local-fennel/aniseed
+
+submodules:
+	git submodule update --init --recursive
+----
+
+Now users of the plugin can simply depend on our repository and have it load and execute without ever knowing about the Lisp it came from! We get a wonderfully expressive language that runs incredibly fast but the user has no idea about what's going on under the hood.
+
 == Configuration
 
 == Interactive buffer evaluation
