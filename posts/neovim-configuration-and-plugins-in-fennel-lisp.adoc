@@ -2,19 +2,33 @@
 Oliver Caldwell
 2019-11-25
 
-In the beginning, there was Vim Script (also known as VimL). All Vim configuration, plugins, tweaks and hacks go through that configuration DSL with a sprinkling of flow control. VimL will take you wherever you want to go, albeit in a slightly slow and clunky fashion.
+In the beginning, there was Vim Script (also known as VimL). All Vim configuration, plugins, tweaks and hacks went through that configuration DSL with a sprinkling of flow control. VimL will take you wherever you want to go, albeit in a slightly slow and clunky fashion.
 
-Eventually people started writing some plugins in Ruby or Python, a lot of great plugins came of that but not so many configuration styles (by configuration, I means your dotfiles).
+We're going to explore the present and potential future in this post together.
 
-Neovim introduced us to remote plugins that communicate with the editor process over a MessagePack RPC channel, this means we can write plugins in our beloved languages for our beloved text editor. This is what my labour of love, https://github.com/Olical/conjure[Conjure], is built upon! It's actually written mostly in Clojure which is hidden away from you for the most part.
+== Going beyond Vim Script
 
-Another benefit of using Neovim is having an integrated Lua interpreter, https://luajit.org/[LuaJIT] to be precise. It's an extremely fast interpreter that has access to all of the tools remote plugins have at their disposal, minus the requirement for MessagePack RPC encoding overhead. This means you get a much simpler language than VimL that's many times faster without the encoding burden.
+Eventually people started writing some plugins in Ruby or Python, a lot of great tools came out of that but not so many configuration styles (by configuration, I mean what you'd find in your dotfiles).
 
-The only downside to Lua is that it's minimal (in syntax and built in functions) almost to a fault, you end up having to use Neovim API calls as your standard library, something that gets pretty tedious to type out eventually.
+Neovim introduced us to remote plugins that communicate with the editor process over a MessagePack RPC channel, this means we can write plugins in our beloved languages for our beloved text editor. This is what my long term project, https://github.com/Olical/conjure[Conjure], is built upon! It's actually written mostly in Clojure which is almost entirely hidden away from you.
 
-If you know me, you'll know that I'm a massive Clojure nerd and can't seem to edit anything anymore unless it's got s-expressions. That's why I've written https://github.com/Olical/aniseed[Aniseed], a convenient way to compile https://github.com/bakpakin/Fennel[Fennel] (a Lisp) into Lua ahead of time or on the fly while you're inside Neovim.
+This is great and all but you'll find that the overhead of communicating back and forth with Neovim begins to add up, especially for things that run as a user types. I found myself writing some of the more chatty functions that needed to call a lot of API functions in VimL then calling out to that from Clojure. This helped speed things up where bulk RPC calls didn't quite cut it.
 
-The end result is a decent Lisp that directly drives Neovim, no remote plugin overhead and a blisteringly fast JIT runtime to execute it. Once all of the code is compiled ahead of time there's essentially zero overhead when compared to writing the underlying Lua by hand.
+Moving things to VimL to optimise MessagePack RPC overhead isn't a great long term solution though. After all, we're writing remote plugins so we _don't_ have to write complex things in VimL!
+
+== Lua to the rescue!(?)
+
+Neovim has an integrated Lua interpreter, https://luajit.org/[LuaJIT] to be precise. It's an extremely fast runtime that has access to all the tools remote plugins have at their disposal, minus the requirement for MessagePack RPC encoding overhead. This means you get a much simpler language than VimL that's many times faster without the encoding burden.
+
+The only downside to Lua is that it's minimal (in syntax and built in functions) almost to a fault, you end up having to use Neovim API calls as your standard library, something that gets pretty tedious to type out eventually. I, personally, struggled to move some logic from Conjure's Clojure into pre-defined Lua functions simply for the fact that I found Lua a bit awkward to type and work with.
+
+== Best of both worlds?
+
+If you know me, you'll know that I'm a massive Clojure nerd and can't seem to edit anything unless it's got s-expressions. That's why I've written https://github.com/Olical/aniseed[Aniseed], a convenient way to compile https://github.com/bakpakin/Fennel[Fennel] (a Lisp) into Lua ahead of time or on the fly while you're inside Neovim. Not only does it help you compile things but it also acts as a small Clojure like standard library to help you build Neovim things with Fennel.
+
+The end result is a decent Lisp that drives Neovim directly, no remote plugin overhead and a blisteringly fast JIT runtime to execute it. Once all of the code is compiled ahead of time there's essentially zero overhead when compared to writing the underlying Lua by hand. You have access to a (subjectively or objectively?) superiour syntax you can manipulate with https://github.com/guns/vim-sexp[vim-sexp] (and https://github.com/tpope/vim-sexp-mappings-for-regular-people[vim-sexp-mappings-for-regular-people]) as well as all the macros your heart desires.
+
+Finding it tedious to write out all of those clever mappings for your plugin but don't want to incur more function call overhead on startup? Fennel macros to the rescue!
 
 == What does this mean for you?
 
