@@ -158,7 +158,7 @@ Create a file called `deps.edn` at the top of your project and add the following
  {:test
   {:extra-paths ["test"]
    :extra-deps
-   {com.cognitect/test-runner {:git/url "git@github.com:cognitect-labs/test-runner"
+   {com.cognitect/test-runner {:git/url "https://github.com/cognitect-labs/test-runner"
                                :sha "5f2b5c2efb444df76fb5252102b33f542ebf7f58"}}
    :main-opts ["-m" "cognitect.test-runner"]}}}
 ----
@@ -208,7 +208,7 @@ Go ahead and add this new alias to the `:aliases` section of your `deps.edn` fil
 :uberjar
 {:extra-deps
  {pack/pack.alpha
-  {:git/url "git@github.com:juxt/pack.alpha.git"
+  {:git/url "https://github.com/juxt/pack.alpha.git"
    :sha     "e6d0691c5f58135e1ef6fb1c9dda563611d36205"}}
  :main-opts ["-m" "mach.pack.alpha.capsule" "deps.edn" "dist/hey.jar"]}
 ----
