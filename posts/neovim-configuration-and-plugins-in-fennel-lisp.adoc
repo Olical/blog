@@ -2,6 +2,10 @@
 Oliver Caldwell
 2019-11-30
 
+____
+A lot of this has been made irrelevant or far easier in Aniseed v3.0.0+. There's a bunch of macros and helper scripts that remove a lot of the boilerplate, check out the documentation! The sentiment of this post is still accurate, it's just easier to implement now.
+____
+
 In the beginning, there was Vim Script (also known as VimL). All Vim configuration, plugins, tweaks and hacks went through that configuration DSL with a sprinkling of flow control. VimL will take you wherever you want to go, albeit in a slightly slow and clunky fashion.
 
 [source,viml]
