@@ -28,7 +28,7 @@ Well said, https://twitter.com/krisajenkins[Kris]. This is more lipstick. I hope
 
 Every time someone discusses laziness they create an example using the Fibonacci sequence, this is no exception. I’m going to port this little Clojure implementation from http://en.wikibooks.org/wiki/Clojure_Programming/Examples/Lazy_Fibonacci[a wiki] to lazy-array.
 
-[source]
+[source,javascript]
 ----
 (defn fib [a b] (lazy-seq (cons a (fib b (+ a b)))))
 
@@ -40,7 +40,7 @@ Every time someone discusses laziness they create an example using the Fibonacci
 
 The Clojure implementation is very elegant, fitting for such a lovely language. When a lazy sequence is printed to the command line in Clojure it is automatically resolved, so they didn’t have to use _doall_, in the following JavaScript example I will use my equivalent to Clojure’s _doall_, _all_, just to illustrate how it would actually be expanded.
 
-[source]
+[source,javascript]
 ----
 'use strict';
 
@@ -104,7 +104,7 @@ I don’t know about you, but I don’t get to write numerical sequences for a l
 
 I think it’s cool that I’m heading towards this same realm of reactivity pretty much by accident, it’s the natural progression once you’ve got the core functions down I feel. I don’t know how I could use lazy arrays to replace something such as bacon.js just yet, but we can still use laziness for more practical problems. Suppose we were building a calendar, we could model every day _ever_ as part of an infinite lazy sequence. Then we can run that through a lazy map to convert those raw _new Date()_ instances into pretty strings. Here’s another test file I added to the repository to illustrate this.
 
-[source]
+[source,javascript]
 ----
 'use strict';
 
