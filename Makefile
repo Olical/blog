@@ -15,7 +15,7 @@ test:
 	clojure -A:test
 
 serve:
-	python -m http.server -d output
+	python3 -m http.server -d output
 
 watch:
 	find templates src posts -type f | entr bash -c "echo \"(require 'blog.render) (blog.render/render!) :repl/quit\" | netcat localhost $(shell cat .prepl-port)"
