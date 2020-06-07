@@ -53,9 +53,79 @@ curl -fL https://raw.githubusercontent.com/Olical/conjure/master/scripts/school.
 
 == Fixing an issue through a conversation
 
-Let's use Conjure and conversational software development to fix an issue with this simple Clojure program.
+Let's use Conjure and conversational software development to fix an issue with this simple Clojure https://en.wikipedia.org/wiki/Fizz_buzz[Fizz Buzz] program. I've called the repository https://github.com/Olical/fizzbugged[fizzbugged] since it's slightly broken by design.
 
-TODO
+[source,clojure]
+----
+(ns fizzbugged.main
+  (:require [clojure.string :as str]))
+
+(defn n->str [n]
+  (let [by-5? (zero? (mod n 3))
+        by-3? (zero? (mod n 5))]
+    (cond
+      (and by-3? by-3?) "Fizz Buzz"
+      by-3? "Fizz"
+      by-5? "Buzz"
+      :else (str n))))
+
+(defn -main []
+  (->> (range 1 101)
+       (map n->str)
+       (str/join ", ")
+       (println)))
+----
+
+Because this is a contrived example to demonstrate a development style (not _hard_ problems) you can probably already spot the issues with this program. It's almost correct, but not quite, let's get a REPL up and running so we can connect to it with Conjure and evaluate some code.
+
+[source,bash]
+----
+$ clojure -m nrepl.cmdline --middleware '["cider.nrepl/cider-middleware"]'
+nREPL server started on port 40285 on host localhost - nrepl://localhost:40285
+----
+
+Open Neovim with Conjure installed and it'll connect automatically.
+
+image:/assets/images/conversational-software-development/init.png[Conjure's connection output]
+
+Now I'll evaluate the contents of `-main` by placing my cursor inside the `+->>+` form and pressing `,ee` (the comma prefix will depend on your `maplocalleader` setting and Conjure configuration). The result will appear in the HUD (small window in the top right) but I'll open the log up in a split so we can see more of it with `,ls`.
+
+image:/assets/images/conversational-software-development/first-eval.png[After the first eval and opening the log window]
+
+Here's the expected and actual output of our program so far.
+
+[source,bash]
+----
+# Expected
+1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, Fizz Buzz
+
+# Actual
+1, 2, Buzz, 4, Fizz Buzz, Buzz, 7, 8, Buzz, Fizz Buzz, 11, Buzz, 13, 14, Fizz Buzz
+----
+
+So the "Fizz Buzz" combination (which should only appear for multiples of 15) is happening at odd places and it looks like "Fizz" and "Buzz" are inverted the rest of the time.
+
+Let's add a comment to the buffer with some test forms to check some of the specific return values of `+n->str+`.
+
+image:/assets/images/conversational-software-development/confirm-bugs.png[Confirming bugs through evals in a comment]
+
+I evaluated each form inside the comment with `,ee`, we can see the results in the log buffer (which you can edit and interact with, by the way). Clearly my suspicions were correct, "Fizz" and "Buzz" are flipped and "Fizz Buzz" is applying to way more than multiples of 15.
+
+I'm going to flip the `+by-5?+` and `+by-3?+` values around in the `let` binding, evaluate the function with `,er` (evaluates the top level or "root" form under the cursor) and then run my little ad-hoc test suite again.
+
+image:/assets/images/conversational-software-development/flip-fix.png[Flipping let bindings around to address one bug]
+
+And now I notice that the weird behaviour of "Fizz Buzz" occouring on things other than multiples of 15 is because I have `+(and by-3? by-3?)+` when one of them should be `+by-5?+`.
+
+I'll correct that, re-evaluate `+n->str+` again and then execute the body of `-main` one last time.
+
+image:/assets/images/conversational-software-development/fixed.png[Correct result and final fix]
+
+That looks good to me! Bear in mind that this is an extremely simple example so you might be thinking "I'd just run my program again after I made a change", which is perfectly acceptable in this instance.
+
+Having a conversation with your program really shines when you're talking directly with your staging server or poking at the state of intermediate steps in a complex pipeline that takes 10 minutes to run end to end.
+
+While connected you can run each step individually, caching the results in vars, which allows you to run individual parts of the program on demand without having to change the code. When you go up against harder and more complex problems you'll be thankful for having this tool close at hand.
 
 == Beyond Conjure
 

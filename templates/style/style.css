@@ -104,6 +104,10 @@ a:hover {
   font-style: italic;
 }
 
+.post-content img {
+  max-width: 100%;
+}
+
 .home-post {
   display: flex;
   justify-content: space-between;
