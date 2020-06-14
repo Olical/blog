@@ -2,12 +2,14 @@
 Oliver Caldwell
 2019-11-06
 
-https://github.com/Olical/conjure[Conjure] is my attempt at https://clojure.org/[Clojure] and https://clojurescript.org/[ClojureScript] tooling for https://neovim.io/[Neovim] without relying on any existing https://nrepl.org/[nREPL] based dependencies. Instead it relies on the https://oli.me.uk/exploring-repl-tooling-with-prepl/[socket prepl] which is built into all newer versions of the language.
+____
+14-06-2020: Updated the post to reflect the current state of Conjure.
+____
 
-Here's a quick demo of Conjure in action for those of you that haven't seen it before.
+https://github.com/Olical/conjure[Conjure] is my attempt at https://clojure.org/[Clojure] and https://clojurescript.org/[ClojureScript] tooling for https://neovim.io/[Neovim]. Here's a quick demo of Conjure in action for those of you that haven't seen it before.
 
 ++++
-<script id="asciicast-267614" src="https://asciinema.org/a/267614.js" async></script>
+<script id="asciicast-325517" src="https://asciinema.org/a/325517.js" async></script>
 ++++
 
 I'm going to help you get Clojure code evaluating in a matter of minutes, you'll be able to try Conjure for yourself and see what it's all about. All you're going to need are the following.
@@ -97,7 +99,7 @@ let g:float_preview#max_height = 40
 Conjure comes bundled with the Python code required to hook itself into Deoplete automatically, combine that with float-preview and suddenly you have automatic completions popping up with their documentation alongside it as you type.
 
 ____
-If Deoplete isn't your thing you might want to try https://github.com/neoclide/coc.nvim[Conquer of Completion] (Coc for short!). https://github.com/jlesquembre/coc-conjure[coc-conjure] will provide Conjure support, I think Coc works with language servers out of the box too, it's definitely worth considering.
+If Deoplete isn't your thing you might want to try https://github.com/neoclide/coc.nvim[Conquer of Completion] (CoC for short!). https://github.com/jlesquembre/coc-conjure[coc-conjure] will provide Conjure support, I think Coc works with language servers out of the box too, it's definitely worth considering.
 
 I've just always been a Deoplete fan and don't find myself using language servers. The plugins being JavaScript dependencies always felt a little odd to me too although that's a minor silly point.
 ____
@@ -155,7 +157,7 @@ nnoremap <leader>fm :Clap marks<cr>
 
 == Adding Conjure
 
-Installing the plugin is the same as any other apart from one minor detail: We have to specify a "compile" script that gets executed upon update to ensure Conjure starts quickly. Luckily, this is easy to do with vim-plug!
+Installing the plugin is the same as any other.
 
 ____
 I'm specifying the latest tagged version at the time of writing this post, have a look at the https://github.com/Olical/conjure[Conjure] repository to find the latest version and decide if you would like to use that instead.
@@ -165,30 +167,48 @@ ____
 
 [source,viml]
 ----
-Plug 'Olical/conjure', { 'tag': 'v2.0.0', 'do': 'bin/compile' }
+Plug 'Olical/conjure', { 'tag': 'v3.4.0' }
 ----
-
-We've essentially asked vim-plug to install `+v2.0.0+` and then execute `+bin/compile+` whenever changes occur (it won't re-compile if the code hasn't changed, don't worry).
 
 If you haven't already, be sure to execute `+:PlugInstall+` within Neovim to ensure all of your plugins are installed and set up correctly.
 
+If you'd prefer to give Conjure a go without changing your config you can launch `:ConjureSchool` through this script that will temporarily download the plugin for you. You can then learn the UX of Conjure through evaluating some https://github.com/bakpakin/Fennel[Fennel] without the install step.
+
+[source,bash]
+----
+
+curl -fL https://raw.githubusercontent.com/Olical/conjure/master/scripts/school.sh | bash
+----
+
+If you have the plugin installed you can run `:ConjureSchool` to get the same tutorial experience.
+
+____
+Beware! `vim-sexp` isn't configured to work in Fennel buffers by default so it won't work in the school. You need to add `fennel` to `g:sexp_filetypes` to use it during the school.
+____
+
 == Using Conjure to evaluate Clojure
 
-Conjure is actually written in Clojure which means it starts a small Clojure instance when you open a Clojure file. The cool thing about this is that Conjure will automatically connect to this JVM when you haven't configured any projects to connect to, this means we can already open any Clojure file and start evaluating things!
+Start an nREPL server (with CIDER middleware) in a terminal.
 
-Try it for yourself, open up a new Clojure file with `+nvim foo.clj+`, write some Clojure (such as `+(+ 10 20)+`) and evaluate it with `+<localleader>ee+`. By default your `+<localleader>+` will be set to the `+\+` key, I set mine to the `+,+` key but this is entirely up to you.
+[source,bash]
+----
+clojure -Sdeps '{:deps {nrepl {:mvn/version "0.7.0"} cider/cider-nrepl {:mvn/version "0.25.0"}}}' -m nrepl.cmdline --middleware '["cider.nrepl/cider-middleware"]'
+----
 
-If everything's set up correctly you'll hopefully see something like this.
+Now open any Clojure file with Neovim and start to edit and eval as you were taught in `:ConjureSchool`. You can consult `:h conjure` and `:h conjure-client-clojure-nrepl` for more information, configuration and mappings.
 
-____
-Bear in mind I've added all of the optional plugins I mentioned previously to get things like autocompletion working.
-____
+[source,bash]
+----
+nvim foo.clj
 
-++++
-<script id="asciicast-XAjevBlcTLnlMlJ9QvCK7IgHe" src="https://asciinema.org/a/XAjevBlcTLnlMlJ9QvCK7IgHe.js" async></script>
-++++
+# Edit and evaluate away!
+----
 
-My full `+~/.config/nvim/init.vim+` looks like this.
+That's all there is to it! If you're interested, you can also use Conjure to evaluate https://github.com/Olical/conjure/wiki/Quick-start:-Fennel-(Aniseed)[Fennel] or https://github.com/Olical/conjure/wiki/Quick-start:-Janet-(netrepl)[Janet]. There's even talk of a https://github.com/Olical/conjure/issues/97[Common Lisp client]!
+
+== Configuration round up
+
+Your full `+~/.config/nvim/init.vim+` may look a little something like this.
 
 [source,viml]
 ----
@@ -230,30 +250,5 @@ let g:ale_linters = {
 ----
 
 There's not much to it but we've already got a fully Clojure integrated editor! Head over to the https://github.com/Olical/conjure[Conjure] repo and https://github.com/Olical/conjure/wiki[wiki] to find out more about configuration, mappings and features.
-
-== Connecting to a real project
-
-This "self prepl" is very handy for trying things out quickly in any directory as well as following along with books and tutorials but at some point you're probably going to want your own `+deps.edn+` (or `+project.clj+`) file in your own project.
-
-There's already a lot of resources around the internet to help you set up your projects. https://oli.me.uk/clojure-projects-from-scratch/[Clojure projects from scratch] will help you structure your repository and `+deps.edn+` file, for example. Some of the versions may be a little out of date but the content should still be completely valid.
-
-Once you have a project you'll want to start your own socket prepl instead of relying on Conjure's internal one. You can do that through some simple JVM args, a small amount of Clojure or with my own tool, https://github.com/Olical/propel[Propel]. You can read about starting prepls without Propel in the https://oli.me.uk/clojure-socket-prepl-cookbook/[Clojure socket prepl cookbook] or with Propel in https://oli.me.uk/repling-into-projects-with-prepl-and-propel/[REPLing into projects with prepl and Propel].
-
-Once your socket prepl is up and running you can configure Conjure to connect to it automatically by writing your own `+.conjure.edn+` file.
-
-[source,clojure]
-----
-;; This will connect to a prepl on port 5656 when you open a Clojure file.
-;; It'll also connect to a ClojureScript prepl on 8899 when you open a ClojureScript file!
-{:conns {:dev {:port 5656}
-         :ui {:port 8899, :lang :cljs}}}
-----
-
-You can also configure Conjure to connect to the port specified in `+.prepl-port+` (when it exists) automatically. Propel will write this file for you when you provide the `+-w+` argument. I specify this in my global `+~/.config/conjure/conjure.edn+` file so Conjure will connect to any project that spits out a `+.prepl-port+` file automatically.
-
-[source,clojure]
-----
-{:conns {:local {:port #slurp-edn ".prepl-port"}}}
-----
 
 I hope this post as well as the others I've linked to are enough to get you started and hooked on Conjure. Please do get in touch with any questions, thoughts or feelings on the project. You can find me on twitter (link in the footer) as well as `+#conjure+` in the http://clojurians.net/[Clojurians Slack].
