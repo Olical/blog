@@ -155,6 +155,8 @@ nnoremap <leader>ft :Clap filetypes<cr>
 nnoremap <leader>fm :Clap marks<cr>
 ----
 
+Update: I'm actually using https://github.com/junegunn/fzf.vim[fzf.vim] now and loving it so far! Clap is still great, it's down to personal preference.
+
 == Adding Conjure
 
 Installing the plugin is the same as any other.
@@ -167,7 +169,7 @@ ____
 
 [source,viml]
 ----
-Plug 'Olical/conjure', { 'tag': 'v3.4.0' }
+Plug 'Olical/conjure', { 'tag': 'v4.3.1' }
 ----
 
 If you haven't already, be sure to execute `+:PlugInstall+` within Neovim to ensure all of your plugins are installed and set up correctly.
@@ -176,8 +178,7 @@ If you'd prefer to give Conjure a go without changing your config you can launch
 
 [source,bash]
 ----
-
-curl -fL https://raw.githubusercontent.com/Olical/conjure/master/scripts/school.sh | bash
+curl -fL conjure.fun/school | sh
 ----
 
 If you have the plugin installed you can run `:ConjureSchool` to get the same tutorial experience.
@@ -230,7 +231,7 @@ Plug 'w0rp/ale'
 " I skipped vim-clap but feel free to add it!
 
 " Conjure! :D
-Plug 'Olical/conjure', { 'tag': 'v3.4.0' }
+Plug 'Olical/conjure', { 'tag': 'v4.3.1' }
 
 " Initialize plugin system.
 call plug#end()
