@@ -48,7 +48,7 @@ I won't be teaching you how to use Conjure specifically here, but you can learn 
 
 [source,bash]
 ----
-curl -fL https://raw.githubusercontent.com/Olical/conjure/master/scripts/school.sh | bash
+curl -fL conjure.fun/school | sh
 ----
 
 == Fixing an issue through a conversation
