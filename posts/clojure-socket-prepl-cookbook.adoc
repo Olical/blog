@@ -3,7 +3,7 @@ Oliver Caldwell
 2019-03-22
 
 ____
-This post has been translated into http://softdroid.net/povarennaya-kniga-clojure-socket-prepl[Russian] by Vlad at http://softdroid.net/[Softdroid].
+This post has been translated into https://web.archive.org/web/20201028075024/http://softdroid.net/povarennaya-kniga-clojure-socket-prepl[Russian] by Vlad at https://web.archive.org/web/20201024055921/https://softdroid.net/[Softdroid].
 ____
 
 ____
