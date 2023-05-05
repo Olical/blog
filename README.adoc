@@ -19,7 +19,7 @@ It's a static site rendered from http://asciidoc.org/[AsciiDoc], feel free to co
 
 == Hosting
 
-This blog runs on https://m.do.co/c/e643aa564b21[DigitalOcean] (referral link!) via http://dokku.viewdocs.io/dokku/[Dokku].
+This blog runs on https://fly.io/[fly.io] (referral link!)
 
 The container ends up being just the static rendered HTML served by https://www.nginx.com/[nginx] hosted in Dokku. The `server` directory contains the nginx configuration template, the `$PORT` that Dokku selects is added in at startup.
 
