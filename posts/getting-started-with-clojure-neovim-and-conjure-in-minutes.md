@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Getting started with Clojure, Neovim and Conjure in minutes
 
 > 14-06-2020: Updated the post to reflect the current state of Conjure.

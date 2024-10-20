@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # My thoughts on React, Flux and Reflux
 
 I could have used “My reaction to React, Flux and Reflux” in this title, but I thought it’d seem unprofessional, so I moved it down to the first point of this post. Because my blog is not an incredibly professional place.

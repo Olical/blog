@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # The Collatz conjecture, visualised in Clojure
 
 Before I begin, watch [the video](https://www.youtube.com/watch?v=LqKpkdRRLZw) that prompted me to do this in the first place.

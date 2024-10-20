@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Some thoughts on Io
 
 I’m talking about [the language](http://iolanguage.org/) not input/output. This whole Io != I/O thing made Googling around for documentation and examples a whole lot harder too. This was the second language from [the book](https://pragprog.com/book/btlang/seven-languages-in-seven-weeks) which, on the whole, was a pleasant experience. My source code for the exercises can be found in [my languages repository](https://github.com/Wolfy87/langs).

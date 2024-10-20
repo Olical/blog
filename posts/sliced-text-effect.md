@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Sliced text effect
 
 I am a huge fan of Terry Pratchett’s discworld books. At one point in the series Death, with his scythe so sharp it can cut sound, manages to slice words on the page into separate letters. The resulting effect on the page looked strange but brilliant. I thought I would try and recreate that effect. And here is what I came up with.

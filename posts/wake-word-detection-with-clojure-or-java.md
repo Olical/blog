@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Wake word detection with Clojure (or Java)
 
 > Hello there, intrepid Clojurian.

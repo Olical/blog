@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Multiple borders with CSS
 
 Any time that I spot an element with multiple borders in a design that I am coding, I instantly turn to Google. Sadly, it never yields the results I seek. I am always hopeful that in the last month every browser has implemented something like this.

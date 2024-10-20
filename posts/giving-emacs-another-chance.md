@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Giving Emacs another chance
 
 I was originally going to call this post “Attempting Emacs 2: The Re-Emacsing – A Vimmers tale”, I thought better of it.

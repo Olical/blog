@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Essential Vim bundles for JavaScript and Clojure
 
 _I mention using NeoBundle in this post, but I’ve since made the switch to [vim-plug](https://github.com/junegunn/vim-plug). Do it, it’s wonderful._

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Fun with negative margins
 
 Ever wanted to overlay elements? You can create great effects and produce a really engaging site by simply making `div`s overlap slightly. But sometimes making elements lay on top of each other is harder than you would think. One of the biggest problems people have when overlaying elements on top of each other seems to be z-index issues. Luckily I am here to show you the perfect way to overlay elements with no z-index woes.

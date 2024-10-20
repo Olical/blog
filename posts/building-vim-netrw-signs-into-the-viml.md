@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Building vim-netrw-signs: Into the VimL
 
 In this post I’m going to aim for an MVP that may not be the most usable but can serve as a proof of concept. This version will only run when you call a command and have minimal configuration. Polishing of the plugin will come after in the form of help pages, configuration and automatic execution.

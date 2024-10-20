@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Localizing times with xtz
 
 I have just uploaded the first version of **xtz**. xtz, shorthand for cross timezone, is a script that converts times on your page to the users local time. So you could replace something like “_27 January, 2000 10:00:00 CST_” with “_27th January, 2000 at 4:00pm_” if the user is in the UK. If the user is in the CST timezone then you would have something like this “_27th January, 2000 at 10:00am_”.

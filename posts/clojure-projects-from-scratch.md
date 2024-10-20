@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Clojure projects from scratch
 
 This post is intended _primarily_ for two groups of people:

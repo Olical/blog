@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Centering with the flexible box model
 
 For those of you that have not heard of the flexible box model, brace yourselves. When it is more widely supported you will no longer need to silently (or audibly) scream to yourself when vertically centering a variable height block level element.

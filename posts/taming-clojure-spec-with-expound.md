@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Taming clojure.spec with expound
 
 From Clojure 1.9 and up, the core language is guarded by various [clojure.spec](https://clojure.org/about/spec) definitions. This means, even if you’re not using spec directly yourself, you will potentially encounter spec derived errors.

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Getting Go Going
 
 I recently had to compile and run a [go](https://golang.org/) project, I found it thoroughly confusing initially and struggled to find a comprehensive guide on how to manage the repository in an idiomatic way. I’m going to show you how to get go projects up and running on your machine, I hope it’s the correct way, correct me if I’m wrong!

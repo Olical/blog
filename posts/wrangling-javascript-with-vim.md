@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Wrangling JavaScript with Vim
 
 I’ve created a [few](/equipping-vim-for-javascript/) [posts](/2014/11/21/essential-vim-bundles-for-javascript-and-clojure/) on here about writing JavaScript with Vim, this is because it’s what I do all day (and night) long, I’ve refined my editor to make writing this slightly questionable language as easy as possible. I’ve now hit a point, once again, where I feel like I should share my tooling for everyone else to take advantage of. You can find everything I’m going to talk about in my [dotfiles](https://github.com/Wolfy87/dotfiles) under the Vim directory if you’re curious.

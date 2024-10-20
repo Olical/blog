@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Brainfuck VM in JavaScript
 
 Welcome to 2015, I hope you had a good break! Some people may now be taking on resolutions for the year, be that to lose weight or to socialise more. I’ve opted to [learn even more than usual](/my-2015-bucket-set/), so that means [more coursera courses](https://www.coursera.org/course/algs4partI) and toy projects in various languages. This is where [my brainfuck virtual machines](https://github.com/Wolfy87/brainfucks) come in. I’ll be writing them in every language I find interesting, starting with my trusty (see: sarcasm) friend, JavaScript.

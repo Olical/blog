@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Faster JavaScript
 
 I have been working on [my EventEmitter class](https://github.com/Wolfy87/EventEmitter) for about a year so far. I have rewritten it roughly every three months to put all of the techniques I have learned into practice. Now I have finished version 4 and it is the fastest yet by a long way. This [jsPerf test](http://jsperf.com/eventemitter-3-vs-4/4) between version 3 and 4 proves my point nicely.

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Ranges, summation and predicates
 
 I’ve been reading a book called [Functional JavaScript](http://shop.oreilly.com/product/0636920028857.do) by [Michael Fogus](http://blog.fogus.me/) which, surprisingly, is all about applying functional programming to JavaScript. The majority of the book depends upon [Underscore](http://underscorejs.org/) to make JavaScript have a more functional feel, but on the whole it’s fairly vanilla.

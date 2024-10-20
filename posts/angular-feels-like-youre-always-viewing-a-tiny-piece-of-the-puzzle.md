@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Angular feels like you’re always viewing a tiny piece of the puzzle
 
 You only see the directive, controller or template. Sometimes parts are in the same place and you can make sense of it. A lot of the time they are disparate and hard to comprehend. I’m wasting time trying to understand how value X gets from A to B, let alone what happens to it along the way or at the other end. Or even what X actually is!

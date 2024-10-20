@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # A JavaScript / Clojure mashup
 
 I’m going to create a nightmare inducing monster and you’re going to enjoy it. Hear me out: Data as code in plain JavaScript without a pre-compilation step or new language to learn (even if Clojure is beautiful and takes all of 10 minutes to memorise the syntax). Of course we don’t have the distinction of vectors and lists, so arrays will have to do, but I think things like **mother flipping macros** would more than make up for it.

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Tuples in JavaScript
 
 As my last post mentioned, I recently read [Functional JavaScript](http://shop.oreilly.com/product/0636920028857.do) and can’t physically recommend it enough. This book has caused me to make the mental leap between real world applications and functional programming due to the fact that it’s written in a language I live and breath.

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Equipping Vim for JavaScript
 
 I’ve written yet another post on this, I’d recommend reading [Wrangling JavaScript with Vim](/wrangling-javascript-with-vim/) instead. Feel free to peruse this post too, it’s just quite a bit older!

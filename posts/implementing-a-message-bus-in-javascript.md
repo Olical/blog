@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Implementing a message bus in JavaScript
 
 For starters, what on Earth is a message bus? It’s not a device used for bulk transportation of postmen… yet. I see message buses as the predecessors to the event managers you see so commonly in today’s modern JavaScript.

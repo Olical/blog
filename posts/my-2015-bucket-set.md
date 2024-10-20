@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # My 2015 Bucket Set
 
 I’m not really one for New Year’s resolutions, but this year I thought I’d create a sort of bucket list of programming related things to learn. But it’s more of a bucket set because the items are unique, I really want to focus on algorithms and data structures as well as a plethora of functional programming languages. So without further ado, here’s all the things I want to accomplish next year, this may grow considerably.

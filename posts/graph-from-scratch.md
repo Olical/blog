@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Graph from scratch
 
 [James](https://twitter.com/jamesfublo) mentioned the other day that he was drinking tea “at a rate of 0.75 OC”, OC being the base speed at which I myself consume a mug of that wonderful brown liquid. A little [flurry of tweets](http://www.exquisitetweets.com/tweets?eids=EjQYN9DC57.EjRXe1BtqC.ElgZl6JxF6.ElhqBY5I1Q.Elhyot1C20.ElhGxGBZoi) ensued which resulted in me kind of accepting a joke/challenge using a meme.

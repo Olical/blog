@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Installing Vimdeck on Arch
 
 I’m going to be talking at [Vim London](http://www.meetup.com/Vim-London/events/174682642/) again on Tuesday, so I thought I’d knock a quick presentation together. I was planning on using [Vimdeck](https://github.com/tybenz/vimdeck) but it turns out it freaks out on Arch based Linux distributions, such as Manjaro (probably some other Linux distributions too).

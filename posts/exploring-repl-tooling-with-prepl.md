@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Exploring REPL tooling with socket prepl
 
 > This post is mainly to help me plan my talk at [London Clojurians](https://www.meetup.com/London-Clojurians/events/262000841/) on 16th July 2019 on the same topic.

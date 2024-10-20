@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Writing a modular frontend
 
 It may be a bold statement, but I believe that modularity is the way forward. By that I mean writing modular code will coax us into writing reusable and higher quality classes and functions. This feeling is present when writing backend or frontend code, the problem is that modularity in the frontend can feel a little alien at first.

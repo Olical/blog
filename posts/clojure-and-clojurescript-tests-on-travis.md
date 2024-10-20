@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Clojure and ClojureScript tests on Travis
 
 As far as I can tell, there isn’t a canonical way to run your Clojure(Script) tests on [Travis](http://travis-ci.org/) through the Clojure CLI.

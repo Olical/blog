@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Always remain a beginner
 
 I’ve been programming for about five years, almost entirely in JavaScript, three of which being professional. I’m an absolute beginner and I always will be. This is a _good_ thing.

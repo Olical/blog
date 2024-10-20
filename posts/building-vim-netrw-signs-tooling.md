@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Building vim-netrw-signs: Tooling
 
 In my last post I focused on [getting the repository and main files up and running](/building-vim-netrw-signs-introduction/), here I’ll briefly touch on the satellite tooling I’m going to hook into to make the development a bit easier. Oh, also, I’m writing this from a cruise ship somewhere around Gibraltar.

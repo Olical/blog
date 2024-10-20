@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Pure CSS toggle accordion
 
 CSS is brilliant. When written properly you can do so much with it. I believe that you should always try to build crucial UI elements with CSS rather than JavaScript. It always feels slightly more responsive, and now with transitions you can make things look amazing with just one line. So I thought I would try my hand at creating an accordion. We have all made one at some point, usually utilizing a massive JavaScript library such as MooTools or jQuery alongside a bloated accordion script. So my version uses _no JavaScript whatsoever_.

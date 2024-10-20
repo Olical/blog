@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Building vim-netrw-signs: Introduction
 
 I thought of another Vim plugin idea a while back at [Vim London](http://www.meetup.com/Vim-London/), which happens to be my second of such ideas, the first being [vim-enmasse](https://github.com/Wolfy87/vim-enmasse). My plan is to build this plugin over the coming weeks (probably months, ideally not years) and take you along for the ride with these brief posts. From `git init` to `git tag v1.0.0`. To begin with, here’s [the repository](https://github.com/Wolfy87/vim-netrw-signs) and the [initial commit](/building-vim-netrw-signs-introduction/232121235a31ee282d363ae331050f40f8dbdc38). As with all of my open source code now, it’s “licensed” under [The Unlicence](http://unlicense.org/).

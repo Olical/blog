@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # D3 within React the right way
 
 If you follow me on twitter (I’m [@OliverCaldwell](https://twitter.com/OliverCaldwell), if you don’t) you will have noticed that I’ve been tweeting about [D3](http://d3js.org/) and [React](http://facebook.github.io/react/) a lot recently. More specifically, how to use both together in a pleasant yet efficient way. After a few weeks of thought and a couple of potential solutions actually being built and used, I settled on what I think is the ideal way to use DOM mutating JavaScript (like D3) from within React.

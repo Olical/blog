@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Building for browsers in a terminal
 
 My entire web development work flow takes place within my terminal; obviously I need a browser too, but other than that I have no GUI tools floating around. I’m going to show you what tools I use and how I use them. Take from this what you will.

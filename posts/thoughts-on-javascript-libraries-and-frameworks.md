@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Thoughts on JavaScript libraries and frameworks
 
 There seems to be a lot of uncertainty about [how we should use JavaScript libraries](http://addyosmani.com/blog/prosconsmicroframeworks/) recently. The main debate is whether we should still use huge 100kb frameworks, such as [MooTools](http://mootools.net/) and [jQuery](http://jquery.com/), or swap to tiny [micro libraries](http://microjs.com/) that each perform a specific task, thus resulting in a smaller page size and load time.

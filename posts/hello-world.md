@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Hello, World!
 
 > This posts is out of date as of the end of 2019. I’ve rewritten it in Clojure and AsciiDoc and ported the super old WordPress posts into AsciiDoc. This content is mostly irrelevant now.

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Use verbose naming in JavaScript
 
 I love verbose names in JavaScript, or any language for that matter. Sadly I see a lot of people yearning for short and obscure method names for no real reason. I can only imagine it’s because the API documentation looks cool in their opinion with no method name being longer than five characters.

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Brainfuck VM in Clojure
 
 This is my second implementation for my repository of [brainfuck interpretors](https://github.com/Wolfy87/brainfucks), this time in the wonderful language Clojure (the first was [JavaScript](/brainfuck-vm-in-javascript/)). It largely follows the same format of my initial machine but takes a route that I want to eventually refactor my JavaScript implementation to use as well. It builds a list of token hash-maps that each contain any required meta data. The JavaScript implementation (at the time of writing) uses two arrays, one for the tokens and one for the jump (loop) meta data.

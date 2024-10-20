@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # A week (or so) with Emacs
 
 So I managed to use Emacs for one whole week of full-time JavaScript work, whilst only falling back to Vim for the odd tweak of JSON or configuration, I count that as a success. It’s shifted my opinion of it since I set up my package management and JavaScript tooling, you can find all of this within [my dotfiles](https://github.com/Wolfy87/dotfiles/blob/master/emacs/init.el). It’s become far easier since I started to learn about vanilla Emacs key-bindings, the reason being that when I lost Evil mode for some buffers I was left high and dry.

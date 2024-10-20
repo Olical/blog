@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # REPLing into projects with prepl and Propel
 
 This post is intended for [Clojure](https://clojure.org/) or [ClojureScript](https://clojurescript.org/) developers who’re interested in trying prepl based tooling over traditional [nREPL](https://nrepl.org/) approaches.

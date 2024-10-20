@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Asynchronicity and JavaScript
 
 There are two very difficult things in UI development, well, there’s a lot more than that but here’s two very important aspects.

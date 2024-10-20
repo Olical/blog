@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # An introduction to transcriptor
 
 [Transcriptor](https://github.com/cognitect-labs/transcriptor) is a new [Clojure](https://clojure.org/) tool released by [Stuard Halloway](https://twitter.com/stuarthalloway) (who literally writes books on Clojure) that approaches testing from a different angle. I only noticed it after he tweeted the following and I asked for him to elaborate. Luckily enough, he did!

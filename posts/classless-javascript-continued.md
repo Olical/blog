@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Classless JavaScript – Continued
 
 _This is a follow on from my previous post, [Classless JavaScript](/classless-javascript/). You might want to read, or at least skim, that first._

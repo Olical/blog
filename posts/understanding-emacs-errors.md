@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Understanding Emacs errors
 
 You can probably begin to get to the bottom of most internal Emacs problems with [debug-on-entry](https://www.gnu.org/software/emacs/manual/html_node/elisp/Function-Debugging.html). This function prompts for a function name interactively (which also hooks into helm) and will essentially set a breakpoint within Emacs on that function. When it is called you’ll get to see what functions were called and with what arguments.

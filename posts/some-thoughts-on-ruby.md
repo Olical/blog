@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Some thoughts on Ruby
 
 You may have noticed that I recently started working my way through [Seven Languages in Seven Weeks](https://pragprog.com/book/btlang/seven-languages-in-seven-weeks) (which will be shortly followed by [Seven More Languages in Seven Weeks](https://pragprog.com/book/7lang/seven-more-languages-in-seven-weeks)). I almost definitely won’t finish in that time frame with Coursera deadlines looming ever closer, but it’s worth a shot. I finished the first chapter this evening, which happens to be on Ruby. I thought I’d write up my thoughts on it after this first dive into a language I’ve been meaning to get my head around.

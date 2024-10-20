@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Getting started with LESS
 
 Taking your first step in any language can be a daunting task. And starting with [LESS](http://lesscss.org/) is no different. The main difficulty with LESS is getting your development environment set up to work with it correctly. In this post I am going to try and guide you through getting up and running with this brilliant CSS preprocessor.

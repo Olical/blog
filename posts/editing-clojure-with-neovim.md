@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Editing Clojure with Neovim
 
 I’ve used [Spacemacs](http://spacemacs.org/) since I started working with [Clojure](https://clojure.org/) a few years ago, it’s an extremely powerful system on par with full IDEs such as [Cursive](https://cursive-ide.com/).

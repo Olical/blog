@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Neovim configuration and plugins in Fennel (Lisp)
 
 > A lot of this has been made irrelevant or far easier in Aniseed v3.0.0+. There’s a bunch of macros and helper scripts that remove a lot of the boilerplate, check out the documentation! The sentiment of this post is still accurate, it’s just easier to implement now.

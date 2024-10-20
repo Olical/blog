@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Clojure prepl for tool authors
 
 I’ve written pretty extensively about [how to start a prepl](https://oli.me.uk/repling-into-projects-with-prepl-and-propel/) as well as [what prepls are](https://oli.me.uk/clojure-socket-prepl-cookbook/). I’ve also written a few tools such as [Conjure](https://github.com/Olical/conjure) and [Propel](https://github.com/Olical/propel) that wouldn’t exist without it.

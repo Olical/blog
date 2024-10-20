@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Making package.el behave like Vundle
 
 I love [Vundle](https://github.com/gmarik/Vundle.vim), it allows me to specify a list of packages within my [dotfiles repository](https://github.com/Wolfy87/dotfiles) that is kept up to date and in sync with every other machine I use Vim on. The key point with this is that I can remove a package from all machines by simply deleting the line from my configuration.

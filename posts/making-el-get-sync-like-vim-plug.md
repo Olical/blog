@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Making El-Get sync like vim-plug
 
 As [my post](/giving-emacs-another-chance/) from last night says, I’m giving Emacs another go. And in an even older post, when I was trying Emacs for the first time, I show [my approach to getting my packages syncing like I do in Vim](/2014/10/20/making-package-el-behave-like-vundle/) (spoiler alert: It didn’t work very well). My Vim setup will remove unused packages, update what I currently have and then install any that are missing through [this simple script](https://github.com/Wolfy87/dotfiles/blob/85937edfd5330cc0478a3165f6aa7d132173ef57/vim/.vim/update.sh) and the use of [vim-plug](https://github.com/junegunn/vim-plug).

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Extending Neovim with any language (mostly Clojure)
 
 > This post is mainly to help me plan my talk at [Vim London](https://www.meetup.com/Vim-London/events/262032144/) on 3rd July 2019 on the same topic.

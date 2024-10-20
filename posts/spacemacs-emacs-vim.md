@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Spacemacs: Emacs + Vim
 
 _This post is pretty rough around the edges. I wrote it in Google keep as notes I intended to write up and eventually publish nicely but I don’t have the time. I’ve done what I can from my phone but I just wanted to get it out there. I hope you find it useful!_

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # An introduction to ClojureScript
 
 In this post I’m going to attempt to explain where [ClojureScript](https://github.com/clojure/clojurescript) comes from as well as what it is and what it can do for you. I’m coming at this from the perspective of someone who writes a lot of JavaScript already, probably with React and Redux.

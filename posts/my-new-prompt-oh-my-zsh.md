@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # My new prompt (oh-my-zsh)
 
 I’ve rewritten this in fish shell functions since writing this, you can find that in [a gist](https://gist.github.com/Olical/1491b2072f0daf84072a).

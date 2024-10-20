@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Clojure and ClojureScript nREPL with Clojure CLI
 
 If you’ve decided to try out the new Clojure CLI introduced with Clojure 1.9 you may have found yourself slightly lost when it comes to getting your CIDER (or other development environment) hooked up to your project through nREPL.

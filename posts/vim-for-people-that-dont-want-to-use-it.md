@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Vim for people that don’t want to use it
 
 This is for those of you that use a GUI IDE / editor happily but sometimes use Vim because you have to in your terminal. (think commit messages, SSH and tiny tweaks to files)

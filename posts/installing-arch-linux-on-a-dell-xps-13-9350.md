@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Installing Arch Linux on a Dell XPS 13 (9350)
 
 I’ve wanted a powerful yet light Linux laptop for a while now, something with a decent CPU and buckets of battery life. I finally found that in the [Dell XPS 13](http://www.dell.com/uk/p/xps-13-9350-laptop/pd). I originally tried to purchase one from Amazon, which failed for some reason (they never explained why they refunded and cancelled, no stock?) but then purchased it from Dell directly. Luckily the new model, 9350, was just released, it’s not the developer edition (one with Ubuntu and no crapware) but it’s good enough.

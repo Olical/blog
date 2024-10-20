@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Introduction
 
 Well, here we go. I have been working on this new blog on and off for about a week now. I thought I would start off with a post about some of the technology behind it.

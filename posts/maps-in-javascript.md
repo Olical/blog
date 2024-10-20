@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Maps in JavaScript
 
 No, I don’t mean the things that help you find obscure places, I mean the things you can store data within. Your average JavaScript object that makes up just about everything in the language is actually a map, it just restricts you to mapping string keys to values of any kind.

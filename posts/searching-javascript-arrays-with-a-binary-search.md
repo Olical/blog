@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Searching JavaScript arrays with a binary search
 
 I migrated from Octopress back to WordPress and all of my code snippets exploded, I’m in the process of fixing those, please bear with me. This post also has huge improvements detailed in the comments section **that makes me think this post warrants a revisit, I’ll link to it from here if so**. **I’ve written a [new post](/revisiting-searching-javascript-arrays-with-a-binary-search/)!** This one includes benchmarks and generative testing (that all passes!). So you can be sure that it works and that any changes made do actually make it faster. This post is therefore **deprecated**. The repository for the new implementation can be found at [Olical/binary-search](https://github.com/Olical/binary-search).

@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # If I wrote a text editor
 
 A little while ago [Jezen Thomas](http://jezenthomas.com/) linked a video to me on [twitter](https://twitter.com/jezenthomas/status/553260993405784064) ([non-twitter link](https://www.destroyallsoftware.com/talks/a-whole-new-world)). It’s a talk by Gary Bernhardt of [Destroy All Software](https://www.destroyallsoftware.com/screencasts). Please go watch it… now. The following post may contain spoilers that could ruin an otherwise excellent talk.

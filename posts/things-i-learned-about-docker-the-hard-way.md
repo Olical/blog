@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Things I learned about Docker the hard way
 
 This list was just ripped from a Google Keep item I wrote late last night, just wanted to share.

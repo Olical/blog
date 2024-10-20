@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Do things that scare you
 
 No, I’m not advocating base jumping while defusing a bomb, that’s a different kind of scared. I’m talking about things like learning Haskell or tackling TDD for the first time. Things that you can’t or won’t use right now. _Things that make you go “eh?”_.

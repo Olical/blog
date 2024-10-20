@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Revisiting: Searching JavaScript arrays with a binary search
 
 Last year I wrote a post called [Searching JavaScript arrays with a binary search](/searching-javascript-arrays-with-a-binary-search/), it’s actually become quite popular and has seen a large amount of suggestions in the comments as well as helping out [PowerArray](https://github.com/techfort/PowerArray). The problem is that it’s an untested, performance chasing, mess of a function. I’ve always wanted to redo this in a more formal manner because I don’t want people using code I’ve written that will probably break on multiple edge cases.

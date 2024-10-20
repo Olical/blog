@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Prototypical inheritance done right
 
 I’ve read a lot of posts in the past on this subject; this includes some by massively influential developers such as [John Resig](http://ejohn.org/blog/simple-javascript-inheritance/). I don’t think the popular methods are the right way though. They all feel synthetic and unnatural. Not nearly vanilla enough for me.

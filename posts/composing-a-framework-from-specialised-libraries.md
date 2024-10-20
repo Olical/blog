@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Composing a framework from specialised libraries
 
 Whenever I dive into a frontend MVC project of my own I always end up getting frustrated at the framework selection stage. I quite like aspects of Backbone et al, but none of them feel like that exact thing I’m looking for. This leaves me with three choices; put up with the little things that annoy me about a given framework, write my own _or_ compose my own from smaller libraries.

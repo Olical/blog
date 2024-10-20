@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # When projects rise from the grave
 
 Halloween is supposed to be over, so why is my project coming back from the dead?

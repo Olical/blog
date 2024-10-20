@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Hello again, WordPress
 
 Once again I’m reworking my personal website and blog. This time I’m aiming to journal my progress through projects that I work on in my free time (such as [Vim plugins](https://github.com/Wolfy87/vim-enmasse)) as well as the odd rant or tutorial post, as I have written in the past. I felt that trying to force myself to write large posts about huge topics and problems on a regular basis was just too difficult to keep up with in those precious few hours I have during some evenings. So my new goal is to journal my progress through my personal projects which should show other hows I work (sort of) and potentially teach other developers some neat tricks I didn’t realise were that neat.

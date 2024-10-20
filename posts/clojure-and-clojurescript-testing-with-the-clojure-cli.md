@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Clojure and ClojureScript testing with the Clojure CLI
 
 This post is sort of an extension of a previous post, [Clojure projects from scratch](/clojure-projects-from-scratch).

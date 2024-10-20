@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Working with multiple of lists in JavaScript
 
 If you’ve ever had to iterate over multiple lists at the same time or map a filtered map of a map, you’ll understand that nesting all of those blocks and callbacks isn’t very easy to work with or understand.

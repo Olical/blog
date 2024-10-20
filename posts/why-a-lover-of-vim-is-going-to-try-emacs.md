@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Why a lover of Vim is going to try Emacs
 
 I’ve been using Vim for a couple of years now, despite that making up around half of my entire career, I feel like I’ve learnt it rather well. I can’t hack VimL like tpope, _all hail_, but I can flit around a large project and edit almost without thinking. The editor becomes a language seared into your muscle memory. It’s so good I couldn’t possibly drop it for a BBOJAAIDE (Big ball of Java as an IDE).

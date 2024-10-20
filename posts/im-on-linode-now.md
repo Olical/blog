@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # I’m on Linode now
 
 And I’m pretty damn happy with it, as happy as you can be with a server I guess.

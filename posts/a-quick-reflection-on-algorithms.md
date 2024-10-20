@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # A quick reflection on Algorithms
 
 It may not be completely over just yet, but I’ve gone as far as I can in [Algorithms, Part I](https://www.coursera.org/course/algs4partI) from Princeton on Coursera. It was an interesting course that ultimately defeated me in some areas, but taught me quite a lot along the way. I’ve given up on the very last part though since the difficulty has ramped up above what I want to burn my free time on and I have quite a few open-source-ish things I’d much rather be pursuing. I’d highly recommend it if you have some of these qualities:

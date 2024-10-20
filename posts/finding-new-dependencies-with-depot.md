@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Finding new dependencies with Depot
 
 If you’re using lein you can use lein-ancient to find newer versions of your dependencies, if you’re using boot you probably have something similar.

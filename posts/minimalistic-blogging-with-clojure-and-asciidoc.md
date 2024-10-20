@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Minimalistic blogging with Clojure and AsciiDoc
 
 I’ve procrastinated my way to yet another blogging stack and I’m very happy with it! I’m going to walk you through how it works and show you a few tricks of prepl based development I found along the way. If you like the idea of this approach feel free to fork [Olical/blog](https://github.com/Olical/blog).

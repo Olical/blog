@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Conversational software development
 
 If you’re a seasoned Lisp (or similar) programmer a lot of this will just be rewording of what you already know. If all you’ve ever known is editing source files and restarting your program this should hopefully be new and inspiring.

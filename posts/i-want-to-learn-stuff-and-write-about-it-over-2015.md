@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # I want to learn stuff and write about it over 2015
 
 I mean, I’ve been doing that on and (mostly) off for a while now, but I really want to focus on things like [Khan Academy](https://www.khanacademy.org/) (which I’m currently using to learn more about algorithms). So hopefully you’ll see more frequent, yet short, posts on things I’ve recently stumbled across. I’ll try and write a few in batches and space them out evenly to make it a little less sporadic.

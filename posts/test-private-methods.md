@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Test private methods
 
 If you’ve barely passed the title and you’re already seething with violent rage: This post is for you. Like medicine that smells of battery acid, this’ll taste bad and potentially kill you but you’ll feel better for it in a few days. Let it settle in for a bit, mull it over.

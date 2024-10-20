@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Clojure socket prepl cookbook
 
 > This post has been translated into [Russian](https://web.archive.org/web/20201028075024/http://softdroid.net/povarennaya-kniga-clojure-socket-prepl) by Vlad at [Softdroid](https://web.archive.org/web/20201024055921/https://softdroid.net/).

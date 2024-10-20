@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Recent video content
 
 I’ve been slacking on the blogging front, sorry about that! But I haven’t been idle, I’ve been pushing out [Conjure](https://github.com/Olical/conjure) releases and speaking at conferences as much as possible. I thought I’d post _something_ here to prove I’m still around and still hacking around with weird Lisp-y ideas.

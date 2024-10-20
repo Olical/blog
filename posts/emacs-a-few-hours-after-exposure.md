@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Emacs: A few hours after exposure
 
 The symptoms are starting to show: fever, babbling, countless browser tabs and an insatiable urge to learn Lisp faster than it can be typed. After just one evening of [playing with my configuration](https://github.com/Wolfy87/dotfiles/tree/52b5819f9e9b63685a0546071db163a1da0ce551/emacs) I have a system for me to [define and load configuration](https://github.com/Wolfy87/dotfiles/blob/52b5819f9e9b63685a0546071db163a1da0ce551/emacs/init.el#L1-L2) files with ease as well as sync my plugin files [from a list](https://github.com/Wolfy87/dotfiles/blob/52b5819f9e9b63685a0546071db163a1da0ce551/emacs/libraries/packages.el#L7-L8). I am considering have it run it’s sync and update cycle on every load though, I’ll have to see how that works out. At the very least I need to define an update function, which I think I need to do through the _interactive_ function.

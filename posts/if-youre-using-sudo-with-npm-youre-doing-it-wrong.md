@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # If you’re using sudo with npm you’re doing it wrong
 
 I see countless developers blindly firing off _sudo npm install -g XYZ_ and it hurts. A lot. From then on, every time you update or execute global npm commands from within scripts or tools the whole thing will halt or die when it encounters permission related problems. One “solution” I’ve seen for this is to chmod **/usr/local**. You don’t own this directory though, you only own your home directory. Assume everything outside of that is shared by other users on the system. Ruby gems are installed to your home directory (or should be if it’s not the case already!) so why not node modules?

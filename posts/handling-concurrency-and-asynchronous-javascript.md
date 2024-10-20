@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Handling concurrency and asynchronous JavaScript
 
 If you’ve worked with JavaScript in a browser, or indeed on the server, for any length of time you’ve probably had to deal with asynchronous spaghetti. This kind of spaghetti is not delicious in any way, shape or form.

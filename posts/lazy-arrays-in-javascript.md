@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Lazy arrays in JavaScript
 
 So I built a thing called [lazy-array](https://github.com/Wolfy87/lazy-array). It came off the back of [a tiny gist](https://gist.github.com/Wolfy87/75b435fce2091f79155e) and grew into something quite powerful (if I do say so myself). This project allows you to define lazy arrays in JavaScript, surprisingly enough, but what are they?

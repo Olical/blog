@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Grabbing elements from the DOM
 
 If, like me, you actually quite enjoy working with the vanilla DOM implementations, you may wonder how you’re actually supposed to find the elements in the first place. I’ve been using quite a nice technique for a while now that allows you to have hyphenated names in your HTML, but keep camel case in your JavaScript even though you’re searching for the elements en masse.

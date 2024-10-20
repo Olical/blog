@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Updating dependencies without CHANGES.md
 
 I recently received an issue on [EventEmitter](https://github.com/Olical/EventEmitter), my longest running project I have carried through my entire career so far, asking [where the change log was](https://github.com/Olical/EventEmitter/issues/126). The bad news is that there isn’t one.

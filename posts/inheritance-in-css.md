@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Inheritance in CSS
 
 When creating styles for elements such as buttons or text boxes in CSS there are always variations. These variations include things like icons and colors. Copying a chunk of CSS and editing the attributes isn’t ideal, so what can you use instead? **Inheritance**, that’s what.

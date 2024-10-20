@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Some thoughts on Prolog
 
 I usually write some notes as I read and work then pad those notes out into a full post after I’m done with the chapter. This time I’m just going to publish it as is (pretty much).

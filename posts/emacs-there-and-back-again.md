@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Emacs: There and Back Again
 
 So I’m back in Vim already. I gave Emacs a few months of good usage though and tried out multiple styles of configuration. At first I tried to build my own from the ground up, a la Vim, but it was too fiddly. I found Emacs to be too big to handle cleanly for one person, so I eventually resorted to [Spacemacs](https://github.com/syl20bnr/spacemacs).

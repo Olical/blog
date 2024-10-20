@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Exporting through AMD, CommonJS and the global object
 
 No matter how amazing your script is, you will need to expose it to the wider world at some point. By that I don’t mean publication through NPM or any other package managers, I mean you need to actually expose your classes and functions to the code that needs to consume them.

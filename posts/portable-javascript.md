@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Portable JavaScript
 
 I gave in to AMD. I am currently using [RequireJS](http://requirejs.org/) on a project which uses quite a few different scripts including [MooTools](http://mootools.net/), [Kalendae](https://github.com/ChiperSoft/Kalendae) (which is amazing by the way) and the [Facebook SDK](https://developers.facebook.com/docs/reference/javascript/). By using AMD I have separated the whole project into manageable modules which are loaded in parallel with each other. I am loading MooTools and the Facebook SDK from their respective CDNs too for an even faster site.

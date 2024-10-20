@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Classless JavaScript
 
 As JavaScript developers, or even web developers as a whole, we seem terrified by the thought of direct usage. No technique or idea seems to be considered “legit” until it has been abstracted by several layers of syntactic sugar and, potentially useless, fluff.

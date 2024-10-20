@@ -1,3 +1,8 @@
+---
+tags:
+  - blog-post
+  - imported-blog-post
+---
 # Writing great JavaScript
 
 I probably could have named this post something like “Writing clean, validating and portable JavaScript”, but that would be no where near as catchy. The problem with “great” is it means different things to different people. I am going to show you my idea of great which may differ from many developers views, but I hope it helps someone improve their code.
