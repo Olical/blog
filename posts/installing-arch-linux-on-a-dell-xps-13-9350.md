@@ -13,9 +13,9 @@ I went for the 1080p (non-touch, because **EW NO**) screen, 256GB SSD, 8GB RAM a
 
 The first thing you’ll notice is that the actual box it’s shipped in is actually really nice. It’s definitely well protected despite the actual machine being pretty solid. The case is beautiful, thin and metal. It’s incredibly light too, even the charger is solid yet small. I really feel like I’ve got my moneys worth even from just feeling the hardware. I used to think Apple were the only ones that could give me that impression (despite hating their OS and locked down hardware choices), but no, Dell have really hit the spot.
 
-[![Still in the box](/assets/legacy-images/2015/11/IMG_20151103_192437.jpg)(/assets/legacy-images/2015/11/IMG_20151103_192437-1024x768.jpg)]The metal body is complemented by a soft feeling carbon fibre-esc interior. The keyboard feels solid and has a decent layout, control being in the bottom left for example. It’s no ErgoDox, but it’ll do. I can’t emphasise enough how light yet strong this thing feels. When running it’s also silent, I can hardly tell that it’s on!
+[![Still in the box](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_192437.jpg)(/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_192437-1024x768.jpg)]The metal body is complemented by a soft feeling carbon fibre-esc interior. The keyboard feels solid and has a decent layout, control being in the bottom left for example. It’s no ErgoDox, but it’ll do. I can’t emphasise enough how light yet strong this thing feels. When running it’s also silent, I can hardly tell that it’s on!
 
-## link:/assets/legacy-images/2015/11/IMG_20151103_192458.jpg[image:/assets/legacy-images/2015/11/IMG_20151103_192458-1024x768.jpg[When open,width=640,height=480]]BIOS updates
+## link:/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_192458.jpg[image:/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_192458-1024x768.jpg[When open,width=640,height=480]]BIOS updates
 
 With the previous model (9343) you had to update the BIOS to at least a version called AO5 to get most components working, [as documented on the Arch wiki](https://wiki.archlinux.org/index.php/Dell_XPS_13_%282015%29#BIOS_updates). This latest version doesn’t appear to have any updates yet but I booted into Windows (shudder, took forever to get through the crappy Windows set up process) to run the Dell tool that checks for me. It found an update but I’m not sure if it actually changed anything. I performed the update anyway.
 
@@ -23,19 +23,19 @@ You can either update through a Windows executable or you can download some file
 
 The first 9350 BIOS version must be equivalent to the AO5 update from the 9343. I presume. Here’s the update taking place anyway.
 
-## link:/assets/legacy-images/2015/11/IMG_20151103_193905.jpg[image:/assets/legacy-images/2015/11/IMG_20151103_193905-1024x768.jpg[Updating the BIOS,width=640,height=480]]Fixing the WiFi
+## link:/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_193905.jpg[image:/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_193905-1024x768.jpg[Updating the BIOS,width=640,height=480]]Fixing the WiFi
 
 As the [Arch wiki mentions](https://wiki.archlinux.org/index.php/Dell_XPS_13_%282015%29#WiFi), the default machine comes with some shoddy Broadcom chip (just like a MacBook!), but you can buy a pretty good Intel one and just swap it out (unlike a MacBook!). I bought my [Intel 7265](http://www.amazon.co.uk/gp/product/B00RK0Q86S?psc=1&redirect=true&ref_=oh_aui_detailpage_o00_s00) from Amazon, I luckily already had [a toolkit](http://www.amazon.co.uk/Cacciavite-Giravite-Acciaio-Allungata-Utensile/dp/B00DIS0LRI/ref=pd_bxgy_23_2?ie=UTF8&refRID=0K3KP6Q1KV75E0HMQZB7) lying around to open the XPS up. You can find the full details to [replace the WiFi on ifixit](https://www.ifixit.com/Teardown/Dell+XPS+13+Teardown/36157), it was surprisingly easy.
 
 Remove the screws around the outer edge as well as the one under the little XPS flap. Pop the base off (took some force, used my Oyster to get some leverage). Unscrew the grounding thing on the chip, remove the two cables which just snap onto little plugs. Slide the chip out and slide the new one in, put the cables back on, screw the thing back down, put the case back on and screw together. Easy. Then it’ll work on boot, the WiFi chip in question is supported by the mainline Linux kernel!
 
-![Upside down with the XPS flap](/assets/legacy-images/2015/11/IMG_20151103_194248-1024x768.jpg)
+![Upside down with the XPS flap](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_194248-1024x768.jpg)
 
-![I’m in](/assets/legacy-images/2015/11/IMG_20151103_195356-1024x768.jpg)
+![I’m in](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_195356-1024x768.jpg)
 
-![The new chip](/assets/legacy-images/2015/11/IMG_20151103_195548-1024x768.jpg)
+![The new chip](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_195548-1024x768.jpg)
 
-![And it’s in!](/assets/legacy-images/2015/11/IMG_20151103_200226-1024x768.jpg)
+![And it’s in!](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151103_200226-1024x768.jpg)
 
 ## The weird parts
 
@@ -53,11 +53,11 @@ I had to change a few bits in the BIOS (press **F2** at boot to access BIOS menu
 
 I then spent hours trying to work out why X wouldn’t start and in turn LightDM. It was complaining about not being able to detect any screens, well it turns out I needed to [add some kernal parameters](https://wiki.archlinux.org/index.php/Intel_graphics#Driver_not_working_for_Intel_Skylake_chips). I also performed this [early KMS](https://wiki.archlinux.org/index.php/Intel_graphics#Enable_early_KMS) thing, but I’m pretty sure it was the kernal parameter that did it.
 
-![Install in progress](/assets/legacy-images/2015/11/IMG_20151104_200015-1024x768.jpg)
+![Install in progress](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151104_200015-1024x768.jpg)
 
 Everything else is as you would expect, you need the Intel graphics driver and synaptics for touchpad support. All of this is part of a normal Arch install though and all documented on the wiki. The important parts are the BIOS and kernal tweaks however. Once you get those out of the way it should work.
 
-![The first actual boot!](/assets/legacy-images/2015/11/IMG_20151104_202556-768x1024.jpg)
+![The first actual boot!](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151104_202556-768x1024.jpg)
 
 ## How is it?
 
@@ -65,11 +65,11 @@ Excellent. I haven’t had a single issue after completing the install. [My dotf
 
 I highly recommend this hardware, Linux can clearly work well on it, it just requires a little bit of fiddling. This post is to help others along the way but also to show that it IS possible, Linux does run fine.
 
-![The first boot into my desktop](/assets/legacy-images/2015/11/IMG_20151105_010626-1024x768.jpg)
+![The first boot into my desktop](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151105_010626-1024x768.jpg)
 
-![Even when charging it looks great](/assets/legacy-images/2015/11/IMG_20151105_020549-1024x768.jpg)
+![Even when charging it looks great](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151105_020549-1024x768.jpg)
 
-![And of course I’ve covered it in stickers](/assets/legacy-images/2015/11/IMG_20151105_110511-1024x768.jpg)
+![And of course I’ve covered it in stickers](/Attachments/imported-blog-posts/legacy-images/2015/11/IMG_20151105_110511-1024x768.jpg)
 
 I hope someone out there finds this useful! It should save you a bunch of time if you attempt to do the same. I have no idea how easy it would be to install Ubuntu / Debian or any other distro, but if Arch works they probably will too.
 

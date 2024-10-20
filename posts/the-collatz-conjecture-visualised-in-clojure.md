@@ -83,13 +83,13 @@ The commit at this point was [4a155ed](https://github.com/Olical/collatz/commit
 
 Now for the pretty part. I hope. I’m starting with the default Quil setup the lein template provides you with, this includes the functional middleware which makes it a bit nicer to work with (although I found I wasn’t really using the state management very much at all). After a little bit of tinkering I ended up with this rough attempt.
 
-![An early render. Kinda ugly and slow to render. Commit was [299f062](https://github.com/Olical/collatz/commit/299f062b3166d20710cd25f7c74e6edcdddb47dc)(/assets/legacy-images/2017/03/Screenshot_2017-03-31_17-13-04.png).,width=804,height=802]
+![An early render. Kinda ugly and slow to render. Commit was [299f062](https://github.com/Olical/collatz/commit/299f062b3166d20710cd25f7c74e6edcdddb47dc)(/Attachments/imported-blog-posts/legacy-images/2017/03/Screenshot_2017-03-31_17-13-04.png).,width=804,height=802]
 
 Although if you squint, this sort of looks similar, I’m not very happy with it. For starters, my use of the Quil API is a bit questionable and it definitely doesn’t follow the same rules as the one in the video. My ideal goal is to basically mimic the original material including random colours. I really hope this doesn’t breach copyright or something, if so, I’m very sorry, send me an email.
 
 Here’s what I had after some more tinkering.
 
-![It’s still not right](/assets/legacy-images/2017/03/Screenshot_2017-03-31_19-28-43.png).,width=804,height=802]
+![It’s still not right](/Attachments/imported-blog-posts/legacy-images/2017/03/Screenshot_2017-03-31_19-28-43.png).,width=804,height=802]
 
 > Although I’m generating the bordered lines with a sort of hack (one bigger black line with a smaller coloured line on top of it), it actually leads to this neat hand drawn effect. So, although it’s not right, I actually like the outcome. It feels more organic than hard, anti-aliased, machine cut edges. To me, anyway.
 
@@ -115,7 +115,7 @@ The other thing that happened was one of the authors of [the book](http://www.bl
 
 Just as a reminder, this is what I want it to look like.
 
-![The original from the video](/assets/legacy-images/2017/04/C8FvTBiW0AAFGpG-809x1024.jpg).,width=792,height=1002]
+![The original from the video](/Attachments/imported-blog-posts/legacy-images/2017/04/C8FvTBiW0AAFGpG-809x1024.jpg).,width=792,height=1002]
 
 ## Flipping the tree
 
@@ -123,13 +123,13 @@ So I want to get it looking semi-accurate before I try to optimise, maybe the op
 
 Sadly, even after flipping the tree over and playing around with more parameters, I just couldn’t match the awesome original design. I guess this is a testament to how good the original authors are at creating visualisations from math alone! Here’s a few things I ended up with to wrap up my stumbling in the dark.
 
-![It’s still wrong](/assets/legacy-images/2017/04/Screenshot_2017-04-01_12-22-38.png).,width=804,height=802]
+![It’s still wrong](/Attachments/imported-blog-posts/legacy-images/2017/04/Screenshot_2017-04-01_12-22-38.png).,width=804,height=802]
 
-![More curve](/assets/legacy-images/2017/04/Screenshot_2017-04-04_21-42-51.png).,width=804,height=802]
+![More curve](/Attachments/imported-blog-posts/legacy-images/2017/04/Screenshot_2017-04-04_21-42-51.png).,width=804,height=802]
 
-![Thinner lines to illustrate just how many I’m actually rendering here. Could be a tad more efficient. Game programmers](/assets/legacy-images/2017/04/Screenshot_2017-04-04_21-46-43.png).,width=804,height=802]
+![Thinner lines to illustrate just how many I’m actually rendering here. Could be a tad more efficient. Game programmers](/Attachments/imported-blog-posts/legacy-images/2017/04/Screenshot_2017-04-04_21-46-43.png).,width=804,height=802]
 
-![The spindly version with prime numbers highlighted in green. Pretty neat. At [ba6700f](https://github.com/Olical/collatz/commit/ba6700f0cad800ca4cbfa80c21e1d662781368cc)(/assets/legacy-images/2017/04/Screenshot_2017-04-04_21-52-49.png).,width=804,height=802]
+![The spindly version with prime numbers highlighted in green. Pretty neat. At [ba6700f](https://github.com/Olical/collatz/commit/ba6700f0cad800ca4cbfa80c21e1d662781368cc)(/Attachments/imported-blog-posts/legacy-images/2017/04/Screenshot_2017-04-04_21-52-49.png).,width=804,height=802]
 
 From the thinner versions you can quite clearly see the need for deduplication, if you just draw _everything_ over the top of each other, not only is it slow, but it also looks messy. I definitely needed to prepare my data a little better, but this post that was supposed to be a small little experiment was beginning to drag on by then.
 

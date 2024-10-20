@@ -21,7 +21,7 @@ They are however, both a [Lisp](https://en.wikipedia.org/wiki/Lisp_%28programmin
 
 This extremely exhaustive chart that shows the history of programming languages shows just how early Lisp turned up. It’s amazing to see what influenced what, click the image to enlarge it.
 
-[![history-of-languages](/assets/legacy-images/2016/02/history-of-languages.png)(/assets/legacy-images/2016/02/history-of-languages-1024x631.png)]So it has been around for a very long time and has appeared in many flavours. We’re going to skip all of the other fascinating Lisps in the middle and jump all the way to Clojure, one of the newest and most popular in recent years.
+[![history-of-languages](/Attachments/imported-blog-posts/legacy-images/2016/02/history-of-languages.png)(/Attachments/imported-blog-posts/legacy-images/2016/02/history-of-languages-1024x631.png)]So it has been around for a very long time and has appeared in many flavours. We’re going to skip all of the other fascinating Lisps in the middle and jump all the way to Clojure, one of the newest and most popular in recent years.
 
 ## Clojure
 

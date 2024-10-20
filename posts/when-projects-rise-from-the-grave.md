@@ -19,7 +19,7 @@ The minified source is actually commited in (which I see as a big **no** now) a
 
 At least I was using [Closure Compiler](https://developers.google.com/closure/compiler/), that’s pretty cool. I mean, [UglifyJS](https://github.com/mishoo/UglifyJS) is enough to get by really, especially at this size, but nice that I was aware of it. I don’t know why everything is a combination of slightly strange looking _Makefile_ and JavaScript though, that’s a really weird build toolchain. I still use _make_ to this day, but not in this way. I’ve just realised I commited the Closure Compiler JAR into the repository too.
 
-[![Shame Cube](/assets/legacy-images/2016/11/giphy.gif)(/assets/legacy-images/2016/11/giphy.gif)]
+[![Shame Cube](/Attachments/imported-blog-posts/legacy-images/2016/11/giphy.gif)(/Attachments/imported-blog-posts/legacy-images/2016/11/giphy.gif)]
 
 ## Code
 

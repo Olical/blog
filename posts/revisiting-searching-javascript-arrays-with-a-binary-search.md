@@ -73,7 +73,7 @@ There wasn’t anything wrong with the search functions. The sorting of the samp
 [ 10, 6 ] 6 1 -1
 ```
 
-[![quadruple-facepalm](/assets/legacy-images/2014/12/quadruple-facepalm.jpg)(/assets/legacy-images/2014/12/quadruple-facepalm.jpg)]So using _list.sort()_ in the tests wasn’t safe, amazingly. I guess it uses string comparison or something crazy like that by default. **Thanks JavaScript!** So I ended up with this binary search from my Khan academy attempt.
+[![quadruple-facepalm](/Attachments/imported-blog-posts/legacy-images/2014/12/quadruple-facepalm.jpg)(/Attachments/imported-blog-posts/legacy-images/2014/12/quadruple-facepalm.jpg)]So using _list.sort()_ in the tests wasn’t safe, amazingly. I guess it uses string comparison or something crazy like that by default. **Thanks JavaScript!** So I ended up with this binary search from my Khan academy attempt.
 
 ```
 /**

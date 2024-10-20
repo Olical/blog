@@ -25,11 +25,11 @@ They have recipes called StackScripts to provision a server with common things l
 
 After performing the basic SSH key exchange I followed the [Linode guide to securing your server](https://www.linode.com/docs/security/securing-your-server). This involved creating a non-root user, locking down SSH, implementing a firewall (easy with [ufw](https://www.linode.com/docs/security/firewalls/configure-firewall-with-ufw)) and setting up [fail2ban](https://www.digitalocean.com/community/tutorials/how-fail2ban-works-to-protect-services-on-a-linux-server). I have to say, the Linode documentation is first rate, I’d happily rely on it for non-Linode systems too.
 
-![My Linode’s dashboard. I called it Turing.](/assets/legacy-images/2017/03/Screenshot_2017-03-28_20-09-24-1024x604.png)
+![My Linode’s dashboard. I called it Turing.](/Attachments/imported-blog-posts/legacy-images/2017/03/Screenshot_2017-03-28_20-09-24-1024x604.png)
 
 Not only does Linode provision and manage the actual image for me, but it also comes with some pretty neat DNS management and Longview, which provides built in, detailed, metrics. They also provide load balancers but I don’t need those (yet). I previously managed my DNS for this domain through Cloudflare, I’ve since moved that to Linode for simplicity and haven’t noticed any issues yet.
 
-![What my Longview dashboard looks like.](/assets/legacy-images/2017/03/Screenshot_2017-03-28_20-12-43.png)
+![What my Longview dashboard looks like.](/Attachments/imported-blog-posts/legacy-images/2017/03/Screenshot_2017-03-28_20-12-43.png)
 
 You probably won’t notice or remember (why would you?) but this site used to be _http_. During the migration I cracked open the old [certbot](https://certbot.eff.org/) from the wonderful [Let’s Encrypt](https://letsencrypt.org/) and got that lovely green lock and _https_ you should see at the top of your browser, unless you’re trying to access this site from a potato. In which case the cert probably failed and you may or may not be reading this. ¯\_(ツ)_/¯
 

@@ -84,11 +84,11 @@ nREPL server started on port 40285 on host localhost - nrepl://localhost:40285
 
 Open Neovim with Conjure installed and it’ll connect automatically.
 
-![Conjure’s connection output](/assets/images/conversational-software-development/init.png)
+![Conjure’s connection output](/Attachments/imported-blog-posts/images/conversational-software-development/init.png)
 
 Now I’ll evaluate the contents of `-main` by placing my cursor inside the `->>` form and pressing `,ee` (the comma prefix will depend on your `maplocalleader` setting and Conjure configuration). The result will appear in the HUD (small window in the top right) but I’ll open the log up in a split so we can see more of it with `,ls`.
 
-![After the first eval and opening the log window](/assets/images/conversational-software-development/first-eval.png)
+![After the first eval and opening the log window](/Attachments/imported-blog-posts/images/conversational-software-development/first-eval.png)
 
 Here’s the expected and actual output of our program so far.
 
@@ -104,19 +104,19 @@ So the "Fizz Buzz" combination (which should only appear for multiples of 15) is
 
 Let’s add a comment to the buffer with some test forms to check some of the specific return values of `n->str`.
 
-![Confirming bugs through evals in a comment](/assets/images/conversational-software-development/confirm-bugs.png)
+![Confirming bugs through evals in a comment](/Attachments/imported-blog-posts/images/conversational-software-development/confirm-bugs.png)
 
 I evaluated each form inside the comment with `,ee`, we can see the results in the log buffer (which you can edit and interact with, by the way). Clearly my suspicions were correct, "Fizz" and "Buzz" are flipped and "Fizz Buzz" is applying to way more than multiples of 15.
 
 I’m going to flip the `by-5?` and `by-3?` values around in the `let` binding, evaluate the function with `,er` (evaluates the top level or "root" form under the cursor) and then run my little ad-hoc test suite again.
 
-![Flipping let bindings around to address one bug](/assets/images/conversational-software-development/flip-fix.png)
+![Flipping let bindings around to address one bug](/Attachments/imported-blog-posts/images/conversational-software-development/flip-fix.png)
 
 And now I notice that the weird behaviour of "Fizz Buzz" occouring on things other than multiples of 15 is because I have `(and by-3? by-3?)` when one of them should be `by-5?`.
 
 I’ll correct that, re-evaluate `n->str` again and then execute the body of `-main` one last time.
 
-![Correct result and final fix](/assets/images/conversational-software-development/fixed.png)
+![Correct result and final fix](/Attachments/imported-blog-posts/images/conversational-software-development/fixed.png)
 
 That looks good to me! Bear in mind that this is an extremely simple example so you might be thinking "I’d just run my program again after I made a change", which is perfectly acceptable in this instance.
 

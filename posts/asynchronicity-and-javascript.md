@@ -20,7 +20,7 @@ Hang on, apparently they allow us to program async in a direct style, which is _
 
 JavaScript promises on the other hand, callbacks. Callbacks everywhere. Callbacks all the way down. JavaScript promises are just glorified callbacks, it’s just another syntax and another style, but it still has the same problems. The caller is not in control of pulling the value back through. It’s continuation passing style, the thing promises and futures are supposed to help you avoid, but they’re built upon those concepts in JavaScript.
 
-[![wp-1453555723852.jpg](/assets/legacy-images/2016/01/wp-1453555723852.jpg)(/assets/legacy-images/2016/01/wp-1453555723852-1024x768.jpg)]
+[![wp-1453555723852.jpg](/Attachments/imported-blog-posts/legacy-images/2016/01/wp-1453555723852.jpg)(/Attachments/imported-blog-posts/legacy-images/2016/01/wp-1453555723852-1024x768.jpg)]
 
 So I’m guessing you think I’m wrong and that promises in JavaScript are actually different from callback based spaghetti hell in some way? Syntactically, sure, but that’s as deep as the difference goes.
 
