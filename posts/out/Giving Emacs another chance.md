@@ -1,0 +1,19 @@
+---
+alias: giving-emacs-another-chance
+tags:
+- blog-post
+- imported-blog-post
+---
+
+
+I was originally going to call this post “Attempting Emacs 2: The Re-Emacsing – A Vimmers tale”, I thought better of it.
+
+As you may have noticed from my tweets over the recent weeks, I’m infatuated by Clojure among many other languages that aren’t the one I’m paid to write (JavaScript). I’ve been planning on working my way through the two [“7 languages in 7 weeks”](https://pragprog.com/book/btlang/seven-languages-in-seven-weeks) books for quite some time too but haven’t been able to start them alongside [my coursera course on algorithms](/a-quick-reflection-on-algorithms/). Now the course is over (I got as far as I wanted to go just before it officially ended) I am free to start, but first I wish to give Emacs another chance. It’s also worth mentioning that not only will I be publishing my “7 languages” projects on GitHub, but I’ll also be continuing my [brainfuck](/2015/01/05/brainfuck-vm-in-javascript/) [interpreters](/2015/01/12/brainfuck-vm-in-clojure/) in each language I look at.
+
+One thing I won’t be doing, at least at first, is giving into the temptation of [Evil](http://www.emacswiki.org/emacs/Evil). I tried it out last time which may have lead to the demise of my previous _.emacs.d_. I think the cognitive dissonance is too great for any seasoned Vim user to handle, I need the distinction this time. Although I do admit the Emacs key bindings are beyond awful when compared with Vim and a bunch of muscle memory. Maybe it’ll get better over time, but if not I’m willing to try out [God mode](https://github.com/chrisdone/god-mode). It introduces a sort of normal / insert mode, but still using Emacs keys. It just stops you having to hold down those pesky modifiers all the time. Vim is Vim and Emacs is Emacs, much like planes and cars I have found they do not work well when you put the former _inside_ the latter.
+
+I think I’ll be relying on [magit](https://github.com/magit/magit), [projectile](https://github.com/bbatsov/projectile) and [helm](https://github.com/emacs-helm/helm) to begin with. I’m not sure how I’ll navigate the buffer though, maybe I’ll try [ace jump](http://www.emacswiki.org/emacs/AceJump). It’s a shame that it just looks like an [EasyMotion](https://github.com/Lokaltog/vim-easymotion) knock off though, it doesn’t appear to support very much of my beloved navigational tool. With EasyMotion I can fly around the screen without a thought.
+
+I’ll also be splitting my configuration into smaller modules as I have done with Vim in [my dotfiles](https://github.com/Wolfy87/dotfiles). I plan to use [Cask](https://github.com/cask/cask) for package management right now, although that could also go out the window in favour of [el-get](https://github.com/dimitri/el-get) or something similar. I’ve written about [my main gripes](/making-package-el-behave-like-vundle/) with Emacs package management (or lack thereof) in the past, but my main point is things like [vim-plug](https://github.com/junegunn/vim-plug) blow all of Emacs’ solutions out of the metaphorical water. In my opinion.
+
+Maybe the only solution is for me to build a vim-plug of my own in Elisp. Talk about trial by fire.
